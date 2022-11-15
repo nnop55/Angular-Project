@@ -16,3 +16,12 @@ mat-card-content {
     display: flex;
     justify-content: space-between;
 }
+
+.right {
+    display: flex;
+    flex-direction: row;
+}
+
+.right i {
+    margin-top: 4px;
+}
