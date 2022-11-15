@@ -25,3 +25,21 @@ mat-card-content {
 .right i {
     margin-top: 4px;
 }
+.filter-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 48px;
+    margin-top: 10px;
+}
+.login {
+    background-color: #FF6984;
+    font-size: 16px;
+    padding: 7px 10px;
+    color: #fff;
+    font-weight: bolder;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0px 0px 5px black;
+    border: none;
+    cursor: pointer;
+}
