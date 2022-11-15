@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Data } from 'src/app/models/data.model';
+import { FilterModalComponent } from '../filter-modal/filter-modal.component';
 
 @Component({
   selector: 'app-hotel-cards',
@@ -10,7 +12,15 @@ export class HotelCardsComponent implements OnInit {
 
   hotelsData: Data[] = [];
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(FilterModalComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
   ngOnInit(): void {
     this.hotelFill();

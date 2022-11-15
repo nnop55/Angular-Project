@@ -9,7 +9,9 @@ import { HotelCardsComponent } from './components/hotel-cards/hotel-cards.compon
 import { MatCardModule } from '@angular/material/card';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { FilterModalComponent } from './components/filter-modal/filter-modal.component'
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -18,14 +20,16 @@ import { FormsModule } from '@angular/forms'
     HeaderComponent,
     HotelCardsComponent,
     RegisterFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    FilterModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
