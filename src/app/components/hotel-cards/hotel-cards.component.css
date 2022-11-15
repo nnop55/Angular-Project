@@ -1,0 +1,18 @@
+.example-card {
+    max-width: 300px;
+}
+
+.cards {
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+mat-card-content {
+    display: flex;
+    justify-content: space-between;
+}
