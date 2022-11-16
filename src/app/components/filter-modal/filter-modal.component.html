@@ -1,0 +1,63 @@
+<article>
+  <h3 mat-dialog-title class="heading">Filters</h3>
+  <mat-dialog-content class="mat-typography">
+    <h1 class="heading-2">Price range</h1>
+    <p class="paragraph">The average nightly price is $212</p>
+
+    <br>
+
+    <div class="form">
+      <input class="min-input" type="text" placeholder="min price">
+      <p class="space"> _ </p>
+      <input class="max-input" type="text" placeholder="max price">
+    </div>
+    <br>
+
+    <h1 class="heading-3"><strong>Type of place</strong></h1>
+    <div class="checkbox-container">
+        <div class="form-2">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Entire place</label>
+              <p class="label-paragraph">A place all to yourself</p>
+            </div>
+          </div>
+      
+          <div class="form-2">
+              <div class="checkbox-input">
+                <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              </div>
+              <div class="checkbox-text">
+                <label for="checkbox1">Private room</label>
+                <p class="label-paragraph">Your own room in a home or a hotel, plus some <br> shared common spaces</p>
+              </div>
+            </div>
+      
+            <div class="form-2">
+              <div class="checkbox-input">
+                <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              </div>
+              <div class="checkbox-text">
+                <label for="checkbox1">Shared room</label>
+                <p class="label-paragraph">A sleeping space and common areas that may <br> be shared with others</p>
+              </div>
+            </div>
+    </div>
+   
+    <h1 class="rooms-bads-heading"><strong>Rooms and beds</strong></h1>
+    <p class="bedrooms-paragraph">Bedrooms</p>
+
+
+    <p class="Beds-paragraph">Beds</p>
+
+    <p class="Bathrooms-paragraph">Bathrooms</p>
+
+    
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+  </mat-dialog-actions>
+</article>

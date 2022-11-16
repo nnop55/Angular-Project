@@ -1,5 +1,12 @@
-<<<<<<< HEAD
-<p>HELLO WORLD</p>
-=======
-<h1>Best Team</h1>
->>>>>>> 6fe916c75cba4cf0a3213c73dec3e70be637214f
+<nav>
+    <div class="left">
+        <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/">Hotels</a>
+    </div>
+    <div class="right">
+        <button routerLink="register" routerLinkActive="active" class="register">Register</button>
+        <button routerLink="login" routerLinkActive="active" class="login">Log In</button>
+        <button *ngIf="checkStorage.checkStorage" (click)="logOut()" class="logout">
+            Log Out
+        </button>
+    </div>
+</nav>

@@ -1,0 +1,76 @@
+.heading {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.heading-2 {
+    font-weight: bold;
+    margin-top: 20px;
+}
+.paragraph {
+    opacity: 0.5;
+    font-size: 17px;
+    margin-top: -10px;
+}
+.checkbox-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.min-input {
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 50px;
+    width: 330px;
+    margin-right: 15px;
+}
+.min-input::placeholder {
+    padding-left: 5px;
+}
+.max-input {
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 50px;
+    width: 330px;
+    margin-left: 15px;
+}
+.max-input::placeholder {
+    padding-left: 5px;
+}
+.heading-3 {
+    margin-top: 30px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+.space {
+    display: flex;
+    align-items: center;
+}
+.form-2 {
+    display: flex;
+}
+.label-paragraph {
+    opacity: 0.5;
+}
+.checkbox {
+    height: 20px;
+    width: 40px;
+}
+.rooms-bads-heading {
+    margin-top: 20px;
+}
+.bedrooms-paragraph {
+    margin-top: -10px;
+    font-size: 17px;
+}
+.Beds-paragraph {
+    font-size: 17px;
+}
+.Bathrooms-paragraph {
+    font-size: 17px;
+
+}

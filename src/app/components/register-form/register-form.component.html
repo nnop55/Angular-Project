@@ -1,0 +1,18 @@
+<div class="main">
+    <div class="center">
+        <div class="centerF">
+            <h4>Create an account</h4>
+            <div class="form">
+                <input type="email" [(ngModel)]="registerInfo.email" placeholder="Email">
+                <input type="text" [(ngModel)]="registerInfo.username" placeholder="Username">
+                <input type="password" [(ngModel)]="registerInfo.password" placeholder="Password">
+                <input type="password" [(ngModel)]="registerInfo.confirmPass" placeholder="Confirm password">
+                <button class="gradient create" (click)="registerBtn()">Sign Up</button>
+                <div class="createnew">
+                    <p class="p" routerLink="/login">Already have an account?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

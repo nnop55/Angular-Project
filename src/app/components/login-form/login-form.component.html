@@ -1,0 +1,26 @@
+<div class="main">
+    <div class="right">
+        <div class="rightF">
+            <h4>Please login to your account</h4>
+            <div class="form">
+                <input type="text" [(ngModel)]="loginInfo.email" placeholder="Email">
+                <input type="password" [(ngModel)]="loginInfo.password" placeholder="Password">
+                <button class="gradient login" (click)="loginBtn()">LOG IN</button>
+                <a class="a">Forgot your password?</a>
+                <div class="createnew">
+                    <p class="p">Don't have an account?</p>
+                    <button class="createacc" routerLink="/register">Create
+                        New</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left">
+        <div class="gradient text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Iste dolore obcaecati pariatur enim perferendis
+                dolores optio aspernatur quas corrupti consectetur assumenda, ratione voluptatibus veritatis doloribus
+                ullam. Dignissimos blanditiis cum voluptatibus.</p>
+        </div>
+    </div>
+</div>
