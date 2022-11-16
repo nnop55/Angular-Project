@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 
-import { FooterComponent } from './footer/footer/footer.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 import { HotelCardsComponent } from './components/hotel-cards/hotel-cards.component';
 import { MatCardModule } from '@angular/material/card';
