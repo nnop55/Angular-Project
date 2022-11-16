@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CheckStorageService } from 'src/app/services/check-storage.service';
+import { UsersDataService } from 'src/app/services/users-data.service';
 
 @Component({
   selector: 'app-header',
@@ -9,16 +9,16 @@ import { CheckStorageService } from 'src/app/services/check-storage.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public checkStorage: CheckStorageService, private router: Router) { }
+  constructor(public checkUsersData: UsersDataService, private router: Router) { }
 
   ngOnInit(): void {
-    this.checkStorage.storageInfo();
+    this.checkUsersData.storageInfo();
   }
 
-  logOut() {
-    localStorage.clear();
+  logOut() {                                             //Log out from account and navigate on register component
+    localStorage.setItem('authorized', 'false');
     this.router.navigate(['/register']);
-    this.checkStorage.storageInfo();
+    this.checkUsersData.storageInfo();
   }
 
 }

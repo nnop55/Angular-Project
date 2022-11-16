@@ -14,7 +14,7 @@ import { RegisterFormComponent } from './components/register-form/register-form.
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { FormsModule } from '@angular/forms';
 import { FilterModalComponent } from './components/filter-modal/filter-modal.component'
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -22,7 +22,6 @@ import {MatDialogModule} from '@angular/material/dialog';
   declarations: [
     AppComponent,
     HeaderComponent,
-
     FooterComponent,
     HotelCardsComponent,
     RegisterFormComponent,

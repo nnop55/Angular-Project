@@ -3,9 +3,11 @@
         <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/">Hotels</a>
     </div>
     <div class="right">
-        <button routerLink="register" routerLinkActive="active" class="register">Register</button>
-        <button routerLink="login" routerLinkActive="active" class="login">Log In</button>
-        <button *ngIf="checkStorage.checkStorage" (click)="logOut()" class="logout">
+        <button *ngIf="!checkUsersData.checkStorage" routerLink="register" routerLinkActive="active"
+            class="register">Register</button>
+        <button *ngIf="!checkUsersData.checkStorage" routerLink="login" routerLinkActive="active" class="login">Log
+            In</button>
+        <button *ngIf="checkUsersData.checkStorage" (click)="logOut()" class="logout">
             Log Out
         </button>
     </div>
