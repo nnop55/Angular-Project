@@ -7,9 +7,9 @@
     <br>
 
     <div class="form">
-      <input class="min-input" type="text" placeholder="min price">
+      <input [(ngModel)]="price['price_From']" class="min-input" type="text" placeholder="min price">
       <p class="space"> _ </p>
-      <input class="max-input" type="text" placeholder="max price">
+      <input [(ngModel)]="price['price_To']" class="max-input" type="text" placeholder="max price">
     </div>
     <br>
 
@@ -17,7 +17,7 @@
     <div class="checkbox-container">
         <div class="form-2">
             <div class="checkbox-input">
-              <input ngModel class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="typeOfPlace['Entire_Place']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">Entire place</label>
@@ -27,7 +27,7 @@
       
           <div class="form-2">
               <div class="checkbox-input">
-                <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                <input [(ngModel)]="typeOfPlace['Private_Room']" class="checkbox" type="checkbox" id="checkbox1" value="Private-Room">
               </div>
               <div class="checkbox-text">
                 <label for="checkbox1">Private room</label>
@@ -37,7 +37,7 @@
       
             <div class="form-2">
               <div class="checkbox-input">
-                <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                <input [(ngModel)]="typeOfPlace['Shared_Room']" class="checkbox" type="checkbox" id="checkbox1" value="Shared-Room">
               </div>
               <div class="checkbox-text">
                 <label for="checkbox1">Shared room</label>
@@ -97,7 +97,7 @@
       class="checkbox-container-2">
         <div class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="item.clicked" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">{{item.name}}</label>
@@ -113,7 +113,7 @@
       <div class="checkbox-container-2">
         <div class="form-3">
           <div class="checkbox-input">
-            <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            <input [(ngModel)]="language['English']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
           </div>
           <div class="checkbox-text">
             <label for="checkbox1">English</label>
@@ -146,7 +146,7 @@
         <div [ngClass]="{'limitTextHeight': isReadMore}">
           <div  class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="language['Spanish']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">Spanish</label>
@@ -157,7 +157,7 @@
         <div [ngClass]="{'limitTextHeight': isReadMore}">
           <div  class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="language['Arabic']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">Arabic</label>
@@ -168,7 +168,7 @@
         <div [ngClass]="{'limitTextHeight': isReadMore}">
           <div  class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="language['Portuguese']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">Portuguese</label>
@@ -179,7 +179,7 @@
         <div [ngClass]="{'limitTextHeight': isReadMore}">
           <div  class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="language['Indonesian']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">Indonesian</label>
@@ -190,7 +190,7 @@
         <div [ngClass]="{'limitTextHeight': isReadMore}">
           <div  class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="language['Korean']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">Korean</label>
@@ -201,7 +201,7 @@
         <div [ngClass]="{'limitTextHeight': isReadMore}">
           <div  class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="language['Thai']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">Thai</label>
@@ -212,7 +212,7 @@
         <div [ngClass]="{'limitTextHeight': isReadMore}">
           <div  class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="language['Greek']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">Greek</label>
@@ -223,7 +223,7 @@
         <div [ngClass]="{'limitTextHeight': isReadMore}">
           <div  class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="language['Hebrew']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">Hebrew</label>
@@ -234,7 +234,7 @@
         <div [ngClass]="{'limitTextHeight': isReadMore}">
           <div  class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="language['Malay']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">Malay</label>
@@ -245,7 +245,7 @@
         <div [ngClass]="{'limitTextHeight': isReadMore}">
           <div  class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="language['Danish']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">Danish</label>
@@ -256,7 +256,7 @@
         <div [ngClass]="{'limitTextHeight': isReadMore}">
           <div  class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="language['Norwegian']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">Norwegian</label>
@@ -267,7 +267,7 @@
         <div [ngClass]="{'limitTextHeight': isReadMore}">
           <div  class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="language['Czech']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">Czech</label>
@@ -278,7 +278,7 @@
         <div [ngClass]="{'limitTextHeight': isReadMore}">
           <div  class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="language['Ukrainian']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">Ukrainian</label>
@@ -297,7 +297,7 @@
       <div class="checkbox-container-3">
         <div class="form-3">
             <div class="checkbox-input">
-              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              <input [(ngModel)]="language['French']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
             </div>
             <div class="checkbox-text">
               <label for="checkbox1">French</label>
@@ -307,7 +307,7 @@
       
           <div class="form-3">
               <div class="checkbox-input">
-                <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                <input [(ngModel)]="language['Japanese']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
               </div>
               <div class="checkbox-text">
                 <label for="checkbox1">Japanese</label>
@@ -317,7 +317,7 @@
             <div [ngClass]="{'limitTextHeight': isReadMore}">
               <div  class="form-3">
                 <div class="checkbox-input">
-                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                  <input [(ngModel)]="language['Dryer']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
                 </div>
                 <div class="checkbox-text">
                   <label for="checkbox1">Dryer</label>
@@ -328,7 +328,7 @@
             <div [ngClass]="{'limitTextHeight': isReadMore}">
               <div  class="form-3">
                 <div class="checkbox-input">
-                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                  <input [(ngModel)]="language['Russian']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
                 </div>
                 <div class="checkbox-text">
                   <label for="checkbox1">Russian</label>
@@ -338,7 +338,7 @@
             <div [ngClass]="{'limitTextHeight': isReadMore}">
               <div  class="form-3">
                 <div class="checkbox-input">
-                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                  <input [(ngModel)]="language['Chinese-(Simplified)']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
                 </div>
                 <div class="checkbox-text">
                   <label for="checkbox1">Chinese (Simplified)</label>
@@ -348,7 +348,7 @@
             <div [ngClass]="{'limitTextHeight': isReadMore}">
               <div  class="form-3">
                 <div class="checkbox-input">
-                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                  <input [(ngModel)]="language['Hindi']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
                 </div>
                 <div class="checkbox-text">
                   <label for="checkbox1">Hindi</label>
@@ -358,7 +358,7 @@
             <div [ngClass]="{'limitTextHeight': isReadMore}">
               <div  class="form-3">
                 <div class="checkbox-input">
-                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                  <input [(ngModel)]="language['Turkish']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
                 </div>
                 <div class="checkbox-text">
                   <label for="checkbox1">Turkish</label>
@@ -369,7 +369,7 @@
             <div [ngClass]="{'limitTextHeight': isReadMore}">
               <div  class="form-3">
                 <div class="checkbox-input">
-                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                  <input [(ngModel)]="language['Dutch']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
                 </div>
                 <div class="checkbox-text">
                   <label for="checkbox1">Dutch</label>
@@ -380,7 +380,7 @@
             <div [ngClass]="{'limitTextHeight': isReadMore}">
               <div  class="form-3">
                 <div class="checkbox-input">
-                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                  <input [(ngModel)]="language['Bengali']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
                 </div>
                 <div class="checkbox-text">
                   <label for="checkbox1">Bengali</label>
@@ -391,7 +391,7 @@
             <div [ngClass]="{'limitTextHeight': isReadMore}">
               <div  class="form-3">
                 <div class="checkbox-input">
-                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                  <input [(ngModel)]="language['Punjabi']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
                 </div>
                 <div class="checkbox-text">
                   <label for="checkbox1">Punjabi</label>
@@ -402,7 +402,7 @@
             <div [ngClass]="{'limitTextHeight': isReadMore}">
               <div  class="form-3">
                 <div class="checkbox-input">
-                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                  <input [(ngModel)]="language['Sign']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
                 </div>
                 <div class="checkbox-text">
                   <label for="checkbox1">Sign</label>
@@ -413,7 +413,7 @@
             <div [ngClass]="{'limitTextHeight': isReadMore}">
               <div  class="form-3">
                 <div class="checkbox-input">
-                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                  <input [(ngModel)]="language['Polish']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
                 </div>
                 <div class="checkbox-text">
                   <label for="checkbox1">Polish</label>
@@ -424,7 +424,7 @@
             <div [ngClass]="{'limitTextHeight': isReadMore}">
               <div  class="form-3">
                 <div class="checkbox-input">
-                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                  <input [(ngModel)]="language['Tagalog']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
                 </div>
                 <div class="checkbox-text">
                   <label for="checkbox1">Tagalog</label>
@@ -435,7 +435,7 @@
             <div [ngClass]="{'limitTextHeight': isReadMore}">
               <div  class="form-3">
                 <div class="checkbox-input">
-                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                  <input [(ngModel)]="language['Swedish']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
                 </div>
                 <div class="checkbox-text">
                   <label for="checkbox1">Swedish</label>
@@ -446,7 +446,7 @@
             <div [ngClass]="{'limitTextHeight': isReadMore}">
               <div  class="form-3">
                 <div class="checkbox-input">
-                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                  <input [(ngModel)]="language['Finnish']" class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
                 </div>
                 <div class="checkbox-text">
                   <label for="checkbox1">Finnish</label>

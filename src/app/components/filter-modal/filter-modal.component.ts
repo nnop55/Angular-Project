@@ -12,9 +12,9 @@ export class FilterModalComponent implements OnInit {
   bathrooms:any [] = []
   propertyType:any [] = []
   essentials:any [] = []
-  essentials2:any []= []
-  priceRange:any [] = []
-  typeOfPlace:any 
+  typeOfPlace:any  = new Object()
+  price:any = new Object()
+  language:any = new Object()
   
   isReadMore:boolean = true;
   
@@ -210,70 +210,65 @@ export class FilterModalComponent implements OnInit {
     this.essentials = [
       {
         name: 'Wifi',
-        clicked: true
+        clicked: false
       },
       {
         name: 'Washer',
-        clicked: true
+        clicked: false
       },
       {
         name: 'Air conditioning',
-        clicked: true
+        clicked: false
       },
       {
         name: 'Dedicated workspace',
-        clicked: true
+        clicked: false
       },
       {
         name: 'Hair dryer',
-        clicked: true
+        clicked: false
       },
       {
         name: 'Kitchen',
-        clicked: true
+        clicked: false
       },
       {
         name: 'Dryer',
-        clicked: true
+        clicked: false
       },
       {
         name: 'Heating',
-        clicked: true
+        clicked: false
       },
       {
         name: 'TV',
-        clicked: true
+        clicked: false
       },
       {
         name: 'Iron',
-        clicked: true
+        clicked: false
       }
       
     ]
   }
-  
-  priceRangeFunc() {
-    this.priceRange = [
-      {
-        name: 'from',
-      },
-      {
-        name: 'To'
-      }
-    ]
-  }
-
-  typeOfPlaceFunc() {
-    this.typeOfPlace = [
-      {
-        value: false
-      }
-    ]
-  }
-
 
   saveFilterBtn() {
-    console.log(this.typeOfPlace);
+    console.log('typeOfPlace : ',this.typeOfPlace);
+    console.log('bathrooms : ',this.bathrooms);
+    console.log('bedrooms : ',this.bedrooms);
+    console.log('beds : ',this.beds);
+    console.log('essentials : ',this.essentials);
+    console.log('language : ',this.language);
+    console.log('price : ',this.price);
+    console.log('propertyType : ',this.propertyType);
+    
+    
+    
+    
+    
+    
+    
+    
     
   }
 
