@@ -47,14 +47,508 @@
     </div>
    
     <h1 class="rooms-bads-heading"><strong>Rooms and beds</strong></h1>
+   
     <p class="bedrooms-paragraph">Bedrooms</p>
-
-
+    <div
+    class="button-div">
+      <button (click)="selectedBtnBedrooms()" [ngClass]="{'selectedHighlit': isSelectedBedrooms}" mat-stroked-button color="dark">ANY</button>
+      <button (click)="selectedBtnBedrooms()" [ngClass]="{'selectedHighlit': isSelectedBedrooms}" mat-stroked-button color="dark">1</button>
+      <button (click)="selectedBtnBedrooms()" [ngClass]="{'selectedHighlit': isSelectedBedrooms}" mat-stroked-button color="dark">2</button>
+      <button (click)="selectedBtnBedrooms()" [ngClass]="{'selectedHighlit': isSelectedBedrooms}" mat-stroked-button color="dark">3</button>
+      <button (click)="selectedBtnBedrooms()" [ngClass]="{'selectedHighlit': isSelectedBedrooms}" mat-stroked-button color="dark">4</button>
+      <button (click)="selectedBtnBedrooms()" [ngClass]="{'selectedHighlit': isSelectedBedrooms}" mat-stroked-button color="dark">5</button>
+      <button (click)="selectedBtnBedrooms()" [ngClass]="{'selectedHighlit': isSelectedBedrooms}" mat-stroked-button color="dark">6</button>
+      <button (click)="selectedBtnBedrooms()" [ngClass]="{'selectedHighlit': isSelectedBedrooms}" mat-stroked-button color="dark">7</button>
+      <button (click)="selectedBtnBedrooms()" [ngClass]="{'selectedHighlit': isSelectedBedrooms}" mat-stroked-button color="dark">8+</button>
+    </div>
+    <br>
     <p class="Beds-paragraph">Beds</p>
-
+    <div class="button-div">
+      <button (click)="selectedBtnBeds()" [ngClass]="{'selectedHighlit': isSelectedBeds}" mat-stroked-button color="dark">ANY</button>
+      <button mat-stroked-button color="dark">1</button>
+      <button mat-stroked-button color="dark">2</button>
+      <button mat-stroked-button color="dark">3</button>
+      <button mat-stroked-button color="dark">4</button>
+      <button mat-stroked-button color="dark">5</button>
+      <button mat-stroked-button color="dark">6</button>
+      <button mat-stroked-button color="dark">7</button>
+      <button mat-stroked-button color="dark">8+</button>
+    </div>
+    <br>
     <p class="Bathrooms-paragraph">Bathrooms</p>
 
+    <div class="button-div">
+      <button (click)="selectedBtnBathrooms()" [ngClass]="{'selectedHighlit': isSelectedBathrooms}" mat-stroked-button color="dark">ANY</button>
+      <button mat-stroked-button color="dark">1</button>
+      <button mat-stroked-button color="dark">2</button>
+      <button mat-stroked-button color="dark">3</button>
+      <button mat-stroked-button color="dark">4</button>
+      <button mat-stroked-button color="dark">5</button>
+      <button mat-stroked-button color="dark">6</button>
+      <button mat-stroked-button color="dark">7</button>
+      <button mat-stroked-button color="dark">8+</button>
+    </div>
+    <br>
     
+    <h1 class="rooms-bads-heading"><strong>Property type</strong></h1>
+    <br>
+    <div class="type-container">
+      <button class="btnType" mat-stroked-button  color="dark"><strong>House</strong></button>
+      <button class="btnType" mat-stroked-button  color="dark"><strong>Apartment</strong></button>
+      <button class="btnType" mat-stroked-button  color="dark"><strong>GuestHouse</strong></button>
+      <button class="btnType" mat-stroked-button  color="dark"><strong>Hotel</strong></button>
+    </div>
+
+
+    <h1 class="rooms-bads-heading"><strong>Amenities</strong></h1>
+    <h3><strong>Essentials</strong></h3>
+
+    <div class="whole-checkbox">
+      <div class="checkbox-container-2">
+        <div class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Wifi</label>
+          
+            </div>
+          </div>
+      
+          <div class="form-3">
+              <div class="checkbox-input">
+                <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              </div>
+              <div class="checkbox-text">
+                <label for="checkbox1">Washer</label>
+              </div>
+            </div>
+      
+            <div class="form-3">
+              <div class="checkbox-input">
+                <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              </div>
+              <div class="checkbox-text">
+                <label for="checkbox1">Air conditioning</label>
+              </div>
+            </div>
+
+            <div class="form-3">
+              <div class="checkbox-input">
+                <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              </div>
+              <div class="checkbox-text">
+                <label for="checkbox1">Dedicated workspace</label>
+              </div>
+            </div>
+
+            <div class="form-3">
+              <div class="checkbox-input">
+                <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              </div>
+              <div class="checkbox-text">
+                <label for="checkbox1">Hair dryer</label>
+              </div>
+            </div>
+    </div>
+    <div class="checkbox-container-3">
+      <div class="form-3">
+          <div class="checkbox-input">
+            <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+          </div>
+          <div class="checkbox-text">
+            <label for="checkbox1">Kitchen</label>
+        
+          </div>
+        </div>
+    
+        <div class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Dryer</label>
+            </div>
+          </div>
+    
+          <div class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Heating</label>
+            </div>
+          </div>
+
+          <div class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">TV</label>
+            </div>
+          </div>
+
+          <div class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Iron</label>
+            </div>
+          </div>
+  </div>
+    </div>
+
+    <h1 class="rooms-bads-heading"><strong>Host language</strong></h1>
+
+    <div class="whole-checkbox">
+      <div class="checkbox-container-2">
+        <div class="form-3">
+          <div class="checkbox-input">
+            <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+          </div>
+          <div class="checkbox-text">
+            <label for="checkbox1">English</label>
+          </div>
+        </div>
+        
+        <div class="form-3">
+          <div class="checkbox-input">
+            <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+          </div>
+          <div class="checkbox-text">
+            <label for="checkbox1">German</label>
+          </div>
+        </div>
+
+   
+
+
+        <div [ngClass]="{'limitTextHeight': isReadMore}">
+          <div  class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Italian</label>
+            </div>
+          </div>
+        </div>
+
+        <div [ngClass]="{'limitTextHeight': isReadMore}">
+          <div  class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Spanish</label>
+            </div>
+          </div>
+        </div>
+
+        <div [ngClass]="{'limitTextHeight': isReadMore}">
+          <div  class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Arabic</label>
+            </div>
+          </div>
+        </div>
+
+        <div [ngClass]="{'limitTextHeight': isReadMore}">
+          <div  class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Portuguese</label>
+            </div>
+          </div>
+        </div>
+
+        <div [ngClass]="{'limitTextHeight': isReadMore}">
+          <div  class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Indonesian</label>
+            </div>
+          </div>
+        </div>
+
+        <div [ngClass]="{'limitTextHeight': isReadMore}">
+          <div  class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Korean</label>
+            </div>
+          </div>
+        </div>
+
+        <div [ngClass]="{'limitTextHeight': isReadMore}">
+          <div  class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Thai</label>
+            </div>
+          </div>
+        </div>
+
+        <div [ngClass]="{'limitTextHeight': isReadMore}">
+          <div  class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Greek</label>
+            </div>
+          </div>
+        </div>
+
+        <div [ngClass]="{'limitTextHeight': isReadMore}">
+          <div  class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Hebrew</label>
+            </div>
+          </div>
+        </div>
+
+        <div [ngClass]="{'limitTextHeight': isReadMore}">
+          <div  class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Malay</label>
+            </div>
+          </div>
+        </div>
+
+        <div [ngClass]="{'limitTextHeight': isReadMore}">
+          <div  class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Danish</label>
+            </div>
+          </div>
+        </div>
+
+        <div [ngClass]="{'limitTextHeight': isReadMore}">
+          <div  class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Norwegian</label>
+            </div>
+          </div>
+        </div>
+
+        <div [ngClass]="{'limitTextHeight': isReadMore}">
+          <div  class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Czech</label>
+            </div>
+          </div>
+        </div>
+
+        <div [ngClass]="{'limitTextHeight': isReadMore}">
+          <div  class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">Ukrainian</label>
+            </div>
+          </div>
+        </div>
+
+        <button class="language-btn" type="button" (click)="showText()">
+          {{ isReadMore ? 'Show More': 'Show Less' }}
+        </button>
+
+
+      </div>
+
+    
+      <div class="checkbox-container-3">
+        <div class="form-3">
+            <div class="checkbox-input">
+              <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+            </div>
+            <div class="checkbox-text">
+              <label for="checkbox1">French</label>
+          
+            </div>
+          </div>
+      
+          <div class="form-3">
+              <div class="checkbox-input">
+                <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+              </div>
+              <div class="checkbox-text">
+                <label for="checkbox1">Japanese</label>
+              </div>
+            </div>
+            
+            <div [ngClass]="{'limitTextHeight': isReadMore}">
+              <div  class="form-3">
+                <div class="checkbox-input">
+                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                </div>
+                <div class="checkbox-text">
+                  <label for="checkbox1">Dryer</label>
+                </div>
+              </div>
+            </div>
+
+            <div [ngClass]="{'limitTextHeight': isReadMore}">
+              <div  class="form-3">
+                <div class="checkbox-input">
+                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                </div>
+                <div class="checkbox-text">
+                  <label for="checkbox1">Russian</label>
+                </div>
+              </div>
+            </div>
+            <div [ngClass]="{'limitTextHeight': isReadMore}">
+              <div  class="form-3">
+                <div class="checkbox-input">
+                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                </div>
+                <div class="checkbox-text">
+                  <label for="checkbox1">Chinese (Simplified)</label>
+                </div>
+              </div>
+            </div>
+            <div [ngClass]="{'limitTextHeight': isReadMore}">
+              <div  class="form-3">
+                <div class="checkbox-input">
+                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                </div>
+                <div class="checkbox-text">
+                  <label for="checkbox1">Hindi</label>
+                </div>
+              </div>
+            </div>
+            <div [ngClass]="{'limitTextHeight': isReadMore}">
+              <div  class="form-3">
+                <div class="checkbox-input">
+                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                </div>
+                <div class="checkbox-text">
+                  <label for="checkbox1">Turkish</label>
+                </div>
+              </div>
+            </div>
+
+            <div [ngClass]="{'limitTextHeight': isReadMore}">
+              <div  class="form-3">
+                <div class="checkbox-input">
+                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                </div>
+                <div class="checkbox-text">
+                  <label for="checkbox1">Dutch</label>
+                </div>
+              </div>
+            </div>
+
+            <div [ngClass]="{'limitTextHeight': isReadMore}">
+              <div  class="form-3">
+                <div class="checkbox-input">
+                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                </div>
+                <div class="checkbox-text">
+                  <label for="checkbox1">Bengali</label>
+                </div>
+              </div>
+            </div>
+
+            <div [ngClass]="{'limitTextHeight': isReadMore}">
+              <div  class="form-3">
+                <div class="checkbox-input">
+                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                </div>
+                <div class="checkbox-text">
+                  <label for="checkbox1">Punjabi</label>
+                </div>
+              </div>
+            </div>
+
+            <div [ngClass]="{'limitTextHeight': isReadMore}">
+              <div  class="form-3">
+                <div class="checkbox-input">
+                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                </div>
+                <div class="checkbox-text">
+                  <label for="checkbox1">Sign</label>
+                </div>
+              </div>
+            </div>
+
+            <div [ngClass]="{'limitTextHeight': isReadMore}">
+              <div  class="form-3">
+                <div class="checkbox-input">
+                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                </div>
+                <div class="checkbox-text">
+                  <label for="checkbox1">Polish</label>
+                </div>
+              </div>
+            </div>
+
+            <div [ngClass]="{'limitTextHeight': isReadMore}">
+              <div  class="form-3">
+                <div class="checkbox-input">
+                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                </div>
+                <div class="checkbox-text">
+                  <label for="checkbox1">Tagalog</label>
+                </div>
+              </div>
+            </div>
+
+            <div [ngClass]="{'limitTextHeight': isReadMore}">
+              <div  class="form-3">
+                <div class="checkbox-input">
+                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                </div>
+                <div class="checkbox-text">
+                  <label for="checkbox1">Swedish</label>
+                </div>
+              </div>
+            </div>
+
+            <div [ngClass]="{'limitTextHeight': isReadMore}">
+              <div  class="form-3">
+                <div class="checkbox-input">
+                  <input class="checkbox" type="checkbox" id="checkbox1" value="entire-place">
+                </div>
+                <div class="checkbox-text">
+                  <label for="checkbox1">Finnish</label>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          </div>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancel</button>
