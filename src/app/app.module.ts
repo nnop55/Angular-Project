@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { FilterModalComponent } from './components/filter-modal/filter-modal.component';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 
@@ -38,7 +40,8 @@ import { FilterModalComponent } from './components/filter-modal/filter-modal.com
     MatCardModule,
     FormsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
