@@ -1,14 +1,17 @@
 <nav>
-    <div class="left">
-        <a [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/">Hotels</a>
-    </div>
-    <div class="right">
-        <button *ngIf="!checkUsersData.checkStorage" routerLink="register" routerLinkActive="active"
-            class="register">Register</button>
-        <button *ngIf="!checkUsersData.checkStorage" routerLink="login" routerLinkActive="active" class="login">Log
-            In</button>
-        <button *ngIf="checkUsersData.checkStorage" (click)="logOut()" class="logout">
-            Log Out
-        </button>
+    <div class="main">
+        <div class="left">
+            <button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" mat-icon-button
+                aria-label="Example icon button with a home icon">
+                <mat-icon>home</mat-icon>
+            </button>
+        </div>
+        <div class="right">
+            <button mat-stroked-button routerLink="/register" *ngIf="!checkUsersData.checkStorage"
+                routerLinkActive="active">Register</button>
+            <button mat-stroked-button routerLink="/login" *ngIf="!checkUsersData.checkStorage"
+                routerLinkActive="active">Log In</button>
+            <button mat-stroked-button (click)="logOut()" *ngIf="checkUsersData.checkStorage">Log Out</button>
+        </div>
     </div>
 </nav>

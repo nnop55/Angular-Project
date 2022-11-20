@@ -12,6 +12,10 @@ export class LoginFormComponent implements OnInit {
 
   loginInfo: Login = new Login();
 
+  checkInpType: boolean = true;
+  eyeIcon: string = 'ri-eye-off-fill'
+  inpType: string = 'password';
+
   constructor(public checkUsersData: UsersDataService, private router: Router) { }
 
   ngOnInit(): void {
@@ -19,24 +23,41 @@ export class LoginFormComponent implements OnInit {
 
   loginBtn() {                               //Log in on existed account,checking if account are exists.
 
-    let users = this.checkUsersData.getUsers();
-
-    if (users.length > 0) {
-      let filteredUser = users.filter((o: any) => this.loginInfo.email == o.email && this.loginInfo.password == o.pass);
-      if (filteredUser.length > 0) {
-        this.loginInfo.email = '';
-        this.loginInfo.password = '';
-        localStorage.setItem('authorized', 'true')
-        this.checkUsersData.storageInfo();
-        this.router.navigate(['/']);
-      } else {
-        alert("Fill correct info");
-      }
-
+    if (this.loginInfo.email == '' || this.loginInfo.password == '') {
+      alert('Fill all the fields')
     } else {
-      alert("User not found");
+      let users = this.checkUsersData.getUsers();
+
+      if (users.length > 0) {
+        let filteredUser = users.filter((o: any) => this.loginInfo.email == o.email && this.loginInfo.password == o.pass);
+        if (filteredUser.length > 0) {
+          this.loginInfo.email = '';
+          this.loginInfo.password = '';
+          localStorage.setItem('authorized', 'true')
+          this.checkUsersData.storageInfo();
+          this.router.navigate(['/']);
+        } else {
+          alert("Fill correct info");
+        }
+
+      } else {
+        alert("User not found");
+      }
     }
 
+
+
+  }
+
+  eyeIconToggle() {
+    this.checkInpType = !this.checkInpType;
+    if (this.checkInpType) {
+      this.eyeIcon = 'ri-eye-off-fill';
+      this.inpType = 'password';
+    } else {
+      this.eyeIcon = 'ri-eye-fill';
+      this.inpType = 'text';
+    }
   }
 
 }

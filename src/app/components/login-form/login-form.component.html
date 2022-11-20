@@ -1,26 +1,26 @@
-<div class="main">
-    <div class="right">
-        <div class="rightF">
-            <h4>Please login to your account</h4>
-            <div class="form">
-                <input type="text" [(ngModel)]="loginInfo.email" placeholder="Email">
-                <input type="password" [(ngModel)]="loginInfo.password" placeholder="Password">
-                <button class="gradient login" (click)="loginBtn()">LOG IN</button>
-                <a class="a">Forgot your password?</a>
-                <div class="createnew">
-                    <p class="p">Don't have an account?</p>
-                    <button class="createacc" routerLink="/register">Create
-                        New</button>
-                </div>
+<div class="container">
+    <div class="left">
+        <div class="title">
+            <h1>Sign In</h1>
+        </div>
+        <div class="inputs">
+            <input type="text" placeholder="Email" [(ngModel)]="loginInfo.email">
+            <div class="passInp">
+                <input [type]="inpType" placeholder="Password" [(ngModel)]="loginInfo.password">
+                <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
             </div>
         </div>
-    </div>
-    <div class="left">
-        <div class="gradient text">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Iste dolore obcaecati pariatur enim perferendis
-                dolores optio aspernatur quas corrupti consectetur assumenda, ratione voluptatibus veritatis doloribus
-                ullam. Dignissimos blanditiis cum voluptatibus.</p>
+        <div class="reg-btn">
+            <button (click)="loginBtn()">Log In</button>
         </div>
+        <div class="already">
+            <a routerLink="/register">Don't Have an account?</a>
+        </div>
+    </div>
+
+    <div class="right">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae ut velit et laborum fuga, facilis eum
+            quidem praesentium, quae cum rem obcaecati nisi, saepe dicta provident neque! Asperiores, accusantium
+            similique!</p>
     </div>
 </div>
