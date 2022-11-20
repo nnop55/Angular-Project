@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 
 @Component({
@@ -261,15 +261,13 @@ export class FilterModalComponent implements OnInit {
     console.log('language : ',this.language);
     console.log('price : ',this.price);
     console.log('propertyType : ',this.propertyType);
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    if(parseInt(this.price.price_from) > parseInt(this.price.price_to)) {
+      alert(` Wrong : price-from is mucher`);
+    } else {
+      console.log("Correct");
+      
+    }
   }
 
 
