@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
 
 @Component({
   selector: 'app-filter-modal',
@@ -7,17 +6,17 @@ import { from } from 'rxjs';
   styleUrls: ['./filter-modal.component.css']
 })
 export class FilterModalComponent implements OnInit {
-  bedrooms:any[] = []
-  beds:any[] = []
-  bathrooms:any [] = []
-  propertyType:any [] = []
-  essentials:any [] = []
-  typeOfPlace:any  = new Object()
-  price:any = new Object()
-  language:any = new Object()
-  
-  isReadMore:boolean = true;
-  
+  bedrooms: any[] = []
+  beds: any[] = []
+  bathrooms: any[] = []
+  propertyType: any[] = []
+  essentials: any[] = []
+  typeOfPlace: any = new Object()
+  price: any = new Object()
+  language: any = new Object()
+
+  isReadMore: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -31,51 +30,51 @@ export class FilterModalComponent implements OnInit {
 
 
   showText() {
-     this.isReadMore = !this.isReadMore
+    this.isReadMore = !this.isReadMore
   }
 
   roomsAndBadsFunc() {
     this.bedrooms = [
       {
-        name:'ANY',
-        clicked:true
+        name: 'ANY',
+        clicked: true
       },
       {
-        name:'1',
-        clicked:false
+        name: '1',
+        clicked: false
       },
       {
-        name:'2',
-        clicked:false
+        name: '2',
+        clicked: false
       },
       {
-        name:'3',
-        clicked:false
+        name: '3',
+        clicked: false
       },
       {
-        name:'4',
-        clicked:false
+        name: '4',
+        clicked: false
       },
       {
-        name:'5',
-        clicked:false
+        name: '5',
+        clicked: false
       },
       {
-        name:'6',
-        clicked:false
+        name: '6',
+        clicked: false
       },
       {
-        name:'7',
-        clicked:false
+        name: '7',
+        clicked: false
       },
       {
-        name:'8+',
-        clicked:false
+        name: '8+',
+        clicked: false
       }
     ]
   }
 
-  bedroomsFunc(item:any) {
+  bedroomsFunc(item: any) {
     this.bedrooms.forEach(item2 => {
       item2.clicked = false;
     })
@@ -87,120 +86,120 @@ export class FilterModalComponent implements OnInit {
   bedsFunc() {
     this.beds = [
       {
-        name:'ANY',
-        clicked:true
+        name: 'ANY',
+        clicked: true
       },
       {
-        name:'1',
-        clicked:false
+        name: '1',
+        clicked: false
       },
       {
-        name:'2',
-        clicked:false
+        name: '2',
+        clicked: false
       },
       {
-        name:'3',
-        clicked:false
+        name: '3',
+        clicked: false
       },
       {
-        name:'4',
-        clicked:false
+        name: '4',
+        clicked: false
       },
       {
-        name:'5',
-        clicked:false
+        name: '5',
+        clicked: false
       },
       {
-        name:'6',
-        clicked:false
+        name: '6',
+        clicked: false
       },
       {
-        name:'7',
-        clicked:false
+        name: '7',
+        clicked: false
       },
       {
-        name:'8+',
-        clicked:false
+        name: '8+',
+        clicked: false
       }
     ]
   }
 
-  bedsFunction(item:any) {
+  bedsFunction(item: any) {
     this.beds.forEach(item2 => {
       item2.clicked = false;
     })
     item.clicked = true;
   }
-  
+
 
   bathroomFunc() {
     this.bathrooms = [
       {
-        name:'ANY',
-        clicked:true
+        name: 'ANY',
+        clicked: true
       },
       {
-        name:'1',
-        clicked:false
+        name: '1',
+        clicked: false
       },
       {
-        name:'2',
-        clicked:false
+        name: '2',
+        clicked: false
       },
       {
-        name:'3',
-        clicked:false
+        name: '3',
+        clicked: false
       },
       {
-        name:'4',
-        clicked:false
+        name: '4',
+        clicked: false
       },
       {
-        name:'5',
-        clicked:false
+        name: '5',
+        clicked: false
       },
       {
-        name:'6',
-        clicked:false
+        name: '6',
+        clicked: false
       },
       {
-        name:'7',
-        clicked:false
+        name: '7',
+        clicked: false
       },
       {
-        name:'8+',
-        clicked:false
+        name: '8+',
+        clicked: false
       }
     ]
   }
 
-  bathroomFunction(item:any) {
+  bathroomFunction(item: any) {
     this.bathrooms.forEach(item2 => {
       item2.clicked = false;
     })
     item.clicked = true;
   }
-  
+
   propertyTypeFunc() {
     this.propertyType = [
       {
         name: 'House',
-        clicked:false,
+        clicked: false,
         icon: 'ri-home-6-line'
       },
       {
         name: 'Apartment',
-        clicked:false,
+        clicked: false,
         icon: 'ri-hotel-line'
       },
       {
         name: 'GuestHouse',
-        clicked:false,
+        clicked: false,
         icon: 'ri-building-4-line'
       },
       {
         name: 'Hotel',
-        clicked:false,
+        clicked: false,
         icon: 'ri-building-2-line'
       }
     ]
@@ -248,28 +247,28 @@ export class FilterModalComponent implements OnInit {
         name: 'Iron',
         clicked: false
       }
-      
+
     ]
   }
 
   saveFilterBtn() {
-    console.log('typeOfPlace : ',this.typeOfPlace);
-    console.log('bathrooms : ',this.bathrooms);
-    console.log('bedrooms : ',this.bedrooms);
-    console.log('beds : ',this.beds);
-    console.log('essentials : ',this.essentials);
-    console.log('language : ',this.language);
-    console.log('price : ',this.price);
-    console.log('propertyType : ',this.propertyType);
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    console.log('typeOfPlace : ', this.typeOfPlace);
+    console.log('bathrooms : ', this.bathrooms);
+    console.log('bedrooms : ', this.bedrooms);
+    console.log('beds : ', this.beds);
+    console.log('essentials : ', this.essentials);
+    console.log('language : ', this.language);
+    console.log('price : ', this.price);
+    console.log('propertyType : ', this.propertyType);
+
+
+
+
+
+
+
+
+
   }
 
 

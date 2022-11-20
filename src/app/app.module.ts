@@ -13,9 +13,9 @@ import { MatCardModule } from '@angular/material/card';
 import { RegisterFormComponent } from './components/register-form/register-form.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { FormsModule } from '@angular/forms';
-import { FilterModalComponent } from './components/filter-modal/filter-modal.component'
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { FilterModalComponent } from './components/filter-modal/filter-modal.component';
 
 
 
