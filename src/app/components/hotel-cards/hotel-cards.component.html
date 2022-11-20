@@ -1,5 +1,15 @@
 <div class="filter-button">
-    <button mat-button (click)="openDialog()" class="gradient login">Filters</button>
+    <!-- <<button mat-button (click)="openDialog()" class="gradient login">Filters</button> -->
+    <!-- <div class="button-div">
+        <i class="ri-equalizer-line"></i>
+        <button mat-button (click)="openDialog()" class="gradient login">Filters</button>
+    </div> -->
+    <button mat-button (click)="openDialog()" class="gradient login">
+        <div class="filter-div">
+            <i class="ri-equalizer-line"></i>
+            <p>Filters </p>
+        </div>
+    </button>
 </div>
 <div class="cards">
     <mat-card class="example-card" *ngFor="let item of hotelsData">
