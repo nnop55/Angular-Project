@@ -2,14 +2,14 @@
   <h3 mat-dialog-title class="heading">Filters</h3>
   <mat-dialog-content class="mat-typography">
     <h1 class="heading-2">Price range</h1>
-    <p class="paragraph">The average nightly price is $212</p>
+    <!-- <p class="paragraph">The average nightly price is $212</p> -->
 
     <br>
 
     <div class="form">
-      <input [(ngModel)]="price['price_from']" class="min-input" type="text" placeholder="min price">
+      <input [(ngModel)]="price['price_from']" class="min-input" type="text" placeholder="Price From">
       <p class="space"> _ </p>
-      <input [(ngModel)]="price['price_to']" class="max-input" type="text" placeholder="max price">
+      <input [(ngModel)]="price['price_to']" class="max-input" type="text" placeholder="Price To">
     </div>
     <br>
 
@@ -25,13 +25,13 @@
             </div>
           </div>
       
-          <div class="form-2">
+          <div class="form-2 m-left:10px">
               <div class="checkbox-input">
                 <input [(ngModel)]="typeOfPlace['Private_Room']" class="checkbox" type="checkbox" id="checkbox1" value="Private-Room">
               </div>
               <div class="checkbox-text">
                 <label for="checkbox1">Private room</label>
-                <p class="label-paragraph">Your own room in a home or a hotel, plus some <br> shared common spaces</p>
+                <p class="label-paragraph">Your own room in a home or a hotel,<br>  plus some shared common spaces</p>
               </div>
             </div>
       
@@ -41,7 +41,7 @@
               </div>
               <div class="checkbox-text">
                 <label for="checkbox1">Shared room</label>
-                <p class="label-paragraph">A sleeping space and common areas that may <br> be shared with others</p>
+                <p class="label-paragraph">A sleeping space and common areas <br>  that may be shared with others</p>
               </div>
             </div>
     </div>
@@ -458,6 +458,6 @@
           </div>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
-    <button (click)="saveFilterBtn()" mat-button [mat-dialog-close]="true" cdkFocusInitial>Save filter</button>
+    <button class="saveBtn" (click)="saveFilterBtn()" mat-button [mat-dialog-close]="true" cdkFocusInitial>Save filter</button>
   </mat-dialog-actions>
 </article>
