@@ -253,22 +253,19 @@ export class FilterModalComponent implements OnInit {
   }
 
   saveFilterBtn() {
-    console.log('typeOfPlace : ', this.typeOfPlace);
-    console.log('bathrooms : ', this.bathrooms);
-    console.log('bedrooms : ', this.bedrooms);
-    console.log('beds : ', this.beds);
-    console.log('essentials : ', this.essentials);
-    console.log('language : ', this.language);
-    console.log('price : ', this.price);
-    console.log('propertyType : ', this.propertyType);
 
-
-
-
-
-
-
-
+    if (parseInt(this.price.price_from) > parseInt(this.price.price_to)) {
+      alert("Incorrect price range!")
+    } else {
+      console.log('typeOfPlace : ', this.typeOfPlace);
+      console.log('bathrooms : ', this.bathrooms);
+      console.log('bedrooms : ', this.bedrooms);
+      console.log('beds : ', this.beds);
+      console.log('essentials : ', this.essentials);
+      console.log('language : ', this.language);
+      console.log('price : ', this.price);
+      console.log('propertyType : ', this.propertyType);
+    }
 
   }
 
