@@ -34,7 +34,7 @@
 }
 
 .inputs input:focus {
-    border: 2px solid rgb(0, 49, 117);
+    border: 2px solid rgb(156, 156, 156);
 }
 
 .inputs {
@@ -69,7 +69,12 @@ i {
     color: black;
     font-size: 17px;
     position: absolute;
-    right: 860px;
-    top: 290px;
+    padding: 10px;
     cursor: pointer;
+}
+
+.pass-inp {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }

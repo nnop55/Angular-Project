@@ -1,15 +1,19 @@
 <div class="container">
-    <div>
+    <div class="child">
         <div class="title">
             <h1>Register your account</h1>
         </div>
         <div class="inputs">
             <input type="text" placeholder="Email" [(ngModel)]="registerInfo.email">
             <input type="text" placeholder="Username" [(ngModel)]="registerInfo.username">
-            <input [type]="inpType" placeholder="Password" [(ngModel)]="registerInfo.password">
-            <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
-            <input [type]="inpType" placeholder="Confirm password" [(ngModel)]="registerInfo.confirmPass">
-            <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
+            <div class="pass-inp">
+                <input [type]="inpType" placeholder="Password" [(ngModel)]="registerInfo.password">
+                <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
+            </div>
+            <div class="pass-inp">
+                <input [type]="inpType" placeholder="Confirm password" [(ngModel)]="registerInfo.confirmPass">
+                <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
+            </div>
         </div>
         <div class="reg-btn">
             <button (click)="registerBtn()">Register</button>
