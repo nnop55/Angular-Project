@@ -27,3 +27,8 @@ button {
 .right button {
   border: 1px solid #444444;
 }
+
+.filter-bar {
+  width: 90%;
+  margin: auto;
+}

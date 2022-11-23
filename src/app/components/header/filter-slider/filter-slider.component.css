@@ -1,0 +1,73 @@
+* {
+  color: #fff;
+}
+
+.slider {
+  display: flex;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.middle {
+  display: flex;
+  width: 80%;
+  overflow: hidden;
+}
+
+.middle ul {
+  display: flex;
+  gap: 15px;
+}
+
+.middle ul li a {
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .5s;
+  padding: 3px 7px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px black;
+  display: flex;
+  justify-content: center;
+}
+
+.middle ul li a:hover {
+  border: 1px solid rgb(177, 177, 177);
+}
+
+.middle ul li {
+  min-width: 150px;
+
+  list-style: none;
+}
+
+.left {
+  padding-left: 30px;
+  margin-top: 10px;
+}
+
+.right {
+  padding-right: 30px;
+  margin-top: 10px;
+}
+
+.right button,
+.left button {
+  border-radius: 50%;
+  font-size: 21px;
+  border: none;
+  padding: 2px 10px;
+  cursor: pointer;
+  transition: .5s;
+  color: rgb(78, 26, 26);
+}
+
+.right button:hover,
+.left button:hover {
+  opacity: 0.7;
+}
+
+.filter-btn>button {
+  background: #454545;
+}

@@ -1,0 +1,19 @@
+<section class="slider">
+    <div class="left">
+        <button [disabled]="btnDisable2" (click)="onHorizontalScrollLeft()"> < </button>
+    </div>
+
+    <div class="middle" #scrollArea>
+        <ul>
+            <li *ngFor="let item of sliderData">
+                    <a>{{item.name}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="right">
+            <button [disabled]="btnDisable" (click)="onHorizontalScrollRight()"> > </button>
+    </div>
+    <div class="filter-btn">
+            <button mat-flat-button (click)="openDialog()"><i class="ri-equalizer-line"> </i>Filter</button>
+    </div>
+</section>

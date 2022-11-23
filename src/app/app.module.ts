@@ -17,6 +17,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { FilterModalComponent } from './components/filter-modal/filter-modal.component';
 import { MatIconModule } from '@angular/material/icon';
+import { FilterSliderComponent } from './components/header/filter-slider/filter-slider.component';
 
 
 
@@ -30,7 +31,8 @@ import { MatIconModule } from '@angular/material/icon';
     HotelCardsComponent,
     RegisterFormComponent,
     LoginFormComponent,
-    FilterModalComponent
+    FilterModalComponent,
+    FilterSliderComponent
 
   ],
   imports: [
