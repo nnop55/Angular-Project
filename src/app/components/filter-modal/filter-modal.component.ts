@@ -253,7 +253,6 @@ export class FilterModalComponent implements OnInit {
   }
 
   saveFilterBtn() {
-
     if (parseInt(this.price.price_from) > parseInt(this.price.price_to)) {
       alert("Incorrect price range!")
     } else {
@@ -266,8 +265,5 @@ export class FilterModalComponent implements OnInit {
       console.log('price : ', this.price);
       console.log('propertyType : ', this.propertyType);
     }
-
   }
-
-
 }
