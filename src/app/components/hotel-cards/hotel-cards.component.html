@@ -1,17 +1,21 @@
 
 <div class="cards">
-    <mat-card class="example-card" *ngFor="let item of hotelsData">
-        <img mat-card-image [src]="item.image" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-            <div class="left">
-                <h3><b>Hotel:</b> {{item.hotelName}}</h3>
-                <h3><b>Price:</b> {{item.price}}</h3>
-            </div>
-            <div class="right">
-                <i class="ri-star-fill"></i>
-                <h3>{{item.rating}}</h3>
-            </div>
-        </mat-card-content>
+    <mat-card class="example-card" *ngFor="let item of hotelObservable |async">
+        <img mat-card-image [src]="item.mainImage" alt="Ups:(">
+        <a [routerLink]="['/inner']">
+            <mat-card-content>
+                <div class="left">
+                    <div class="card-title-name">{{item.city}}, {{item.country}}</div>
+                    <p class="address">{{item.address}}</p>
+                    <br>
+                    <h3 style="font-weight: 500;"> {{item.rooms[0].price | currency}} <span style="font-weight: 200;"> Night</span> </h3>
+                </div>
+                <div class="right">
+                    <i class="ri-star-fill"></i>
+                    <h3>{{item.starCount}}</h3>
+                </div>
+            </mat-card-content>
+        </a>
     </mat-card>
 
 </div>

@@ -18,6 +18,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { FilterModalComponent } from './components/filter-modal/filter-modal.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FilterSliderComponent } from './components/header/filter-slider/filter-slider.component';
+import { HotelInnerComponent } from './components/hotel-cards/hotel-inner/hotel-inner/hotel-inner.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -32,7 +34,8 @@ import { FilterSliderComponent } from './components/header/filter-slider/filter-
     RegisterFormComponent,
     LoginFormComponent,
     FilterModalComponent,
-    FilterSliderComponent
+    FilterSliderComponent,
+    HotelInnerComponent
 
   ],
   imports: [
@@ -43,7 +46,8 @@ import { FilterSliderComponent } from './components/header/filter-slider/filter-
     FormsModule,
     MatDialogModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

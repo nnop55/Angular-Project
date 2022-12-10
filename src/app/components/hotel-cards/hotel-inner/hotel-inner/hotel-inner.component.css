@@ -1,0 +1,28 @@
+section {
+    max-width: 1120px;
+    padding: 0 40px;
+    
+}
+.name{
+    padding: 24px 0 0 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+    margin: 0 4px;
+}
+span{
+    margin: 0 4px;
+}
+.point {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 2px 0;
+    width: 5px;
+    font-size: 14px;
+}
+.info {
+    display: flex;
+    
+}
