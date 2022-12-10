@@ -12,15 +12,8 @@ export class HotelCardsComponent implements OnInit {
 
   hotelsData: Data[] = [];
 
-  constructor(public dialog: MatDialog) { }
+  constructor() { }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(FilterModalComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
 
   ngOnInit(): void {
     this.hotelFill();
