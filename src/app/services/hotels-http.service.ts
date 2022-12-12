@@ -7,14 +7,15 @@ import { Injectable } from '@angular/core';
 })
 export class HotelsHttpService {
 
-  constructor(private http:HttpClient) { }
+  private hotelApi: string = 'http://airbnb-dev.us-east-1.elasticbeanstalk.com/api/Hotel';
 
-  getHotels():Observable <any>{
-return this.http.get('http://airbnb-dev.us-east-1.elasticbeanstalk.com/api/Hotel')
+  constructor(private http: HttpClient) { }
+
+  getHotels(): Observable<any> {
+    return this.http.get(this.hotelApi)
   }
-  
-  getHotelById(hotelId:any):any {
-    var apiUr:string = `${this.getHotels}/${hotelId}`;
-    return this.http.get(apiUr);
+
+  getHotelById(hotelId: any): Observable<any> {
+    return this.http.get(`${this.hotelApi}/${hotelId}`);
   }
 }

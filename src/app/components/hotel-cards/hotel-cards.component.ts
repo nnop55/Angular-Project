@@ -12,28 +12,14 @@ import { FilterModalComponent } from '../filter-modal/filter-modal.component';
 })
 export class HotelCardsComponent implements OnInit {
 
+  hotelObservable!: Observable<any>
 
-   public hotelsData = [];
-
-  constructor(public dialog: MatDialog, public hotel:HotelsHttpService) { }
-  hotelObservable!:Observable<any> 
-  
-  
-  openDialog() {
-    const dialogRef = this.dialog.open(FilterModalComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
-
+  constructor(public hotel: HotelsHttpService) { }
 
   ngOnInit(): void {
     this.hotelObservable = this.hotel.getHotels()
-    console.log(this.hotelsData);
-    
   }
 
-  
+
 
 }

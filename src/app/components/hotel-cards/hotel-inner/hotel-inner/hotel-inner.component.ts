@@ -1,5 +1,6 @@
-import { HotelCardsComponent } from './../../hotel-cards.component';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HotelsHttpService } from 'src/app/services/hotels-http.service';
 
 @Component({
   selector: 'app-hotel-inner',
@@ -8,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HotelInnerComponent implements OnInit {
 
-  constructor(hotel:HotelCardsComponent) { }
-  
+  currentHotel: any;
+
+  constructor(private http: HotelsHttpService, private activatedRoute: ActivatedRoute) { }
+
   ngOnInit(): void {
-    
-    }
+    this.activatedRoute.params.subscribe(params => {
+      let id = params['id'];
+      this.http.getHotelById(id).subscribe(res => {
+        this.currentHotel = res;
+        console.log(this.currentHotel);
+      })
+    })
+  }
 
 }
