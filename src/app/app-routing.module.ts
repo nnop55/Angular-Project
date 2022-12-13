@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: "", component: HotelCardsComponent },
   { path: "login", component: LoginFormComponent },
   { path: "register", component: RegisterFormComponent },
-  {path: 'inner/:hotelId', component: HotelInnerComponent},
+  { path: 'inner/:id', component: HotelInnerComponent },
 ];
 
 @NgModule({

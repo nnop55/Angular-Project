@@ -1,9 +1,7 @@
 import { Observable } from 'rxjs';
 import { HotelsHttpService } from './../../services/hotels-http.service';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { Data } from 'src/app/models/data.model';
-import { FilterModalComponent } from '../filter-modal/filter-modal.component';
+
 
 @Component({
   selector: 'app-hotel-cards',
