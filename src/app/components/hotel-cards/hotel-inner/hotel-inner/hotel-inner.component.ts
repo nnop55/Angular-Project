@@ -14,8 +14,10 @@ export class HotelInnerComponent implements OnInit {
   constructor(private http: HotelsHttpService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute.params.subscribe((params:any) => {
       let id = params['id'];
+      console.log(this.activatedRoute);
+      
       this.http.getHotelById(id).subscribe(res => {
         this.currentHotel = res;
         console.log(this.currentHotel);
