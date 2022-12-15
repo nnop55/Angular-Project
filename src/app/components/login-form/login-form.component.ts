@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Login } from 'src/app/models/login.model';
+import { FirebaseWorkerService } from 'src/app/services/firebase-worker.service';
 import { UsersDataService } from 'src/app/services/users-data.service';
 
 @Component({
@@ -16,34 +17,39 @@ export class LoginFormComponent implements OnInit {
   eyeIcon: string = 'ri-eye-off-fill'
   inpType: string = 'password';
 
-  constructor(public checkUsersData: UsersDataService, private router: Router) { }
+  constructor(public checkUsersData: UsersDataService, private router: Router,
+    private fireWorker:FirebaseWorkerService) { }
 
   ngOnInit(): void {
   }
 
-  loginBtn() {                               //Log in on existed account,checking if account are exists.
+  loginBtn() {     
+    
+    //Log in on existed account,checking if account are exists.
 
-    if (this.loginInfo.email == '' || this.loginInfo.password == '') {
-      alert('Fill all the fields')
-    } else {
-      let users = this.checkUsersData.getUsers();
+    this.fireWorker.signIn('bero12345@gmail.com', '123123');
 
-      if (users.length > 0) {
-        let filteredUser = users.filter((o: any) => this.loginInfo.email == o.email && this.loginInfo.password == o.pass);
-        if (filteredUser.length > 0) {
-          this.loginInfo.email = '';
-          this.loginInfo.password = '';
-          localStorage.setItem('authorized', 'true')
-          this.checkUsersData.storageInfo();
-          this.router.navigate(['/']);
-        } else {
-          alert("Fill correct info");
-        }
+    // if (this.loginInfo.email == '' || this.loginInfo.password == '') {
+    //   alert('Fill all the fields')
+    // } else {
+    //   let users = this.checkUsersData.getUsers();
 
-      } else {
-        alert("User not found");
-      }
-    }
+    //   if (users.length > 0) {
+    //     let filteredUser = users.filter((o: any) => this.loginInfo.email == o.email && this.loginInfo.password == o.pass);
+    //     if (filteredUser.length > 0) {
+    //       this.loginInfo.email = '';
+    //       this.loginInfo.password = '';
+    //       localStorage.setItem('authorized', 'true')
+    //       this.checkUsersData.storageInfo();
+    //       this.router.navigate(['/']);
+    //     } else {
+    //       alert("Fill correct info");
+    //     }
+
+    //   } else {
+    //     alert("User not found");
+    //   }
+    // }
 
 
 
