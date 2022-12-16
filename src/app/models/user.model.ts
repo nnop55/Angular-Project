@@ -7,4 +7,6 @@ export class User
     public countryCode!:string;
     public verifiedUser!:boolean;
     public gender!:string;
+    public password!:string;
+    public confirmPass!:string;
 }

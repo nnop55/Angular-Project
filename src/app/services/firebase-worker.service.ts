@@ -99,7 +99,9 @@ export class FirebaseWorkerService {
       verifiedUser: true,
       gender: user.gender,
       phoneNumber: user.phoneNumber,
-      countryCode: user.countryCode
+      countryCode: user.countryCode,
+      password: user.password,
+      confirmPass: user.confirmPass
     } as User;
     return userRef.set(userData, {
       merge: true,

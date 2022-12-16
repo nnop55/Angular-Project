@@ -1,25 +1,31 @@
-<div class="container">
-    <div class="child">
-        <div class="title">
-            <h1>Register your account</h1>
-        </div>
-        <div class="inputs">
-            <input type="text" placeholder="Email" [(ngModel)]="registerInfo.email">
-            <input type="text" placeholder="Username" [(ngModel)]="registerInfo.username">
-            <div class="pass-inp">
-                <input [type]="inpType" placeholder="Password" [(ngModel)]="registerInfo.password">
-                <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
+<form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+    <div class="container">
+        <div class="child">
+            <div class="title">
+                <h1>Register your account</h1>
             </div>
-            <div class="pass-inp">
-                <input [type]="inpType" placeholder="Confirm password" [(ngModel)]="registerInfo.confirmPass">
-                <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
+            <div class="inputs">
+                <input type="text" placeholder="Email" ngModel name="email">
+
+                <!-- <input type="text" placeholder="Email" [(ngModel)]="userInfo.email"> -->
+                <input type="text" placeholder="Username" ngModel name="userName">
+                <div class="pass-inp">
+                    <input type="password" placeholder="Password" ngModel name="password">
+                    <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
+                </div>
+                <div class="pass-inp">
+                    <input type="password" placeholder="Confirm password" ngModel name="confirmPass">
+                    <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
+                </div>
             </div>
-        </div>
-        <div class="reg-btn">
-            <button (click)="registerBtn()">Register</button>
-        </div>
-        <div class="already">
-            <a routerLink="/login">Already have an account?</a>
+            <div class="reg-btn">
+                <button type="submit">Register</button>
+                <!-- <button (click)="registerBtn()">Register</button> -->
+
+            </div>
+            <div class="already">
+                <a routerLink="/login">Already have an account?</a>
+            </div>
         </div>
     </div>
-</div>
+</form>

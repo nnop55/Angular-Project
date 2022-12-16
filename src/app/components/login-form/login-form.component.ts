@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Login } from 'src/app/models/login.model';
+// import { Login } from 'src/app/models/login.model';
+import { User } from 'src/app/models/user.model';
 import { FirebaseWorkerService } from 'src/app/services/firebase-worker.service';
 import { UsersDataService } from 'src/app/services/users-data.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
@@ -11,7 +13,8 @@ import { UsersDataService } from 'src/app/services/users-data.service';
 })
 export class LoginFormComponent implements OnInit {
 
-  loginInfo: Login = new Login();
+  // loginInfo: Login = new Login();
+  loginInfo: User = new User()
 
   checkInpType: boolean = true;
   eyeIcon: string = 'ri-eye-off-fill'
@@ -21,6 +24,13 @@ export class LoginFormComponent implements OnInit {
     private fireWorker:FirebaseWorkerService) { }
 
   ngOnInit(): void {
+  }
+
+  onFormSubmit(form:NgForm) {
+    var tmpUser = Object.assign(new User(),form.value);
+    this.fireWorker.signIn(tmpUser,form.value.password).then((response:any) => {
+      console.log(response);
+    })
   }
 
   loginBtn() {     

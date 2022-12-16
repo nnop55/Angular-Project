@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Register } from 'src/app/models/register.model';
+// import { Register } from 'src/app/models/register.model';
 import { User } from 'src/app/models/user.model';
 import { UsersDataService } from 'src/app/services/users-data.service';
 import { FirebaseWorkerService } from '../../services/firebase-worker.service';
@@ -12,8 +13,8 @@ import { FirebaseWorkerService } from '../../services/firebase-worker.service';
 })
 export class RegisterFormComponent implements OnInit {
 
-  registerInfo: Register = new Register();
-
+  // registerInfo: Register = new Register();
+    userInfo: User = new User();
 
   checkInpType: boolean = true;
   eyeIcon: string = 'ri-eye-off-fill';
@@ -25,11 +26,20 @@ export class RegisterFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onFormSubmit(form:NgForm) {
+    var tmpUser = Object.assign(new User(),form.value);
+    this.fireWorker.signUp(tmpUser,form.value.password).then((response:any) => {
+      this.router.navigate(['/login']);
+      console.log(response);
+      
+    })
+  }
+
   registerBtn() {                              //Register user and data saves in local storage and checks if user already registered or not.
 
-    var tmpUser = new User()
-    tmpUser.email = "bero1234567@gmail.com"
-    this.fireWorker.signUp(tmpUser, '123123');
+    // var tmpUser = new User()
+    // tmpUser.email = "bero12345678@gmail.com"
+    // this.fireWorker.signUp(tmpUser, '123123');
 
     // if (this.registerInfo.email == '' || this.registerInfo.username == ''
     //   || this.registerInfo.password == '' || this.registerInfo.confirmPass == '') {

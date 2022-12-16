@@ -1,26 +1,28 @@
-<div class="container">
-    <div class="left">
-        <div class="title">
-            <h1>Sign In</h1>
-        </div>
-        <div class="inputs">
-            <input type="text" placeholder="Email" [(ngModel)]="loginInfo.email">
-            <div class="pass-inp">
-                <input [type]="inpType" placeholder="Password" [(ngModel)]="loginInfo.password">
-                <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
+<form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+    <div class="container">
+        <div class="left">
+            <div class="title">
+                <h1>Sign In</h1>
+            </div>
+            <div class="inputs">
+                <input type="text" placeholder="Email" ngModel name="email">
+                <div class="pass-inp">
+                    <input type="password" placeholder="Password" ngModel name="password">
+                    <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
+                </div>
+            </div>
+            <div class="reg-btn">
+                <button type="submit">Log In</button>
+            </div>
+            <div class="already">
+                <a routerLink="/register">Don't Have an account?</a>
             </div>
         </div>
-        <div class="reg-btn">
-            <button (click)="loginBtn()">Log In</button>
-        </div>
-        <div class="already">
-            <a routerLink="/register">Don't Have an account?</a>
+    
+        <div class="right">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae ut velit et laborum fuga, facilis eum
+                quidem praesentium, quae cum rem obcaecati nisi, saepe dicta provident neque! Asperiores, accusantium
+                similique!</p>
         </div>
     </div>
-
-    <div class="right">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae ut velit et laborum fuga, facilis eum
-            quidem praesentium, quae cum rem obcaecati nisi, saepe dicta provident neque! Asperiores, accusantium
-            similique!</p>
-    </div>
-</div>
+</form>
