@@ -9,25 +9,20 @@ import { Observable } from 'rxjs';
 })
 export class FirebaseWorkerService {
 
-  constructor(private firestore: AngularFirestore, public auth: AngularFireAuth) { }
+  constructor(private firestore: AngularFirestore, public auth: AngularFireAuth,
+   ) { }
 
 
   signIn(email: string, password: string) {
     return this.auth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
-        console.log(result);
-        this.getUserDoc(result.user?.uid ?? "").subscribe((userResult:any) => {
-          console.log(userResult);
-          
-        })
         this.auth.authState.subscribe((user) => {
           if (user) {
-            // this.router.navigate(['dashboard']);
             console.log(user);
-            
           }
         });
+        return  this.getUserDoc(result.user?.uid ?? "");
       })
       .catch((error) => {
         window.alert(error.message);
@@ -46,6 +41,12 @@ export class FirebaseWorkerService {
       .catch((error) => {
         window.alert(error.message);
       });
+  }
+
+  signOut() {
+    return this.auth.signOut().then(() => {
+      window.alert('Logged out!');
+    });
   }
 
   sendVerificationMail() {

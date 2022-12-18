@@ -21,23 +21,25 @@ export class LoginFormComponent implements OnInit {
   inpType: string = 'password';
 
   constructor(public checkUsersData: UsersDataService, private router: Router,
-    private fireWorker:FirebaseWorkerService) { }
+    private fireWorker:FirebaseWorkerService,
+    ) { }
 
   ngOnInit(): void {
   }
 
   onFormSubmit(form:NgForm) {
-    var tmpUser = Object.assign(new User(),form.value);
-    this.fireWorker.signIn(tmpUser,form.value.password).then((response:any) => {
-      console.log(response);
+    this.fireWorker.signIn(form.value.email,form.value.password).then(response => {
+        response.subscribe((user:any) => {console.log(user)})   
     })
+    this.router.navigate(['/'])
   }
+
 
   loginBtn() {     
     
     //Log in on existed account,checking if account are exists.
 
-    this.fireWorker.signIn('bero12345@gmail.com', '123123');
+    // this.fireWorker.signIn('bero12345@gmail.com', '123123');
 
     // if (this.loginInfo.email == '' || this.loginInfo.password == '') {
     //   alert('Fill all the fields')

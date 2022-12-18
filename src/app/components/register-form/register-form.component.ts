@@ -31,7 +31,6 @@ export class RegisterFormComponent implements OnInit {
     this.fireWorker.signUp(tmpUser,form.value.password).then((response:any) => {
       this.router.navigate(['/login']);
       console.log(response);
-      
     })
   }
 
