@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { HotelsHttpService } from 'src/app/services/hotels-http.service';
 import { FilterModalComponent } from '../../filter-modal/filter-modal.component';
 
 @Component({
@@ -8,35 +9,22 @@ import { FilterModalComponent } from '../../filter-modal/filter-modal.component'
   styleUrls: ['./filter-slider.component.css']
 })
 export class FilterSliderComponent implements OnInit {
-  sliderData:any [] = [];
-  index:number = 0;
-  @ViewChild('scrollArea', {static:true}) scrollArea!: ElementRef<HTMLElement>;
-  saveInc:any = 0;
-  btnDisable:boolean = false;
-  btnDisable2:boolean = true;
-  constructor(private dialog : MatDialog) { }
+  sliderData: any[] = [];
+
+  @ViewChild('scrollArea', { static: true }) scrollArea!: ElementRef<HTMLElement>;
+  btnDisable: boolean = false;
+  btnDisable2: boolean = true;
+  constructor(private dialog: MatDialog, private categoryHttp: HotelsHttpService) { }
 
   ngOnInit(): void {
     this.getSliderData();
   }
 
-  getSliderData(){
-    this.sliderData = [
-      { name: 'Svaneti' },
-      { name: 'Samegrelo' },
-      { name: 'Kaxeti' },
-      { name: 'Lechxumi' },
-      { name: 'Apxazeti' },
-      { name: 'Tbilisi' },
-      { name: 'Racha' },
-      { name: 'Guria' },
-      { name: 'Kvemo kartli' },
-      { name: 'Shida kartli' },
-      { name: 'Samcxe - Javaxeti' },
-      { name: 'Mcxeta - Mtianeti' },
-      { name: 'Achara' },
-      { name: 'Imereti' },
-    ]
+  getSliderData() {
+    this.categoryHttp.getCategories().subscribe(res => {
+      this.sliderData = res;
+      console.log(this.sliderData)
+    })
   }
 
   openDialog() {
@@ -47,7 +35,7 @@ export class FilterSliderComponent implements OnInit {
     });
   }
 
-  onHorizontalScrollLeft(){
+  onHorizontalScrollLeft() {
     let element = this.scrollArea.nativeElement as HTMLElement;
     this.btnDisable = false;
     let inc = 25;
@@ -57,10 +45,10 @@ export class FilterSliderComponent implements OnInit {
       element.scrollLeft -= inc;
       inc = inc > 0 ? inc : 0;
 
-      if(inc == 0){
-        if(element.scrollLeft == 0){
+      if (inc == 0) {
+        if (element.scrollLeft == 0) {
           this.btnDisable2 = true;
-        }else{
+        } else {
           this.btnDisable2 = false;
         }
         clearInterval(interval);
@@ -68,7 +56,7 @@ export class FilterSliderComponent implements OnInit {
     }, 10)
   }
 
-  onHorizontalScrollRight(){
+  onHorizontalScrollRight() {
     let element = this.scrollArea.nativeElement as HTMLElement;
     this.btnDisable2 = false;
 
@@ -79,15 +67,15 @@ export class FilterSliderComponent implements OnInit {
       element.scrollLeft += inc;
       inc = inc > 25 ? 25 : inc;
 
-      if(inc == 25){
-        if((element.scrollWidth - element.clientWidth) == element.scrollLeft ){
+      if (inc == 25) {
+        if ((element.scrollWidth - element.clientWidth) == element.scrollLeft) {
           this.btnDisable = true;
-        }else{
+        } else {
           this.btnDisable = false;
         }
         clearInterval(interval)
       }
-    } ,10)
+    }, 10)
   }
 
 

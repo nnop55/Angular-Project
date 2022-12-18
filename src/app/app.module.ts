@@ -10,8 +10,8 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { HotelCardsComponent } from './components/hotel-cards/hotel-cards.component';
 import { MatCardModule } from '@angular/material/card';
-import { RegisterFormComponent } from './components/register-form/register-form.component';
-import { LoginFormComponent } from './components/login-form/login-form.component';
+import { RegisterFormComponent } from './components/authorization-forms/register-form/register-form.component';
+import { LoginFormComponent } from './components/authorization-forms/login-form/login-form.component';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
@@ -42,7 +42,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
     FilterModalComponent,
     FilterSliderComponent,
     HotelInnerComponent
-
   ],
   imports: [
     BrowserModule,
