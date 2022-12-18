@@ -98,9 +98,6 @@ export class FirebaseWorkerService {
       email: fireUser.email,
       userName: fireUser.displayName,
       verifiedUser: true,
-      gender: user.gender,
-      phoneNumber: user.phoneNumber,
-      countryCode: user.countryCode,
       password: user.password,
       confirmPass: user.confirmPass
     } as User;
