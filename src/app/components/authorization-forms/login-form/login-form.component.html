@@ -7,7 +7,7 @@
             <div class="inputs">
                 <input type="text" placeholder="Email" ngModel name="email">
                 <div class="pass-inp">
-                    <input type="password" placeholder="Password" ngModel name="password">
+                    <input [type]="inpType" placeholder="Password" ngModel name="password">
                     <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
                 </div>
             </div>
