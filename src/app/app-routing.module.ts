@@ -9,7 +9,11 @@ const routes: Routes = [
   { path: "", component: HotelCardsComponent },
   { path: "login", component: LoginFormComponent },
   { path: "register", component: RegisterFormComponent },
+<<<<<<< Updated upstream
   { path: 'inner/:id', component: HotelInnerComponent },
+=======
+  {path: 'inner/:id', component: HotelInnerComponent},
+>>>>>>> Stashed changes
 ];
 
 @NgModule({

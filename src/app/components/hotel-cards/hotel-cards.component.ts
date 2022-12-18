@@ -17,7 +17,7 @@ export class HotelCardsComponent implements OnInit {
   ngOnInit(): void {
     this.hotelObservable = this.hotel.getHotels()
   }
-
+  
 
 
 }
