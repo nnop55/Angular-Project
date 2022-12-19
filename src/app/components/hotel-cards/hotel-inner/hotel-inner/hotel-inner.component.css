@@ -1,7 +1,19 @@
+
+* {
+    color: #fff;
+}
 section {
     max-width: 1120px;
     padding: 0 40px;
     
+}
+.main {
+    width: 80%;
+    margin: 50px auto 0px;
+    background: #313131;
+    padding: 20px;
+    border-radius: 5px;
+    padding-bottom: 100px;
 }
 .name{
     padding: 24px 0 0 0;
@@ -21,6 +33,7 @@ section {
 
 .top {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -48,9 +61,16 @@ section {
 
 .rooms {
     text-align: center;
+}
+
+.card {
+    box-shadow: 0px 0px 5px black;
+    padding: 5px; 
     margin: 2px 0;
-    width: 5px;
     font-size: 14px;
+}
+.card p b {
+    color: black;
 }
 
 .slider {
