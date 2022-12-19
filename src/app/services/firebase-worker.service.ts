@@ -50,11 +50,7 @@ export class FirebaseWorkerService {
   }
 
   sendVerificationMail() {
-    // return this.auth.currentUser
-    //   .then((u: any) => u.sendEmailVerification())
-    //   .then(() => {
-    //     this.router.navigate(['verify-email-address']);
-    //   });
+
   }
 
   getUserDoc(id:string):any {
@@ -65,27 +61,6 @@ export class FirebaseWorkerService {
   }
 
 
-  // setUserDataForSignIn(fireUser: any) {
-  //   console.log(fireUser);
-    
-  //   const userRef: AngularFirestoreDocument<any> = this.firestore.doc(
-  //     `users/${fireUser.uid}`
-  //   );
-  //   const userData: User = {
-  //     id: fireUser.uid,
-  //     email: fireUser.email,
-  //     userName: fireUser.displayName,
-  //     verifiedUser: true,
-  //     gender: fireUser.gender,
-  //     phoneNumber: fireUser.phoneNumber,
-  //     countryCode: fireUser.countryCode
-  //   } as User;
-  //   return userRef.set(userData, {
-  //     merge: true,
-  //   });
-  // }
-
-  
 
   setUserDataForSignUp(fireUser: any, user:User) {
     console.log(user);
