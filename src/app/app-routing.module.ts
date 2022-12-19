@@ -7,10 +7,14 @@ import { RegisterFormComponent } from './components/authorization-forms/register
 
 const routes: Routes = [
   { path: "", component: HotelCardsComponent },
-  { path: "login", component: LoginFormComponent },
-  { path: "register", component: RegisterFormComponent },
-  {path: 'inner/:id', component: HotelInnerComponent},
+  {
+    path: 'authorization', children: [
+      { path: "login", component: LoginFormComponent },
+      { path: "register", component: RegisterFormComponent },
+    ]
+  }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
