@@ -1,48 +1,15 @@
-<div class="main">
-    <div class="center">
-        <div class="top">
-            <h1><b>Name</b> : {{currentHotel.name}}</h1>
-            <h1><b>Address</b> : {{currentHotel.address}}</h1>
-            <div class="slider">
-                <button (click)="previousImage(currentHotel)">
-                    < </button>
-                        <img [src]="currentHotel.mainImages[currentHotel.imgIndex ? currentHotel.imgIndex : 0]"
-                            (error)="updateUrl($event)" alt="">
-                        <button (click)="nextImage(currentHotel)"> > </button>
-            </div>
-        </div>
-        <div class="description">
-            <p><b>Stars count</b> : {{currentHotel.starCount}}</p>
-            <p><b>Host</b> : {{currentHotel.hostInformation.hostName}}</p>
-            <p><b>Email</b> : {{currentHotel.hostInformation.emailAddress}}</p>
-            <p><b>Phone</b> : {{currentHotel.hostInformation.phoneNumber}}</p>
-            <p><b>City</b> : {{currentHotel.city}}</p>
-            <p><b>Country</b> : {{currentHotel.country}}</p>
-            <p><b>Property type</b> : {{currentHotel.propertyType}}</p>
-            <p>{{currentHotel.description}}</p>
-        </div>
-        <div class="place">
-            <h2>Place offers</h2>
-            <p *ngFor="let item of currentHotel.placeOffers">{{item}}</p>
-        </div>
-        <div class="rooms">
-            <h2>Rooms</h2>
-            <div class="room-cards">
-                <div *ngFor="let item of currentHotel.rooms" class="card">
-                    <div class="slider">
-                        <button (click)="previousImage(item)">
-                            < </button>
-                                <img [src]="item.images[item.imgIndex ? item.imgIndex : 0]" (error)="updateUrl($event)"
-                                    alt="">
-                                <button (click)="nextImage(item)"> > </button>
-                    </div>
-                    <h3><b>Price</b> : {{item.price}}</h3>
-                    <p><b>Bathrooms</b> : {{item.bathRoomsCount}}</p>
-                    <p><b>Beds</b> : {{item.bedsCount}}</p>
-                    <p><b>Persons</b> : {{item.personsCount}}</p>
-                    <p><b>Child policy</b> : {{item.childPolicy}}</p>
-                </div>
-            </div>
+<section>
+    <div class="name">
+        <h1>Aura House 2bds Eco Bamboo House, Pool, River View</h1>
+        <div class="info">
+            <span>.</span>
+            <span></span>
+            <span class="point">.</span>
+            <a href="#">162 отзыва</a>
+            <span class="point">.</span>
+            <span>Суперхозяин</span>
+            <span class="point">.</span>
+            <a href="#">Abiansemal, Бали, Индонезия</a>
         </div>
     </div>
-</div>
+</section>

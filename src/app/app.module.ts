@@ -31,6 +31,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
     LoginFormComponent,
     FilterModalComponent,
     FilterSliderComponent,
-    HotelInnerComponent
+    HotelInnerComponent,
   ],
   imports: [
     BrowserModule,
