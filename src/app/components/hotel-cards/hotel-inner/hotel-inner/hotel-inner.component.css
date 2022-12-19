@@ -74,7 +74,15 @@ section {
 
 .slider button:hover {
     opacity: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: baseline;
+    font-size: 15px; 
+    color:rgb(83, 82, 82); 
+    font-weight: 200;
 }
+
 .img1 {
     margin: 5px;
     object-fit: contain;
