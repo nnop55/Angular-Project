@@ -1,11 +1,7 @@
 <div class="cards">
     <mat-card class="example-card" *ngFor="let item of hotelObservable |async">
         <img mat-card-image [src]="item.mainImages[0]" alt="Ups:(">
-<<<<<<< Updated upstream
-        <a routerLink="/inner/{{item.id}}">
-=======
         <a [routerLink]="['/inner/', item.id]">
->>>>>>> Stashed changes
             <mat-card-content>
                 <div class="left">
                     <div class="card-title-name">{{item.name}}</div>
