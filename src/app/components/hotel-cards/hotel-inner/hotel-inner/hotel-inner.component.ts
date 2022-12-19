@@ -33,5 +33,6 @@ export class HotelInnerComponent implements OnInit {
       })
     })
   }
+
 }
 

@@ -7,7 +7,7 @@
             <div class="inputs">
                 <input type="text" placeholder="Email" ngModel name="email">
                 <div class="pass-inp">
-                    <input type="password" placeholder="Password" ngModel name="password">
+                    <input [type]="inpType" placeholder="Password" ngModel name="password">
                     <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
                 </div>
             </div>
@@ -22,11 +22,11 @@
             </div> -->
 
             <div class="already">
-                <a routerLink="/register">Don't Have an account?</a>
+                <a routerLink="/authorization/register">Don't Have an account?</a>
             </div>
         </div>
-        
-        
+
+
         <div class="right">
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae ut velit et laborum fuga, facilis eum
                 quidem praesentium, quae cum rem obcaecati nisi, saepe dicta provident neque! Asperiores, accusantium

@@ -1,92 +1,15 @@
 <section>
     <div class="name">
-        <h1 style="font-weight: 500;">{{currentHotel.name}}</h1>
+        <h1>Aura House 2bds Eco Bamboo House, Pool, River View</h1>
         <div class="info">
-            <i class="ri-star-fill"></i>
-            <span>{{currentHotel.starCount}}</span>
+            <span>.</span>
+            <span></span>
             <span class="point">.</span>
-            <span>{{currentHotel.address}}</span>
+            <a href="#">162 отзыва</a>
+            <span class="point">.</span>
+            <span>Суперхозяин</span>
+            <span class="point">.</span>
+            <a href="#">Abiansemal, Бали, Индонезия</a>
         </div>
     </div>
-     
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="true">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="6" aria-label="Slide 7"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="7" aria-label="Slide 8"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="8" aria-label="Slide 9"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="9" aria-label="Slide 10"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="10" aria-label="Slide 11"></button>
-          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="11" aria-label="Slide 0"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img [src]="currentHotel.rooms[0].images[0]" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img [src]="currentHotel.rooms[0].images[1]" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img [src]="currentHotel.rooms[0].images[2]" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img [src]="currentHotel.rooms[0].images[3]" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img [src]="currentHotel.rooms[0].images[5]" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img [src]="currentHotel.rooms[0].images[6]" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img [src]="currentHotel.rooms[0].images[7]" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img [src]="currentHotel.rooms[0].images[8]" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img [src]="currentHotel.rooms[0].images[9]" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img [src]="currentHotel.rooms[0].images[10]" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img [src]="currentHotel.rooms[0].images[11]" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
-<div class="divStyle">
-  <h2 style="margin: 0;">Hosted by {{currentHotel.hostInformation.hostName}}</h2>
-  <div class="point1">
-    <div>{{currentHotel.rooms[0].personsCount}} Guests</div>
-     <div style="font-size: 25px;">.</div>
-    <div>{{currentHotel.rooms[0].bedsCount}} Bed</div>
-    <div style="font-size: 25px;">.</div>
-    <div>{{currentHotel.rooms[0].bathRoomsCount}} Bath</div>
-  </div>
-</div>
-<div style="font-weight: 300; font-size: 18px;" class="divStyle">
-  <p>
-    {{currentHotel.description}}
-  </p>
-</div>
-<div *ngFor="let item of currentHotel.rooms[0].placeOffers">
-  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, eligendi sapiente? Fugiat ea optio adipisci repellendus voluptates cupiditate quae iure tempore nisi, provident laudantium omnis magni? Ipsa eaque ab mollitia?</div>
-</div>
-
-   <br><br><br><br><br><br><br><br><br><br>
 </section>

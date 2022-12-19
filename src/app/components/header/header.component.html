@@ -7,9 +7,9 @@
             </button>
         </div>
         <div class="right">
-            <button mat-stroked-button routerLink="/register" *ngIf="!checkUsersData.checkStorage"
+            <button mat-stroked-button routerLink="/authorization/register" *ngIf="!checkUsersData.checkStorage"
                 routerLinkActive="active">Register</button>
-            <button mat-stroked-button routerLink="/login" *ngIf="!checkUsersData.checkStorage"
+            <button mat-stroked-button routerLink="/authorization/login" *ngIf="!checkUsersData.checkStorage"
                 routerLinkActive="active">Log In</button>
             <button mat-stroked-button (click)="logOut()" *ngIf="checkUsersData.checkStorage">Log Out</button>
         </div>

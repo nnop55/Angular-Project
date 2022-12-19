@@ -10,11 +10,11 @@
                 <!-- <input type="text" placeholder="Email" [(ngModel)]="userInfo.email"> -->
                 <input type="text" placeholder="Username" ngModel name="userName">
                 <div class="pass-inp">
-                    <input type="password" placeholder="Password" ngModel name="password">
+                    <input [type]="inpType" placeholder="Password" ngModel name="password">
                     <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
                 </div>
                 <div class="pass-inp">
-                    <input type="password" placeholder="Confirm password" ngModel name="confirmPass">
+                    <input [type]="inpType" placeholder="Confirm password" ngModel name="confirmPass">
                     <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
                 </div>
             </div>
@@ -24,7 +24,7 @@
 
             </div>
             <div class="already">
-                <a routerLink="/login">Already have an account?</a>
+                <a routerLink="/authorization/login">Already have an account?</a>
             </div>
         </div>
     </div>

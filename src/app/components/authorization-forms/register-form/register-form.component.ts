@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 // import { Register } from 'src/app/models/register.model';
 import { User } from 'src/app/models/user.model';
 import { UsersDataService } from 'src/app/services/users-data.service';
-import { FirebaseWorkerService } from '../../services/firebase-worker.service';
+import { FirebaseWorkerService } from '../../../services/firebase-worker.service';
 
 @Component({
   selector: 'app-register-form',
@@ -14,22 +14,22 @@ import { FirebaseWorkerService } from '../../services/firebase-worker.service';
 export class RegisterFormComponent implements OnInit {
 
   // registerInfo: Register = new Register();
-    userInfo: User = new User();
+  userInfo: User = new User();
 
   checkInpType: boolean = true;
   eyeIcon: string = 'ri-eye-off-fill';
   inpType: string = 'password';
 
   constructor(private router: Router, private checkUsersData: UsersDataService,
-    private fireWorker:FirebaseWorkerService) { }
+    private fireWorker: FirebaseWorkerService) { }
 
   ngOnInit(): void {
   }
 
-  onFormSubmit(form:NgForm) {
-    var tmpUser = Object.assign(new User(),form.value);
-    this.fireWorker.signUp(tmpUser,form.value.password).then((response:any) => {
-      this.router.navigate(['/login']);
+  onFormSubmit(form: NgForm) {
+    var tmpUser = Object.assign(new User(), form.value);
+    this.fireWorker.signUp(tmpUser, form.value.password).then((response: any) => {
+      this.router.navigate(['/authorization/login']);
       console.log(response);
     })
   }
