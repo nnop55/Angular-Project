@@ -11,9 +11,10 @@ const routes: Routes = [
     path: 'authorization', children: [
       { path: "login", component: LoginFormComponent },
       { path: "register", component: RegisterFormComponent },
-      { path: 'inner/:id', component: HotelInnerComponent },
+      // { path: 'inner/:id', component: HotelInnerComponent },
     ]
-  }
+  },
+  { path: 'inner/:id', component: HotelInnerComponent }
 ];
 
 
