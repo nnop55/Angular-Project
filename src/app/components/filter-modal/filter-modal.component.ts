@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
+import { HotelsHttpService } from 'src/app/services/hotels-http.service';
 
 @Component({
   selector: 'app-filter-modal',
@@ -7,174 +8,120 @@ import { from } from 'rxjs';
   styleUrls: ['./filter-modal.component.css']
 })
 export class FilterModalComponent implements OnInit {
-  bedrooms: any[] = []
-  beds: any[] = []
-  bathrooms: any[] = []
-  propertyType: any[] = []
-  essentials: any[] = []
-  typeOfPlace: any = new Object()
-  price: any = new Object()
-  language: any = new Object()
 
-  isReadMore: boolean = true;
+typeOfPlace: any[] = [];
+  bedrooms: any[] = [];
+  beds: any[] = [];
+  bathrooms: any[] = [];
+  propertyType: any[] = [];
+  hostLanguage: any[] = [];
 
-  constructor() { }
+  priceRange: any = new Object();
+
+  selectedFilter: any = new Object();
+
+  amenitiesForm = [
+    {
+      name: '',
+    }
+  ];
+
+  constructor(private http: HotelsHttpService) { }
 
   ngOnInit(): void {
-    this.roomsAndBadsFunc();
+    this.typeOfPlaceFunc();
+    this.bedroomsFunc();
     this.bedsFunc();
-    this.bathroomFunc();
+    this.bathroomsFunc();
     this.propertyTypeFunc();
-    this.essentialsFunc();
-
+    this.hostLanguageFunc();
   }
 
-
-  showText() {
-    this.isReadMore = !this.isReadMore
+  saveFilterBtn() {
+        if (parseInt(this.priceRange.price_from) > parseInt(this.priceRange.price_to)) {
+          alert("Incorrect price range!")
+        } else {
+          console.log('typeOfPlace : ', this.typeOfPlace);
+          console.log('bathrooms : ', this.bathrooms);
+          console.log('bedrooms : ', this.bedrooms);
+          console.log('beds : ', this.beds);
+          console.log('hostLanguage : ', this.hostLanguage);
+          console.log('price : ', this.priceRange);
+          console.log('propertyType : ', this.propertyType);
+        }
   }
 
-  roomsAndBadsFunc() {
-    this.bedrooms = [
-      {
-        name: 'ANY',
-        clicked: true
-      },
-      {
-        name: '1',
-        clicked: false
-      },
-      {
-        name: '2',
-        clicked: false
-      },
-      {
-        name: '3',
-        clicked: false
-      },
-      {
-        name: '4',
-        clicked: false
-      },
-      {
-        name: '5',
-        clicked: false
-      },
-      {
-        name: '6',
-        clicked: false
-      },
-      {
-        name: '7',
-        clicked: false
-      },
-      {
-        name: '8+',
-        clicked: false
-      }
+  addAmenitiesForm() {
+    this.amenitiesForm.push({
+      name: '',
+    });
+  }
+
+  typeOfPlaceFunc() {
+    this.typeOfPlace = [
+      { name: 'Entire Place', desc: 'A place all to yourself', clicked: false },
+      { name: 'Private room', desc: 'Your own room in a home or a hotel, plus some shared common spaces', clicked: false },
+      { name: 'Shared room', desc: 'A sleeping space and common areas that may be shared with others', clicked: false }
     ]
   }
 
-  bedroomsFunc(item: any) {
+  bedroomsFunc() {
+    this.bedrooms = [
+      { name: 'ANY', clicked: true },
+      { name: '1', clicked: false },
+      { name: '2', clicked: false },
+      { name: '3', clicked: false },
+      { name: '4', clicked: false },
+      { name: '5', clicked: false },
+      { name: '6', clicked: false },
+      { name: '7', clicked: false },
+      { name: '8+', clicked: false },
+    ]
+  }
+
+  bedroomsClick(item: any) {
     this.bedrooms.forEach(item2 => {
       item2.clicked = false;
     })
     item.clicked = true;
   }
 
-
-
   bedsFunc() {
     this.beds = [
-      {
-        name: 'ANY',
-        clicked: true
-      },
-      {
-        name: '1',
-        clicked: false
-      },
-      {
-        name: '2',
-        clicked: false
-      },
-      {
-        name: '3',
-        clicked: false
-      },
-      {
-        name: '4',
-        clicked: false
-      },
-      {
-        name: '5',
-        clicked: false
-      },
-      {
-        name: '6',
-        clicked: false
-      },
-      {
-        name: '7',
-        clicked: false
-      },
-      {
-        name: '8+',
-        clicked: false
-      }
+      { name: 'ANY', clicked: true },
+      { name: '1', clicked: false },
+      { name: '2', clicked: false },
+      { name: '3', clicked: false },
+      { name: '4', clicked: false },
+      { name: '5', clicked: false },
+      { name: '6', clicked: false },
+      { name: '7', clicked: false },
+      { name: '8+', clicked: false },
     ]
   }
 
-  bedsFunction(item: any) {
+  bedsClick(item: any) {
     this.beds.forEach(item2 => {
       item2.clicked = false;
     })
     item.clicked = true;
   }
 
-
-  bathroomFunc() {
+  bathroomsFunc() {
     this.bathrooms = [
-      {
-        name: 'ANY',
-        clicked: true
-      },
-      {
-        name: '1',
-        clicked: false
-      },
-      {
-        name: '2',
-        clicked: false
-      },
-      {
-        name: '3',
-        clicked: false
-      },
-      {
-        name: '4',
-        clicked: false
-      },
-      {
-        name: '5',
-        clicked: false
-      },
-      {
-        name: '6',
-        clicked: false
-      },
-      {
-        name: '7',
-        clicked: false
-      },
-      {
-        name: '8+',
-        clicked: false
-      }
+      { name: 'ANY', clicked: true },
+      { name: '1', clicked: false },
+      { name: '2', clicked: false },
+      { name: '3', clicked: false },
+      { name: '4', clicked: false },
+      { name: '5', clicked: false },
+      { name: '6', clicked: false },
+      { name: '7', clicked: false },
+      { name: '8+', clicked: false },
     ]
   }
 
-  bathroomFunction(item: any) {
+  bathroomsClick(item: any) {
     this.bathrooms.forEach(item2 => {
       item2.clicked = false;
     })
@@ -183,87 +130,34 @@ export class FilterModalComponent implements OnInit {
 
   propertyTypeFunc() {
     this.propertyType = [
-      {
-        name: 'House',
-        clicked: false,
-        icon: 'ri-home-6-line'
-      },
-      {
-        name: 'Apartment',
-        clicked: false,
-        icon: 'ri-hotel-line'
-      },
-      {
-        name: 'GuestHouse',
-        clicked: false,
-        icon: 'ri-building-4-line'
-      },
-      {
-        name: 'Hotel',
-        clicked: false,
-        icon: 'ri-building-2-line'
-      }
+      { name: 'Home', icon: 'ri-home-6-line', clicked: false },
+      { name: 'Villa', icon: 'ri-building-line', clicked: false },
     ]
   }
 
-  essentialsFunc() {
-    this.essentials = [
-      {
-        name: 'Wifi',
-        clicked: false
-      },
-      {
-        name: 'Washer',
-        clicked: false
-      },
-      {
-        name: 'Air conditioning',
-        clicked: false
-      },
-      {
-        name: 'Dedicated workspace',
-        clicked: false
-      },
-      {
-        name: 'Hair dryer',
-        clicked: false
-      },
-      {
-        name: 'Kitchen',
-        clicked: false
-      },
-      {
-        name: 'Dryer',
-        clicked: false
-      },
-      {
-        name: 'Heating',
-        clicked: false
-      },
-      {
-        name: 'TV',
-        clicked: false
-      },
-      {
-        name: 'Iron',
-        clicked: false
-      }
-
-    ]
+  propertyTypeClick(item: any) {
+    this.propertyType.forEach(item2 => {
+      item2.clicked = false;
+    })
+    item.clicked = true;
   }
 
-  saveFilterBtn() {
-    if (parseInt(this.price.price_from) > parseInt(this.price.price_to)) {
-      alert("Incorrect price range!")
-    } else {
-      console.log('typeOfPlace : ', this.typeOfPlace);
-      console.log('bathrooms : ', this.bathrooms);
-      console.log('bedrooms : ', this.bedrooms);
-      console.log('beds : ', this.beds);
-      console.log('essentials : ', this.essentials);
-      console.log('language : ', this.language);
-      console.log('price : ', this.price);
-      console.log('propertyType : ', this.propertyType);
-    }
+
+
+  hostLanguageFunc() {
+    this.hostLanguage = [
+      { name: 'English', clicked: false },
+      { name: 'French', clicked: false },
+      { name: 'Russian', clicked: false },
+      { name: 'German', clicked: false },
+      { name: 'Georgian', clicked: false },
+      { name: 'Spanish', clicked: false },
+      { name: 'Japanese', clicked: false },
+      { name: 'Norwegian', clicked: false },
+      { name: 'Ukranian', clicked: false },
+      { name: 'Swedish', clicked: false },
+      { name: 'Arabic', clicked: false },
+      { name: 'Italian', clicked: false },
+    ]
   }
 }
