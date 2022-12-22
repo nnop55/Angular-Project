@@ -1,9 +1,10 @@
 import { HotelInnerComponent } from './components/hotel-cards/hotel-inner/hotel-inner/hotel-inner.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HotelCardsComponent } from './components/hotel-cards/hotel-cards.component';
 import { LoginFormComponent } from './components/authorization-forms/login-form/login-form.component';
 import { RegisterFormComponent } from './components/authorization-forms/register-form/register-form.component';
+import { ForgotPasswordComponent } from './components/authorization-forms/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   { path: "", component: HotelCardsComponent },
@@ -11,6 +12,7 @@ const routes: Routes = [
     path: 'authorization', children: [
       { path: "login", component: LoginFormComponent },
       { path: "register", component: RegisterFormComponent },
+      {path: "forgot-password", component: ForgotPasswordComponent}
     ]
   },
   { path: 'inner/:id', component: HotelInnerComponent }

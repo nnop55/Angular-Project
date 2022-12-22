@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { User } from '../models/user.model';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 export class FirebaseWorkerService {
 
   constructor(private firestore: AngularFirestore, public auth: AngularFireAuth,
-   ) { }
+   private router:Router) { }
 
 
   signIn(email: string, password: string) {
@@ -50,7 +51,6 @@ export class FirebaseWorkerService {
   }
 
   sendVerificationMail() {
-
   }
 
   getUserDoc(id:string):any {
@@ -80,4 +80,25 @@ export class FirebaseWorkerService {
       merge: true,
     });
   }
+
+  // forgotPassword(email:string) {
+  //   this.auth.sendPasswordResetEmail(email).then(() => {
+  //       this.router.navigate(['/login']);
+  //   }, error => {
+  //     alert('something went wrong');
+  //   })
+  // }
+
+    forgotPassword(passwordReset:string) {
+      return this.auth.sendPasswordResetEmail(passwordReset)
+      .then(() => {
+        window.alert("Password Reset Email Send, Check Your Inbox")
+      })
+      .catch((error) => {
+        window.alert(error)
+      })
+    }
+
 }
+
+
