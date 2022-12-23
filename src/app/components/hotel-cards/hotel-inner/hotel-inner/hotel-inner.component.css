@@ -1,7 +1,5 @@
 
-* {
-    color: #fff;
-}
+
 section {
     max-width: 1120px;
     padding: 0 40px;
@@ -36,6 +34,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #fff;
 }
 
 .description,
@@ -43,6 +42,7 @@ section {
 .rooms {
     padding: 10px;
     box-shadow: 0px 0px 5px black;
+    color: #fff;
 }
 
 
@@ -61,16 +61,20 @@ section {
 
 .rooms {
     text-align: center;
+    color: black;
 }
 
 .card {
     box-shadow: 0px 0px 5px black;
-    padding: 5px; 
+    padding: 10px; 
     margin: 2px 0;
     font-size: 14px;
 }
 .card p b {
     color: black;
+}
+.card h3 {
+    margin: 16px 0;
 }
 
 .slider {
@@ -82,14 +86,15 @@ section {
 .slider button {
     border-radius: 5px;
     background-color: transparent;
-    color: #fff;
+    color: black;
     font-weight: bolder;
     cursor: pointer;
     opacity: 0.7;
     transition: 200ms;
     height: 30px;
     align-self: center;
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 200;
 }
 
 .slider button:hover {
@@ -98,7 +103,7 @@ section {
     flex-wrap: wrap;
     justify-content: start;
     align-items: baseline;
-    font-size: 15px; 
+    font-size: 25px; 
     color:rgb(83, 82, 82); 
     font-weight: 200;
 }
