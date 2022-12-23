@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersDataService } from 'src/app/services/users-data.service';
+import { CheckbooleansService } from '../../services/checkbooleans.service';
 
 @Component({
   selector: 'app-header',
@@ -9,16 +10,14 @@ import { UsersDataService } from 'src/app/services/users-data.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public checkUsersData: UsersDataService, private router: Router) { }
+  constructor(public checkUser:CheckbooleansService, private router: Router) { }
 
   ngOnInit(): void {
-    this.checkUsersData.storageInfo();
   }
 
   logOut() {                                             //Log out from account and navigate on register component
-    localStorage.setItem('authorized', 'false');
-    this.router.navigate(['/register']);
-    this.checkUsersData.storageInfo();
+    this.router.navigate(['/authorization/login']);
+    this.checkUser.checkUserLoggedIn = false;
   }
 
 }

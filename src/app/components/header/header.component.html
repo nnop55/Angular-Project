@@ -7,11 +7,11 @@
             </button>
         </div>
         <div class="right">
-            <button mat-stroked-button routerLink="/authorization/register" *ngIf="!checkUsersData.checkStorage"
+            <button mat-stroked-button routerLink="/authorization/register" *ngIf="!checkUser.checkUserLoggedIn"
                 routerLinkActive="active">Register</button>
-            <button mat-stroked-button routerLink="/authorization/login" *ngIf="!checkUsersData.checkStorage"
+            <button mat-stroked-button routerLink="/authorization/login" *ngIf="!checkUser.checkUserLoggedIn"
                 routerLinkActive="active">Log In</button>
-            <button mat-stroked-button (click)="logOut()" *ngIf="checkUsersData.checkStorage">Log Out</button>
+            <button mat-stroked-button (click)="logOut()" *ngIf="checkUser.checkUserLoggedIn">Log Out</button>
         </div>
     </div>
     <div class="filter-bar">
