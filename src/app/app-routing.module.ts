@@ -5,6 +5,8 @@ import { HotelCardsComponent } from './components/hotel-cards/hotel-cards.compon
 import { LoginFormComponent } from './components/authorization-forms/login-form/login-form.component';
 import { RegisterFormComponent } from './components/authorization-forms/register-form/register-form.component';
 import { ForgotPasswordComponent } from './components/authorization-forms/forgot-password/forgot-password.component';
+import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   { path: "", component: HotelCardsComponent },
@@ -15,6 +17,8 @@ const routes: Routes = [
       {path: "forgot-password", component: ForgotPasswordComponent}
     ]
   },
+  {path: 'profile', component:ProfileComponent},
+  {path: 'profile-edit', component: ProfileEditComponent},
   { path: 'inner/:id', component: HotelInnerComponent }
 ];
 

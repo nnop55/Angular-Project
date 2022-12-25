@@ -6,4 +6,5 @@ export class User
     public verifiedUser!:boolean;
     public password!:string;
     public confirmPass!:string;
+    public phoneNumber!:number;
 }

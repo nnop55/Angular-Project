@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { User } from '../models/user.model';
-import { Observable } from 'rxjs';
+import { Observable, of, switchMap } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -10,8 +10,21 @@ import { Router } from '@angular/router';
 })
 export class FirebaseWorkerService {
 
+  user$!: Observable<User | null | undefined>;
+
   constructor(private firestore: AngularFirestore, public auth: AngularFireAuth,
-   private router:Router) { }
+   private router:Router) { 
+    this.user$ = this.auth.authState
+      .pipe(
+        switchMap((user: any) => {
+          if (user) {
+            return this.firestore.doc<User>(`users/${user.uid}`).valueChanges();
+          } else {
+            return of(null)
+          }
+        })
+      )
+   }
 
 
   signIn(email: string, password: string) {
@@ -71,23 +84,16 @@ export class FirebaseWorkerService {
     const userData: User = {
       id: fireUser.uid,
       email: fireUser.email,
-      userName: fireUser.displayName,
+      userName: user.userName,
       verifiedUser: true,
       password: user.password,
-      confirmPass: user.confirmPass
+      confirmPass: user.confirmPass,
+      phoneNumber: user.phoneNumber
     } as User;
     return userRef.set(userData, {
       merge: true,
     });
   }
-
-  // forgotPassword(email:string) {
-  //   this.auth.sendPasswordResetEmail(email).then(() => {
-  //       this.router.navigate(['/login']);
-  //   }, error => {
-  //     alert('something went wrong');
-  //   })
-  // }
 
     forgotPassword(passwordReset:string) {
       return this.auth.sendPasswordResetEmail(passwordReset)

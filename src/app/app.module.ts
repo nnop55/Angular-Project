@@ -27,6 +27,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { ForgotPasswordComponent } from './components/authorization-forms/forgot-password/forgot-password.component';
+import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -45,6 +47,8 @@ import { ForgotPasswordComponent } from './components/authorization-forms/forgot
     FilterSliderComponent,
     HotelInnerComponent,
     ForgotPasswordComponent,
+    ProfileEditComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
