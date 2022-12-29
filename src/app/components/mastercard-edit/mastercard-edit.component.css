@@ -1,0 +1,128 @@
+* {
+    /* color: #fff; */
+    color: black;
+}
+
+.container {
+    background-color: #313131;
+    width: 80%;
+    margin: 70px auto;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px black;
+}
+.title h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.child {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputs input {
+    padding: 10px 80px 10px 20px;
+    font-size: 15px;
+    outline: none;
+    border: 2px solid #d8d8d8;
+    color: black;
+    border-radius: 5px;
+}
+
+.inputs input::placeholder {
+    color: rgb(129, 129, 129);
+}
+
+.inputs input:focus {
+    border: 2px solid rgb(156, 156, 156);
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.reg-btn {
+    border: 2px solid black;
+    margin-top: 10px;
+    color: black;
+    width: 135px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 200px;
+    margin-top: 30px;
+
+}
+
+.reg-btn button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    background: transparent;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.reg-btn button:hover {
+    background-color: #fff;
+    color: black;
+}
+
+
+i {
+    color: black;
+    font-size: 17px;
+    position: absolute;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.pass-inp {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card-information {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-left: 20px;
+    padding: 15px;
+    box-shadow: 0px 0px 5px black;
+    margin-bottom: 30px;
+}
+.card-heading {
+    margin-bottom: -5px;
+}
+.date {
+    margin-top: -30px;
+}
+.image {
+    width: 50px;
+}
+.mastercard-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.mastercard-inputs {
+    display: flex;
+}
+.second {
+    margin-left: 20px;
+}
+.second p {
+    margin-bottom: 30px;
+}

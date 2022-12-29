@@ -15,14 +15,16 @@
                 <h2 class="email-heading">Email :{{user?.email}}</h2>
                 <h2 class="phone-heading">Phone Number :{{user?.phoneNumber}}</h2>
                 <p>Card Number :{{user?.cardNumber}}</p>
-                <p>CVV :{{user?.Cvv}}</p>
-                <p>Card Expiration Date :</p>
-                <button class="edit-card" (click)="editCard()">Edit</button>
+                <p>CVV :{{user?.cardCvv}}</p>
+                <p>Card Expiration Date : {{user?.date}}</p>
+                <!-- <button class="edit-card" (click)="editCard()">Edit</button> -->
             </div>
         </div>
 
         <div class="reg-btn">
-            <button (click)="goToEditProfile()" type="submit">Edit Your Profile </button>
+            <button (click)="goToEditProfile()" type="submit">Edit Your Profile Info </button>
+            <button class="edit-card" (click)="editCard()">Edit Mastercard Info</button>
+
         </div>
     </div>
 </div>

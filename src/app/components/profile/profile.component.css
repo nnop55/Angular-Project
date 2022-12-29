@@ -109,6 +109,9 @@ i {
     margin-bottom: -5px;
 }
 .edit-card {
-    border: none;
+    /* border: 1px solid black;
+    border-radius: 10px;
     color: black;
+    width: 100px; */
+    margin-left: 10px;
 }

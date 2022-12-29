@@ -27,6 +27,6 @@ export class ProfileComponent implements OnInit {
   }
 
   editCard() {
-    
+    this.router.navigate(['/mastercard-edit'])
   }
 }
