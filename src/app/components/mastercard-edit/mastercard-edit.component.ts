@@ -28,6 +28,7 @@ export class MastercardEditComponent implements OnInit {
       this.userName = user.userName;
       this.phoneNumber = user.phoneNumber;
       this.email = user.email;
+      
       console.log(user);
     })
   }

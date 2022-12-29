@@ -9,5 +9,5 @@ export class User
     public phoneNumber!:number;
     public cardNumber!:number;
     public cardCvv!:number;
-    public date!:string;
+    public expirationDate!:string;
 }

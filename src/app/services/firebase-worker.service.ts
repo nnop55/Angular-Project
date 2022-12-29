@@ -91,7 +91,7 @@ export class FirebaseWorkerService {
       phoneNumber: user.phoneNumber,
       cardNumber: user.cardNumber,
       cardCvv: user.cardCvv,
-      date: user.date
+      expirationDate: user.expirationDate
     } as User;
     return userRef.set(userData, {
       merge: true,
