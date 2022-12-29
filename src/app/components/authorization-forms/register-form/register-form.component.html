@@ -7,7 +7,7 @@
             <div class="inputs">
                 <input required type="text" placeholder="Username" ngModel name="userName">
                 <input required type="tel" placeholder="Phone Number" ngModel name="phoneNumber">
-                <input required type="text" placeholder="Email" ngModel name="email"> 
+                <input required type="text" placeholder="Email" ngModel name="email">
                 <div class="pass-inp">
                     <input required [type]="inpType" placeholder="Password" ngModel name="password">
                     <i [class]="eyeIcon" (click)="eyeIconToggle()"></i>
@@ -28,13 +28,12 @@
         <div class="card-information">
             <h1 class="card-heading">Card information</h1>
             <div class="inputs">
-                <input required maxlength="8" type="number"  placeholder="Card Number" ngModel name="cardNumber">
-                <input required maxlength="4" type="number"  placeholder="Card CVV" ngModel name="cardCvv">
-                <input type="hidden" ngModel name="id">
+                <input required maxlength="8" type="number" placeholder="Card Number" ngModel name="cardNumber">
+                <input required maxlength="4" type="number" placeholder="Card CVV" ngModel name="cardCvv">
             </div>
             <h2>Expiration Date</h2>
             <div class="inputs">
-                <input class="date" type="date">
+                <input class="date" ngModel name="expirationDate" type="date">
             </div>
 
             <img class="image" src="https://1000logos.net/wp-content/uploads/2017/03/MasterCard-Logo-1990.png">

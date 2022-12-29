@@ -13,7 +13,7 @@ export class FirebaseWorkerService {
   user$!: Observable<User | null | undefined>;
 
   constructor(private firestore: AngularFirestore, public auth: AngularFireAuth,
-   private router:Router) { 
+    private router: Router) {
     this.user$ = this.auth.authState
       .pipe(
         switchMap((user: any) => {
@@ -24,7 +24,7 @@ export class FirebaseWorkerService {
           }
         })
       )
-   }
+  }
 
 
   signIn(email: string, password: string) {
@@ -36,7 +36,7 @@ export class FirebaseWorkerService {
             console.log(user);
           }
         });
-        return  this.getUserDoc(result.user?.uid ?? "");
+        return this.getUserDoc(result.user?.uid ?? "");
       })
       .catch((error) => {
         window.alert(error.message);
@@ -44,11 +44,11 @@ export class FirebaseWorkerService {
   }
 
 
-  signUp(user:User, password:string):any {
+  signUp(user: User, password: string): any {
     return this.auth
       .createUserWithEmailAndPassword(user.email, password)
       .then((result) => {
-        
+
         this.sendVerificationMail();
         this.setUserDataForSignUp(result.user, user);
       })
@@ -66,23 +66,23 @@ export class FirebaseWorkerService {
   sendVerificationMail() {
   }
 
-  getUserDoc(id:string):any {
+  getUserDoc(id: string): any {
     return this.firestore
-    .collection('users')
-    .doc(id)
-    .valueChanges();
+      .collection('users')
+      .doc(id)
+      .valueChanges();
   }
 
 
 
-  setUserDataForSignUp(fireUser: any, user:User) {
+  setUserDataForSignUp(fireUser: any, user: User) {
     console.log(user);
-    
+
     const userRef: AngularFirestoreDocument<any> = this.firestore.doc(
       `users/${fireUser.uid}`
     );
     const userData: User = {
-      id: fireUser.uid,
+      uid: fireUser.uid,
       email: fireUser.email,
       userName: user.userName,
       verifiedUser: true,
@@ -98,15 +98,15 @@ export class FirebaseWorkerService {
     });
   }
 
-    forgotPassword(passwordReset:string) {
-      return this.auth.sendPasswordResetEmail(passwordReset)
+  forgotPassword(passwordReset: string) {
+    return this.auth.sendPasswordResetEmail(passwordReset)
       .then(() => {
         window.alert("Password Reset Email Send, Check Your Inbox")
       })
       .catch((error) => {
         window.alert(error)
       })
-    }
+  }
 
 }
 

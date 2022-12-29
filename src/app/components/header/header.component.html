@@ -13,7 +13,7 @@
                 routerLinkActive="active">Log In</button>
             <button mat-stroked-button (click)="logOut()" *ngIf="checkUser.checkUserLoggedIn">Log Out</button>
         </div>
-        <button mat-stroked-button (click)="goToProfile()">Profile</button>
+        <button mat-stroked-button (click)="goToProfile()" *ngIf="checkUser.checkUserLoggedIn">Profile</button>
     </div>
     <div class="filter-bar">
         <app-filter-slider></app-filter-slider>
