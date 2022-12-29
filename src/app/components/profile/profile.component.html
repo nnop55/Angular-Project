@@ -4,9 +4,22 @@
             <h1>Your Profile</h1>
         </div>
 
-        <h4><b>UserName :</b>{{user?.userName}}</h4>
-        <p><b>Email :</b>{{user?.email}}</p>
-        <p><b>PhoneNumber :</b>{{user?.phoneNumber}}</p>
+        <div class="info-container">
+            <div class="profile-info">
+                <h4><b>UserName :</b>{{user?.userName}}</h4>
+                <p><b>Email :</b>{{user?.email}}</p>
+                <p><b>PhoneNumber :</b>{{user?.phoneNumber}}</p>
+            </div>
+            <div class="card-info">
+                <p>UserName :{{user?.userName}}</p>
+                <h2 class="email-heading">Email :{{user?.email}}</h2>
+                <h2 class="phone-heading">Phone Number :{{user?.phoneNumber}}</h2>
+                <p>Card Number :{{user?.cardNumber}}</p>
+                <p>CVV :{{user?.Cvv}}</p>
+                <p>Card Expiration Date :</p>
+                <button class="edit-card" (click)="editCard()">Edit</button>
+            </div>
+        </div>
 
         <div class="reg-btn">
             <button (click)="goToEditProfile()" type="submit">Edit Your Profile </button>

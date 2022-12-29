@@ -46,6 +46,7 @@
 .reg-btn {
     display: flex;
     justify-content: center;
+    margin-top: 30px;
 }
 
 .reg-btn button {
@@ -83,4 +84,31 @@ i {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+.info-container {
+    display: flex;   
+    justify-content: space-between;
+}
+.card-info {
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.card-info p {
+    color: black;
+}
+.card-info h2 {
+    color: black;
+}
+.phone-heading {
+    border-bottom: 1px solid lightgrey;
+}
+.email-heading {
+    margin-bottom: -5px;
+}
+.edit-card {
+    border: none;
+    color: black;
 }
