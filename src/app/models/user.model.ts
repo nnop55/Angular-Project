@@ -7,4 +7,6 @@ export class User
     public password!:string;
     public confirmPass!:string;
     public phoneNumber!:number;
+    public cardNumber!:number;
+    public cardCvv!:number;
 }

@@ -30,7 +30,6 @@ export class ProfileEditComponent implements OnInit {
       this.phoneNumber = user.phoneNumber;
       this.email = user.email;
       console.log(user);
-      
     })
   }
 
