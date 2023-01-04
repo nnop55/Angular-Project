@@ -1,14 +1,14 @@
 <div class="main">
     <div class="center">
         <div class="top">
-            <h1><b>Name</b> : {{currentHotel.name}}</h1>
-            <h1><b>Address</b> : {{currentHotel.address}}</h1>
+            <h1>{{currentHotel.name}}</h1>
+            <h2>{{currentHotel.address}}</h2>
             <div class="slider">
-                <button (click)="previousImage(currentHotel)">
+                <button class="slider-left" (click)="previousImage(currentHotel)">
                     < </button>
                         <img [src]="currentHotel.mainImages[currentHotel.imgIndex ? currentHotel.imgIndex : 0]"
                             (error)="updateUrl($event)" alt="">
-                        <button (click)="nextImage(currentHotel)"> > </button>
+                        <button class="slider-right" (click)="nextImage(currentHotel)"> > </button>
             </div>
         </div>
         <div class="description">
@@ -31,17 +31,17 @@
             <div class="room-cards">
                 <div *ngFor="let item of currentHotel.rooms" class="card">
                     <div class="slider">
-                        <button (click)="previousImage(item)">
+                        <button class="slider-left" (click)="previousImage(item)">
                             < </button>
                                 <img [src]="item.images[item.imgIndex ? item.imgIndex : 0]" (error)="updateUrl($event)"
                                     alt="">
-                                <button (click)="nextImage(item)"> > </button>
+                                <button class="slider-right" (click)="nextImage(item)"> > </button>
                     </div>
-                    <h3><b>Price</b> : {{item.price}}</h3>
-                    <p><b>Bathrooms</b> : {{item.bathRoomsCount}}</p>
-                    <p><b>Beds</b> : {{item.bedsCount}}</p>
-                    <p><b>Persons</b> : {{item.personsCount}}</p>
-                    <p><b>Child policy</b> : {{item.childPolicy}}</p>
+                    <h3><b>Price</b>   {{item.price | currency}}</h3>
+                    <p>Bathrooms : {{item.bathRoomsCount}}</p>
+                    <p>Beds : {{item.bedsCount}}</p>
+                    <p>Persons : {{item.personsCount}}</p>
+                    <p>Child policy : {{item.childPolicy}}</p>
                 </div>
             </div>
 
