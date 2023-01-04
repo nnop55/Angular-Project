@@ -1,35 +1,35 @@
 <div class="main">
     <div class="center">
         <div class="top">
-            <h1>{{currentHotel.name}}</h1>
-            <h2>{{currentHotel.address}}</h2>
+            <h1>{{currentHotel?.name}}</h1>
+            <h2>{{currentHotel?.address}}</h2>
             <div class="slider">
                 <button class="slider-left" (click)="previousImage(currentHotel)">
                     < </button>
-                        <img [src]="currentHotel.mainImages[currentHotel.imgIndex ? currentHotel.imgIndex : 0]"
+                        <img [src]="currentHotel?.mainImages[currentHotel.imgIndex ? currentHotel.imgIndex : 0]"
                             (error)="updateUrl($event)" alt="">
                         <button class="slider-right" (click)="nextImage(currentHotel)"> > </button>
             </div>
         </div>
         <div class="description">
-            <p><b>Stars count</b> : {{currentHotel.starCount}}</p>
-            <p><b>Host</b> : {{currentHotel.hostInformation.hostName}}</p>
-            <p><b>Email</b> : {{currentHotel.hostInformation.emailAddress}}</p>
-            <p><b>Phone</b> : {{currentHotel.hostInformation.phoneNumber}}</p>
-            <p><b>City</b> : {{currentHotel.city}}</p>
-            <p><b>Country</b> : {{currentHotel.country}}</p>
-            <p><b>Property type</b> : {{currentHotel.propertyType}}</p>
-            <p>{{currentHotel.description}}</p>
+            <p><b>Stars count</b> : {{currentHotel?.starCount}}</p>
+            <p><b>Host</b> : {{currentHotel?.hostInformation.hostName}}</p>
+            <p><b>Email</b> : {{currentHotel?.hostInformation.emailAddress}}</p>
+            <p><b>Phone</b> : {{currentHotel?.hostInformation.phoneNumber}}</p>
+            <p><b>City</b> : {{currentHotel?.city}}</p>
+            <p><b>Country</b> : {{currentHotel?.country}}</p>
+            <p><b>Property type</b> : {{currentHotel?.propertyType}}</p>
+            <p>{{currentHotel?.description}}</p>
         </div>
 
         <div class="place">
             <h2>Place offers</h2>
-            <p *ngFor="let item of currentHotel.placeOffers">{{item}}</p>
+            <p *ngFor="let item of currentHotel?.placeOffers">{{item}}</p>
         </div>
         <div class="rooms">
             <h2>Rooms</h2>
             <div class="room-cards">
-                <div *ngFor="let item of currentHotel.rooms" class="card">
+                <div *ngFor="let item of currentHotel?.rooms" class="card">
                     <div class="slider">
                         <button class="slider-left" (click)="previousImage(item)">
                             < </button>
