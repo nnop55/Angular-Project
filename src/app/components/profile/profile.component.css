@@ -4,21 +4,21 @@
 
 .container {
     background-color: #313131;
-    width: 80%;
+    width: 60%;
     margin: 70px auto;
     padding: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
+    /* justify-content: space-around; */
+    /* align-items: center; */
     border-radius: 10px;
     box-shadow: 0px 0px 5px black;
 }
 
-.child {
+.title {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    justify-content: center;
 }
+
 
 .inputs input {
     padding: 10px 80px 10px 20px;
@@ -43,6 +43,12 @@
     gap: 10px;
 }
 
+.reg-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
 .reg-btn button {
     padding: 10px;
     border-radius: 5px;
@@ -50,6 +56,7 @@
     background: transparent;
     transition: .5s;
     cursor: pointer;
+
 }
 
 .reg-btn button:hover {
@@ -57,39 +64,54 @@
     color: black;
 }
 
+.right {
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px black;
+    padding: 20px;
+    width: 300px;
+}
 
 i {
     color: black;
     font-size: 17px;
     position: absolute;
-    cursor: pointer;
     padding: 10px;
+    cursor: pointer;
 }
 
 .pass-inp {
     display: flex;
     justify-content: flex-end;
-    flex-direction: row;
     align-items: center;
 }
 
-.card-information {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border: 2px solid black;
-    border-radius: 5px;
-    margin-left: 20px;
-    padding: 15px;
-    box-shadow: 0px 0px 5px black;
-    margin-bottom: 30px;
+.info-container {
+    display: flex;   
+    justify-content: space-between;
 }
-.card-heading {
+.card-info {
+    background: white;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.card-info p {
+    color: black;
+}
+.card-info h2 {
+    color: black;
+}
+.phone-heading {
+    border-bottom: 1px solid lightgrey;
+}
+.email-heading {
     margin-bottom: -5px;
 }
-.date {
-    margin-top: -30px;
-}
-.image {
-    width: 50px;
+.edit-card {
+    /* border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+    width: 100px; */
+    margin-left: 10px;
 }

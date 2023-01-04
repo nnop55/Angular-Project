@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsersDataService } from 'src/app/services/users-data.service';
 import { CheckbooleansService } from '../../services/checkbooleans.service';
 
 @Component({
@@ -10,7 +9,7 @@ import { CheckbooleansService } from '../../services/checkbooleans.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public checkUser:CheckbooleansService, private router: Router) { }
+  constructor(public checkUser: CheckbooleansService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +17,10 @@ export class HeaderComponent implements OnInit {
   logOut() {                                             //Log out from account and navigate on register component
     this.router.navigate(['/authorization/login']);
     this.checkUser.checkUserLoggedIn = false;
+  }
+
+  goToProfile() {
+    this.router.navigate(['/profile']);
   }
 
 }

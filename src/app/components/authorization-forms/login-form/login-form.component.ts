@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 // import { Login } from 'src/app/models/login.model';
 import { User } from 'src/app/models/user.model';
 import { FirebaseWorkerService } from 'src/app/services/firebase-worker.service';
-import { UsersDataService } from 'src/app/services/users-data.service';
 import { NgForm } from '@angular/forms';
 import { CheckbooleansService } from '../../../services/checkbooleans.service';
 
@@ -14,24 +13,22 @@ import { CheckbooleansService } from '../../../services/checkbooleans.service';
 })
 export class LoginFormComponent implements OnInit {
 
-  loginInfo: User = new User()
-
   checkInpType: boolean = true;
   eyeIcon: string = 'ri-eye-off-fill'
   inpType: string = 'password';
 
   constructor(public checkUser: CheckbooleansService, private router: Router,
-    private fireWorker:FirebaseWorkerService, 
-    ) { }
+    private fireWorker: FirebaseWorkerService,
+  ) { }
 
   ngOnInit(): void {
   }
 
-  onFormSubmit(form:NgForm) {
-    this.fireWorker.signIn(form.value.email,form.value.password).then(response => {
-        response.subscribe((user:any) => {console.log(user)})   
-        this.checkUser.checkUserLoggedIn = true;
-        
+  onFormSubmit(form: NgForm) {
+    this.fireWorker.signIn(form.value.email, form.value.password).then(response => {
+      response.subscribe((user: any) => { console.log(user) })
+      this.checkUser.checkUserLoggedIn = true;
+
     })
     this.router.navigate(['/'])
   }

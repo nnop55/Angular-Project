@@ -1,0 +1,30 @@
+<form #form="ngForm" (ngSubmit)="onFormSubmit()">
+        <div class="container">
+            <div class="mastercard-container">
+
+            <div class="left">
+                <div class="title">
+                    <h1>MasterCard Info</h1>
+                </div>
+                <div class="mastercard-inputs">
+                    <div class="inputs">
+                        <input required type="text" placeholder="Username" ngModel name="userName">
+                        <input required type="tel" placeholder="Phone Number" ngModel name="phoneNumber">
+                        <input required type="text" placeholder="Email" ngModel name="email"> 
+                    </div>
+                    <div class="inputs second">
+                        <input required maxlength="8" type="number"  placeholder="Card Number" ngModel name="cardNumber">
+                        <input required maxlength="4" type="number"  placeholder="Card CVV" ngModel name="cardCvv">
+                        <p><b>Expiration Date</b></p>
+                        <div class="inputs">
+                            <input class="date" type="date">
+                        </div>
+                    </div>
+                </div>
+                <div class="reg-btn">
+                    <button type="submit">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
