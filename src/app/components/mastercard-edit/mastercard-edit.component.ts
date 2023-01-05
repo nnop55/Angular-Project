@@ -15,6 +15,11 @@ export class MastercardEditComponent implements OnInit {
   userName!: string;
   phoneNumber!: string;
   email!: string;
+  cardNumber!:number;
+  cardCvv!:number;
+  expirationDate!: string;
+
+
 
   inpType: string = 'password';
   user: User = new User();
@@ -28,6 +33,10 @@ export class MastercardEditComponent implements OnInit {
       this.userName = user.userName;
       this.phoneNumber = user.phoneNumber;
       this.email = user.email;
+      this.cardNumber = user.cardNumber;
+      this.cardCvv = user.cardCvv;
+      this.expirationDate = user.expirationDate;
+
       
       console.log(user);
     })
@@ -38,6 +47,11 @@ export class MastercardEditComponent implements OnInit {
       'userName': this.userName,
       'phoneNumber': this.phoneNumber,
       'email': this.email,
+      'cardNumber': this.cardNumber,
+      'cardCvv': this.cardCvv,
+      'expirationDate': this.expirationDate,
+
+      
     }, { merge: true })
       .then(() => {
         this.router.navigate(['/profile'])
