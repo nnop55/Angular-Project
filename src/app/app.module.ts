@@ -30,6 +30,7 @@ import { ForgotPasswordComponent } from './components/authorization-forms/forgot
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MastercardEditComponent } from './components/mastercard-edit/mastercard-edit.component';
+import { ReserveHotelComponent } from './components/hotel-cards/reserve-hotel/reserve-hotel.component';
 
 
 
@@ -51,6 +52,7 @@ import { MastercardEditComponent } from './components/mastercard-edit/mastercard
     ProfileEditComponent,
     ProfileComponent,
     MastercardEditComponent,
+    ReserveHotelComponent,
   ],
   imports: [
     BrowserModule,
