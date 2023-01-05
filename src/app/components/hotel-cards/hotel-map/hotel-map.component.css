@@ -1,67 +1,63 @@
-.example-card {
-  max-width: 325px;
-}
-.mat-card {
-  box-shadow: none;
-  
-}
-.mat-card-image {
-  max-height: 300px;
-  border-radius: 9px;
-  border-top-left-radius: 9px!important;
-  border-top-right-radius: 9px!important;
-}
-a{
-  text-decoration: none;
-  color: black;
-  margin-top: 17px;
-}
 .cards {
-  width: 95%;
-  margin: auto;
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
 }
-
+  a{
+    text-decoration: none;
+    color: black;
+  }
+agm-map{
+    height: 600px;
+    }
+ mat-card {
+    width: 300px;
+    height: 300px;
+    padding: 0;
+    }
+    .example-card div{
+        padding: 0!important;
+    }
+    .gm-style-iw-d{
+        padding: 0;
+    }
+mat-card img {
+    max-width: 300px;
+    max-height: 200px;
+    border-radius: 10px;
+    }
 mat-card-content {
-  display: flex;
-  justify-content: space-between;
-  margin: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+        
+    }
+.gm-ui-hover-effect{
+    position: absolute;
 }
-.card-title-name{
-  margin: 0 0 5px!important;
-  font-size: 20px!important;
-}
-.address{
-  opacity: 0.5;
-font-weight: 200;
+.gm-style-iw-d{
+overflow: hidden;
 }
 .right {
-  display: flex;
-  flex-direction: row;
-}
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+      
 .right i {
-  margin-top: 4px;
-}
+    margin-top: 7px;
+    margin-right: 3px;
+    }
+    gm-style-iw-d{
+        padding: 10px;
+    }
 
-.left {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+
 .slider {
     display: flex;
     justify-content: space-evenly;
-    gap: 10px; 
+    gap: 10px;
     position: relative;
-    width: 300px;
-    height: 300px;
-    object-fit: contain;
 }
-
 
 .slider-left{
     position: absolute;
@@ -88,7 +84,7 @@ background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(69,69,69,0.5) 10
     cursor: pointer;
     opacity: 0.7;
     transition: 200ms;
-    height: 300px;
+    height: 200px;
     width: 20%;
     align-self: center;
     font-size: 33px;
@@ -107,10 +103,3 @@ background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(69,69,69,0.5) 10
     font-weight: 200;
     
 }
-
-mat-card img {
-  width: 300px;
-  height: 300px;
-  border-radius: 10px;
-  margin: 0 0 10px;
-  }

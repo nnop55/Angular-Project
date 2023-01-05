@@ -1,23 +1,33 @@
-import { Observable } from 'rxjs';
-import { HotelsHttpService } from './../../services/hotels-http.service';
+import { HotelsHttpService } from 'src/app/services/hotels-http.service';
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
-  selector: 'app-hotel-cards',
-  templateUrl: './hotel-cards.component.html',
-  styleUrls: ['./hotel-cards.component.css']
+  selector: 'app-hotel-map',
+  templateUrl: './hotel-map.component.html',
+  styleUrls: ['./hotel-map.component.css']
 })
-export class HotelCardsComponent implements OnInit {
+export class HotelMapComponent implements OnInit {
+  
+  
 
-  hotelObservable!: Observable<any>
+  constructor(private hotel:HotelsHttpService) { }
+  lat = 41.7151;
+  long = 40.8271;
+  zoom = 4;
 
-  constructor(public hotel: HotelsHttpService) { }
+  
+currentLatLng:any [] = []
+currentHotelCard:any
+id:any
 
   ngOnInit(): void {
-    this.hotelObservable = this.hotel.getHotels()
+    this.hotel.getHotels().subscribe(res =>{
+      this.currentLatLng = res;
+      console.log(this.currentLatLng);
+      this.id = res.id      
+    })
+    
   }
-  
   previousImage(item: any) {
     item.imgIndex = item.imgIndex ? item.imgIndex : 0;
 

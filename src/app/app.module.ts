@@ -32,6 +32,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { MastercardEditComponent } from './components/mastercard-edit/mastercard-edit.component';
 import { ReserveHotelComponent } from './components/hotel-cards/reserve-hotel/reserve-hotel.component';
 
+import { AgmCoreModule } from '@agm/core';
+import { HotelMapComponent } from './components/hotel-cards/hotel-map/hotel-map.component';
 
 
 
@@ -52,7 +54,11 @@ import { ReserveHotelComponent } from './components/hotel-cards/reserve-hotel/re
     ProfileEditComponent,
     ProfileComponent,
     MastercardEditComponent,
+<<<<<<< HEAD
     ReserveHotelComponent,
+=======
+    HotelMapComponent,
+>>>>>>> 17f11ae48f79a627b8bcd2a6f788c3b885aaa23d
   ],
   imports: [
     BrowserModule,
@@ -69,6 +75,9 @@ import { ReserveHotelComponent } from './components/hotel-cards/reserve-hotel/re
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

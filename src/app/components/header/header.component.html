@@ -5,6 +5,7 @@
                 aria-label="Example icon button with a home icon">
                 <mat-icon>home</mat-icon>
             </button>
+            <button (click)="map()" mat-stroked-button routerLink="/hotel-map">Map</button>
         </div>
         <div class="right">
             <button mat-stroked-button routerLink="/authorization/register" *ngIf="!checkUser.checkUserLoggedIn"
