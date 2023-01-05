@@ -1,3 +1,4 @@
+import { HotelMapComponent } from './components/hotel-cards/hotel-map/hotel-map.component';
 import { HotelInnerComponent } from './components/hotel-cards/hotel-inner/hotel-inner/hotel-inner.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,11 +12,12 @@ import { MastercardEditComponent } from './components/mastercard-edit/mastercard
 
 const routes: Routes = [
   { path: "", component: HotelCardsComponent },
+  {path: "hotel-map", component: HotelMapComponent},
   {
     path: 'authorization', children: [
       { path: "login", component: LoginFormComponent },
       { path: "register", component: RegisterFormComponent },
-      {path: "forgot-password", component: ForgotPasswordComponent}
+      {path: "forgot-password", component: ForgotPasswordComponent},
     ]
   },
   {path: 'profile', component:ProfileComponent},

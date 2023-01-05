@@ -96,10 +96,7 @@ section {
     gap: 10px;
     position: relative;
 }
-/*
-.slider img {
-    position: relative; 
-}*/
+
 .slider-left{
     position: absolute;
     left: 0;

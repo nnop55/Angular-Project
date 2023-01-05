@@ -1,6 +1,12 @@
 <div class="cards">
     <mat-card class="example-card" *ngFor="let item of hotelObservable |async">
-        <img mat-card-image [src]="item.mainImages[0]" alt="Ups:(">
+        <div  class="slider">
+            <button class="slider-left" (click)="previousImage(item)">
+                < </button>
+                    <img mat-card-image [src]="item?.mainImages[item.imgIndex ? item.imgIndex : 0]"
+                        (error)="updateUrl($event)" alt="">
+                    <button class="slider-right" (click)="nextImage(item)"> > </button>
+        </div>
         <a [routerLink]="['/inner/', item.id]">
             <mat-card-content>
                 <div class="left">

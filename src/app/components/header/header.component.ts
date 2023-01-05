@@ -23,4 +23,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/profile']);
   }
 
+  map(){
+    this.router.navigate(['/hotel-map'])
+  }
+
 }

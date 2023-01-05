@@ -31,6 +31,8 @@ import { ProfileEditComponent } from './components/profile-edit/profile-edit.com
 import { ProfileComponent } from './components/profile/profile.component';
 import { MastercardEditComponent } from './components/mastercard-edit/mastercard-edit.component';
 
+import { AgmCoreModule } from '@agm/core';
+import { HotelMapComponent } from './components/hotel-cards/hotel-map/hotel-map.component';
 
 
 
@@ -51,6 +53,7 @@ import { MastercardEditComponent } from './components/mastercard-edit/mastercard
     ProfileEditComponent,
     ProfileComponent,
     MastercardEditComponent,
+    HotelMapComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +70,9 @@ import { MastercardEditComponent } from './components/mastercard-edit/mastercard
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

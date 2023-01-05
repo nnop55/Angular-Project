@@ -20,10 +20,11 @@ nav {
 .left button:hover{
   border: 1px solid #18aaaa;
 }
-.right {
+.right , .left{
   display: flex;
   gap: 10px;
 }
+
 
 button {
   color: white;
