@@ -54,11 +54,9 @@ import { HotelMapComponent } from './components/hotel-cards/hotel-map/hotel-map.
     ProfileEditComponent,
     ProfileComponent,
     MastercardEditComponent,
-<<<<<<< HEAD
-    ReserveHotelComponent,
-=======
     HotelMapComponent,
->>>>>>> 17f11ae48f79a627b8bcd2a6f788c3b885aaa23d
+    ReserveHotelComponent,
+    HotelMapComponent,
   ],
   imports: [
     BrowserModule,

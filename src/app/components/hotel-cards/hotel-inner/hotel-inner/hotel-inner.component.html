@@ -42,9 +42,10 @@
                     <p>Beds : {{item.bedsCount}}</p>
                     <p>Persons : {{item.personsCount}}</p>
                     <p>Child policy : {{item.childPolicy}}</p>
-                    <!-- <button (click)="bookBtn()" class="booking">Book</button> -->
-                    <a [routerLink]="['/reserve-hotel/', item.id]">Book</a>
                 </div>
-                
             </div>
+            <div>    
+                <a [routerLink]="['/reserve-hotel/', currentHotel.id]">Book</a>     
+            </div>
+
 

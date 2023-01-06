@@ -1,9 +1,5 @@
-<div class="place">
-    <h2>Place offers</h2>
-    <p *ngFor="let item of currentHotel?.placeOffers">{{item}}</p>
-</div>
 <div class="rooms">
-    <h2>Rooms</h2>
+    <h2 class="heading">Rooms</h2>
     <div class="room-cards">
         <div *ngFor="let item of currentHotel?.rooms" class="card">
             <div class="slider">
@@ -13,7 +9,7 @@
                             alt="">
                         <button class="slider-right" (click)="nextImage(item)"> > </button>
             </div>
-            <h3><b>Price</b>   {{item.price | currency}}</h3>
+            <h3><b>Price</b>{{item.price | currency}}</h3>
             <p>Bathrooms : {{item.bathRoomsCount}}</p>
             <p>Beds : {{item.bedsCount}}</p>
             <p>Persons : {{item.personsCount}}</p>

@@ -82,7 +82,7 @@ section {
     align-items: flex-start;
 }
 .card p  {
-    color: #ffffff87;
+    color: black;
     font-weight: 100;
     margin-bottom: 4px;
 }
@@ -141,4 +141,7 @@ background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(69,69,69,0.5) 10
     color:#18aaaa; 
     font-weight: 200;
     
+}
+.heading {
+    color: black;
 }
