@@ -34,6 +34,7 @@ import { ReserveHotelComponent } from './components/hotel-cards/reserve-hotel/re
 
 import { AgmCoreModule } from '@agm/core';
 import { HotelMapComponent } from './components/hotel-cards/hotel-map/hotel-map.component';
+import { BookingModalComponent } from './components/booking-modal/booking-modal.component';
 
 
 
@@ -57,6 +58,7 @@ import { HotelMapComponent } from './components/hotel-cards/hotel-map/hotel-map.
     HotelMapComponent,
     ReserveHotelComponent,
     HotelMapComponent,
+    BookingModalComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,9 @@
             <p>Beds : {{item.bedsCount}}</p>
             <p>Persons : {{item.personsCount}}</p>
             <p>Child policy : {{item.childPolicy}}</p>
-            <button class="booking">Book</button>
+                <!-- <button (click)="bookingBtn()" class="booking">Book</button>  -->
+                <button class="booking" mat-button (click)="openDialog()"> Booking </button>
+
         </div>        
     </div>
 </div>

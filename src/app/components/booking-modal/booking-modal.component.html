@@ -1,0 +1,12 @@
+<div class="dialog">
+    <h2 mat-dialog-title>Book Room</h2>
+    <mat-dialog-content class="mat-typography">
+        <h4>Are u sure to book this room</h4>
+        <input placeholder="Add contact (not required)" type="number">
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button class="noBtn" mat-button mat-dialog-close>No</button>
+        <button class="yesBtn" mat-button [mat-dialog-close]="true"  cdkFocusInitial>Yes</button>
+    </mat-dialog-actions>
+</div>
+        
