@@ -35,6 +35,9 @@ import { ReserveHotelComponent } from './components/hotel-cards/reserve-hotel/re
 import { AgmCoreModule } from '@agm/core';
 import { HotelMapComponent } from './components/hotel-cards/hotel-map/hotel-map.component';
 import { BookingModalComponent } from './components/booking-modal/booking-modal.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 
 
@@ -70,6 +73,8 @@ import { BookingModalComponent } from './components/booking-modal/booking-modal.
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
