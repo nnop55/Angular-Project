@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class CheckbooleansService {
 
   checkUserLoggedIn:boolean = false;
+  showHeader:boolean = true;
 
   constructor() { }
 }

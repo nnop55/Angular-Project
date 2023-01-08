@@ -16,7 +16,7 @@
         </div>
         <button mat-stroked-button (click)="goToProfile()" *ngIf="checkUser.checkUserLoggedIn">Profile</button>
     </div>
-    <div class="filter-bar">
+    <div class="filter-bar" *ngIf="checkUser.showHeader">
         <app-filter-slider></app-filter-slider>
     </div>
 </nav>
