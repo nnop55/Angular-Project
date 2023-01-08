@@ -1,0 +1,176 @@
+
+
+section {
+    max-width: 1120px;
+    padding: 0 40px;
+    
+}
+.main {
+    width: 80%;
+    margin: 50px auto 0px;
+    background: #313131;
+    padding: 30px 106px ;
+    border-radius: 5px;
+    padding-bottom: 100px;
+}
+.name{
+    padding: 24px 0 0 0;
+}
+
+.top img {
+    width: 940px;
+    height: 500px;
+    /* object-fit: cover; */
+    border-radius: 10px;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.top h2{
+    font-weight: 200;
+}
+
+.description,
+.place {
+    padding: 10px 0;
+    border-bottom: 3px double #18aaaa;
+    color: #fff;
+}
+
+
+
+.rooms div img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+.rooms h2 {
+    margin: 16px 0;
+}
+
+.room-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.rooms {
+    text-align: center;
+    color: #fff;
+}
+
+.card {
+    /* box-shadow: 0px 0px 5px black; */
+    background-color: transparent;
+    margin: 2px 0;
+    font-size: 14px;
+    border-radius: 0;
+    border: 0;
+    display: flex;
+    align-items: flex-start;
+}
+.card p  {
+    color: black;
+    font-weight: 100;
+    margin-bottom: 4px;
+}
+.card h3 {
+    margin: 16px 0 4px;
+}
+
+.slider {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    position: relative;
+}
+/*
+.slider img {
+    position: relative; 
+}*/
+.slider-left{
+    position: absolute;
+    left: 0;
+}
+.slider-left:hover{
+    background: linear-gradient(90deg, rgba(69,69,69,0.5) 0%, rgba(255,255,255,0) 100%);
+}
+.slider-right{
+    position: absolute;
+    right: 0;
+}
+.slider-right:hover{
+background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(69,69,69,0.5) 100%);
+}
+
+.slider button {
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    font-weight: bolder;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 200ms;
+    height: 100%;
+    width: 20%;
+    align-self: center;
+    font-size: 33px;
+    font-weight: 200;
+    border: 0;
+    border-radius: 10px;
+}
+
+.slider button:hover {
+    opacity: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: baseline;
+    color:#18aaaa; 
+    font-weight: 200;
+    
+}
+.heading {
+    color: black;
+}
+.booking {
+    background-color: black;
+}
+
+.calendar {
+    width: 300px;
+    border: 1px solid white;
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #313131;
+    color: white;
+}
+
+.mdy {
+    border-top: 1px solid black;
+    padding: 5px;
+}
+
+.pricedays {
+    color: black;
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: -10px;
+}

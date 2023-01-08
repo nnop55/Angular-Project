@@ -30,9 +30,14 @@ import { ForgotPasswordComponent } from './components/authorization-forms/forgot
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MastercardEditComponent } from './components/mastercard-edit/mastercard-edit.component';
+import { ReserveHotelComponent } from './components/hotel-cards/reserve-hotel/reserve-hotel.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { HotelMapComponent } from './components/hotel-cards/hotel-map/hotel-map.component';
+import { BookingModalComponent } from './components/booking-modal/booking-modal.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 
 
@@ -54,6 +59,9 @@ import { HotelMapComponent } from './components/hotel-cards/hotel-map/hotel-map.
     ProfileComponent,
     MastercardEditComponent,
     HotelMapComponent,
+    ReserveHotelComponent,
+    HotelMapComponent,
+    BookingModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +73,8 @@ import { HotelMapComponent } from './components/hotel-cards/hotel-map/hotel-map.
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,

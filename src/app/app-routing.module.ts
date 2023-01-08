@@ -9,6 +9,8 @@ import { ForgotPasswordComponent } from './components/authorization-forms/forgot
 import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MastercardEditComponent } from './components/mastercard-edit/mastercard-edit.component';
+import { ReserveHotelComponent } from './components/hotel-cards/reserve-hotel/reserve-hotel.component';
+import { BookingModalComponent } from './components/booking-modal/booking-modal.component';
 
 const routes: Routes = [
   { path: "", component: HotelCardsComponent },
@@ -23,6 +25,9 @@ const routes: Routes = [
   {path: 'profile', component:ProfileComponent},
   {path: 'profile-edit', component: ProfileEditComponent},
   {path: 'mastercard-edit', component: MastercardEditComponent},
+  {path: 'reserve-hotel', component: ReserveHotelComponent},
+  {path: 'reserve-hotel/:id', component: ReserveHotelComponent},
+  {path: 'booking-modal', component: BookingModalComponent},
   { path: 'inner/:id', component: HotelInnerComponent }
 ];
 
