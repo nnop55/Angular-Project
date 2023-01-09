@@ -5,9 +5,11 @@ import { Injectable } from '@angular/core';
 })
 export class CheckbooleansService {
 
-  checkUserLoggedIn: boolean = false;
 
   showHotelsBtn: boolean = false;
+
+  checkUserLoggedIn: boolean = false;
+  showHeader: boolean = true;
 
   constructor() { }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HotelsHttpService } from 'src/app/services/hotels-http.service';
+import { BookingModalComponent } from '../../booking-modal/booking-modal.component';
 
 @Component({
   selector: 'app-reserve-hotel',
@@ -34,6 +35,17 @@ export class ReserveHotelComponent implements OnInit {
       })
     })
   }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(BookingModalComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+    // this.router.navigate(['/booking-modal'])
+  }
+
+
   previousImage(item: any) {
     item.imgIndex = item.imgIndex ? item.imgIndex : 0;
 
@@ -57,5 +69,7 @@ export class ReserveHotelComponent implements OnInit {
     let ev = event.target as HTMLImageElement;
     ev.src = "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png";
   }
+
+
 
 }

@@ -8,10 +8,14 @@ import { CheckbooleansService } from '../../services/checkbooleans.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(public checkUser: CheckbooleansService, private router: Router) { }
-
+hideheader:any
+  constructor(public checkUser: CheckbooleansService, private router: Router) {}
+  
+  
   ngOnInit(): void {
+  
+  console.log(this.hideheader);
+  
   }
 
   logOut() {                                             //Log out from account and navigate on register component
@@ -26,5 +30,6 @@ export class HeaderComponent implements OnInit {
   map(){
     this.router.navigate(['/hotel-map'])
   }
+  
 
 }
