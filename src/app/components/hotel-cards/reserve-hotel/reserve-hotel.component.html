@@ -2,14 +2,14 @@
     <div appearance="fill">
         <label>Enter a date range</label>
         <mat-date-range-input [rangePicker]="picker">
-          <input matStartDate placeholder="Start date">
-          <input matEndDate placeholder="End date">
+            <input matStartDate placeholder="Start date" [(ngModel)]="date['date_from']">
+            <input matEndDate placeholder="End date" [(ngModel)]="date['date_to']">
         </mat-date-range-input>
-        <mat-datepicker-toggle  matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-date-range-picker  #picker></mat-date-range-picker>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
         <p class="mdy">MM/DD/YYYY – MM/DD/YYYY</p>
-        <button class="pricedays">Calculate price and book days</button>
-      </div>
+        <button class="pricedays" (click)="getDifferenceInDays()">Calculate price and book days</button>
+    </div>
 </div>
 
 <div class="rooms">
@@ -19,18 +19,16 @@
             <div class="slider">
                 <button class="slider-left" (click)="previousImage(item)">
                     < </button>
-                        <img [src]="item.images[item.imgIndex ? item.imgIndex : 0]" (error)="updateUrl($event)"
-                            alt="">
+                        <img [src]="item.images[item.imgIndex ? item.imgIndex : 0]" (error)="updateUrl($event)" alt="">
                         <button class="slider-right" (click)="nextImage(item)"> > </button>
             </div>
-            <h3><b>Price</b>{{item.price | currency}}</h3>
+            <h3><b>Price</b> : {{item.price | currency}}</h3>
             <p>Bathrooms : {{item.bathRoomsCount}}</p>
             <p>Beds : {{item.bedsCount}}</p>
             <p>Persons : {{item.personsCount}}</p>
             <p>Child policy : {{item.childPolicy}}</p>
-                <button class="booking" mat-button (click)="openDialog()"> Booking </button>
+            <button class="booking" mat-button (click)="openDialog(item)"> Booking </button>
 
-        </div>        
+        </div>
     </div>
 </div>
-    

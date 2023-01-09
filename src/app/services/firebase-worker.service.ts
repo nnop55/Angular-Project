@@ -4,6 +4,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat
 import { User } from '../models/user.model';
 import { Observable, of, switchMap } from 'rxjs';
 import { Router } from '@angular/router';
+import { HotelBook } from '../models/hotel-book.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,22 @@ export class FirebaseWorkerService {
           }
         })
       )
+  }
+
+  getDataByDocumentName(document: string): any {
+    return this.firestore.collection<any>(document);
+  }
+
+  setDataByDocumentName(document: string, uid: string): any {
+    return this.firestore.doc<any>(`${document}/${uid}`)
+  }
+
+  createBookHistory(item: HotelBook) {
+    let uid = this.firestore.createId();
+
+    const bookRef: AngularFirestoreDocument<any> = this.firestore.doc(
+      `book-history/${uid}`
+    )
   }
 
 

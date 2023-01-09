@@ -1,19 +1,19 @@
-
-
 section {
     max-width: 1120px;
     padding: 0 40px;
-    
+
 }
+
 .main {
     width: 80%;
     margin: 50px auto 0px;
     background: #313131;
-    padding: 30px 106px ;
+    padding: 30px 106px;
     border-radius: 5px;
     padding-bottom: 100px;
 }
-.name{
+
+.name {
     padding: 24px 0 0 0;
 }
 
@@ -37,7 +37,8 @@ section {
     align-items: center;
     color: #fff;
 }
-.top h2{
+
+.top h2 {
     font-weight: 200;
 }
 
@@ -55,6 +56,7 @@ section {
     height: 300px;
     border-radius: 10px;
 }
+
 .rooms h2 {
     margin: 16px 0;
 }
@@ -82,13 +84,16 @@ section {
     display: flex;
     align-items: flex-start;
 }
-.card p  {
+
+.card p {
     color: black;
     font-weight: 100;
     margin-bottom: 4px;
 }
+
 .card h3 {
     margin: 16px 0 4px;
+    color: black;
 }
 
 .slider {
@@ -97,23 +102,27 @@ section {
     gap: 10px;
     position: relative;
 }
+
 /*
 .slider img {
     position: relative; 
 }*/
-.slider-left{
+.slider-left {
     position: absolute;
     left: 0;
 }
-.slider-left:hover{
-    background: linear-gradient(90deg, rgba(69,69,69,0.5) 0%, rgba(255,255,255,0) 100%);
+
+.slider-left:hover {
+    background: linear-gradient(90deg, rgba(69, 69, 69, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
 }
-.slider-right{
+
+.slider-right {
     position: absolute;
     right: 0;
 }
-.slider-right:hover{
-background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(69,69,69,0.5) 100%);
+
+.slider-right:hover {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(69, 69, 69, 0.5) 100%);
 }
 
 .slider button {
@@ -139,13 +148,15 @@ background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(69,69,69,0.5) 10
     flex-wrap: wrap;
     justify-content: start;
     align-items: baseline;
-    color:#18aaaa; 
+    color: #18aaaa;
     font-weight: 200;
-    
+
 }
+
 .heading {
     color: black;
 }
+
 .booking {
     background-color: black;
 }
