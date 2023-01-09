@@ -5,9 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class CheckbooleansService {
 
+  bookStatus: string = 'Active';
+
+
+  showHotelsBtn: boolean = false;
+
   checkUserLoggedIn: boolean = false;
   showHeader: boolean = true;
-  bookStatus: string = 'Active';
 
   constructor() { }
 }

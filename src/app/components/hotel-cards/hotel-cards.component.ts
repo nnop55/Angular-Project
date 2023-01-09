@@ -15,9 +15,15 @@ export class HotelCardsComponent implements OnInit {
   constructor(public hotel: HotelsHttpService) { }
 
   ngOnInit(): void {
-    this.hotelObservable = this.hotel.getHotels()
+    this.getHotelInfo();
   }
-  
+  getHotelInfo() {
+    this.hotel.getHotels().subscribe((res: any) => {
+      this.hotel.filteredHotelsArr = res;
+      console.log(this.hotel.filteredHotelsArr);
+    })
+  }
+
   previousImage(item: any) {
     item.imgIndex = item.imgIndex ? item.imgIndex : 0;
 

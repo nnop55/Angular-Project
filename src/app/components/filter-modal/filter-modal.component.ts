@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
+import { ICON_REGISTRY_PROVIDER } from '@angular/material/icon';
+import { filter, from } from 'rxjs';
 import { HotelsHttpService } from 'src/app/services/hotels-http.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { HotelsHttpService } from 'src/app/services/hotels-http.service';
 })
 export class FilterModalComponent implements OnInit {
 
-typeOfPlace: any[] = [];
+  typeOfPlace: any[] = [];
   bedrooms: any[] = [];
   beds: any[] = [];
   bathrooms: any[] = [];
@@ -25,6 +26,7 @@ typeOfPlace: any[] = [];
       name: '',
     }
   ];
+  checkBooleans: any;
 
   constructor(private http: HotelsHttpService) { }
 
@@ -38,23 +40,27 @@ typeOfPlace: any[] = [];
   }
 
   saveFilterBtn() {
-        if (parseInt(this.priceRange.price_from) > parseInt(this.priceRange.price_to)) {
-          alert("Incorrect price range!")
-        } else {
-          console.log('typeOfPlace : ', this.typeOfPlace);
-          console.log('bathrooms : ', this.bathrooms);
-          console.log('bedrooms : ', this.bedrooms);
-          console.log('beds : ', this.beds);
-          console.log('hostLanguage : ', this.hostLanguage);
-          console.log('price : ', this.priceRange);
-          console.log('propertyType : ', this.propertyType);
-        }
+    if (parseInt(this.priceRange.price_from) > parseInt(this.priceRange.price_to)) {
+      alert("Incorrect price range!")
+    } else {
+      this.filterHotels();
+
+      this.http.filteredHotelsArr = [];
+      this.http.getFilteredHotels(this.selectedFilter).subscribe(res => {
+        this.http.filteredHotelsArr = res;
+        console.log(this.http.filteredHotelsArr)
+      })
+      console.log(this.selectedFilter)
+    }
   }
 
   addAmenitiesForm() {
     this.amenitiesForm.push({
       name: '',
     });
+  }
+  removeAmenitiesForm(index: any) {
+    this.amenitiesForm.splice(index, 1)
   }
 
   typeOfPlaceFunc() {
@@ -160,4 +166,109 @@ typeOfPlace: any[] = [];
       { name: 'Italian', clicked: false },
     ]
   }
+
+  filterHotels() {
+    //priceRAnge
+    this.selectedFilter['priceFrom'] = this.priceRange['priceFrom'];
+    this.selectedFilter['priceTo'] = this.priceRange['priceTo'];
+
+    //typeOfPlace
+
+    this.typeOfPlace.forEach((e: any) => {
+      this.selectedFilter['typeOfPlace'] = this.selectedFilter['typeOfPlace']
+        == undefined ? "" : this.selectedFilter['typeOfPlace'];
+
+      if (this.selectedFilter['typeOfPlace'] == "") {
+        this.selectedFilter['typeOfPlace'] += e.clicked == true ? e.name : '';
+      }
+    })
+    this.selectedFilter['typeOfPLace'] = this.selectedFilter['typeOfPlace']
+      == "" ? undefined : this.selectedFilter['typeOfPlace'];
+
+    //bedrroms
+    this.bedrooms.forEach((e: any) => {
+      this.selectedFilter['bedrooms'] = this.selectedFilter['bedrooms']
+        == undefined ? "" : this.selectedFilter['bedrooms'];
+
+      if (this.selectedFilter['bedrooms'] == "") {
+        this.selectedFilter['bedrooms'] += e.clicked == true ? e.name : '';
+      }
+    })
+    this.selectedFilter['bedrooms'] = this.selectedFilter['bedrooms']
+      == "" ? undefined : this.selectedFilter['bedrooms'];
+    this.selectedFilter['bedrooms'] = this.selectedFilter['bedrooms']
+      == 'ANY' ? undefined : this.selectedFilter['bedrooms']
+
+    //beds
+    this.beds.forEach((e: any) => {
+      this.selectedFilter['beds'] = this.selectedFilter['beds']
+        == undefined ? "" : this.selectedFilter['beds'];
+
+      if (this.selectedFilter['beds'] == "") {
+        this.selectedFilter['beds'] += e.clicked == true ? e.name : '';
+      }
+    })
+    this.selectedFilter['beds'] = this.selectedFilter['beds']
+      == "" ? undefined : this.selectedFilter['beds'];
+    this.selectedFilter['beds'] = this.selectedFilter['beds']
+      == "ANY" ? undefined : this.selectedFilter['beds'];
+
+    //bathrooms
+    this.bathrooms.forEach((e: any) => {
+      this.selectedFilter['bathrooms'] = this.selectedFilter['bathrooms']
+        == undefined ? "" : this.selectedFilter['bathrooms'];
+
+      if (this.selectedFilter['bathrooms'] == "") {
+        this.selectedFilter['bathrooms'] += e.clicked == true ? e.name : '';
+      }
+    })
+    this.selectedFilter['bathrooms'] = this.selectedFilter['bathrooms']
+      == "" ? undefined : this.selectedFilter['bathrooms'];
+
+    this.selectedFilter['bathrooms'] = this.selectedFilter['bathrooms']
+      == 'ANY' ? undefined : this.selectedFilter['bathrooms'];
+
+
+    //propertyType
+    this.propertyType.forEach((e: any) => {
+      this.selectedFilter['propertyType'] = this.selectedFilter['propertyType']
+        == undefined ? "" : this.selectedFilter['propertyType'];
+
+      if (this.selectedFilter['propertyType'] == "") {
+        this.selectedFilter['propertyType'] += e.clicked == true ? e.name : '';
+      }
+    })
+    this.selectedFilter['propertyType'] = this.selectedFilter['propertyType']
+      == "" ? undefined : this.selectedFilter['propertyType'];
+
+    //amenities
+    this.amenitiesForm.forEach((e: any) => {
+      this.selectedFilter['amenities'] = this.selectedFilter['amenities']
+        == undefined ? "" : this.selectedFilter['amenities'];
+
+      if (this.selectedFilter['amenities'] == "") {
+        this.selectedFilter['amenities'] += e.name != '' ? e.name : '';
+      } else {
+        this.selectedFilter['amenities'] += e.name != '' ? '&Amenities=' + e.name : '';
+      }
+    })
+    this.selectedFilter['amenities'] = this.selectedFilter['amenities']
+      == "" ? undefined : this.selectedFilter['amenities'];
+
+    //hostLanguage
+    this.hostLanguage.forEach((e: any) => {
+      this.selectedFilter['hostLanguage'] = this.selectedFilter['hostLanguage']
+        == undefined ? "" : this.selectedFilter['hostLanguage']
+
+      if (this.selectedFilter['hostLanguage'] == "") {
+        this.selectedFilter['hostLanguage'] += e.clicked == true ? e.name : "";
+      } else {
+        this.selectedFilter['hostLanguage'] += e.clicked == true ? '&HostLanguages=' + e.name : '';
+      }
+    })
+    this.selectedFilter['hostLanguage'] = this.selectedFilter['hostLanguage']
+      == "" ? undefined : this.selectedFilter['hostLanguage']
+  }
+
 }
+

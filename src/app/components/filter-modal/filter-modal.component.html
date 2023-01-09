@@ -1,78 +1,78 @@
-
 <div class="dialog">
-  <h2 mat-dialog-title>Filter hotels</h2>
-  <mat-dialog-content class="mat-typography">
-      <div class="main">
-          <div class="price-range">
-              <h1>Price range</h1>
-              <div class="inputs">
-                  <input type="number" placeholder="Price From" [(ngModel)]="priceRange['priceFrom']">
-                  <input type="number" placeholder="Price To" [(ngModel)]="priceRange['priceTo']">
-              </div>
-          </div>
-          <div class="type-of-place">
-              <h1>Type of place</h1>
-              <div class="place-select" *ngFor="let item of typeOfPlace">
-                  <input type="checkbox" [(ngModel)]="item.clicked">
-                  <div class="place-text">
-                      <label>{{item.name}}</label>
-                      <p>{{item.desc}}</p>
-                  </div>
-              </div>
-          </div>
-          <div class="rooms-and-beds">
-              <h1>Rooms and Beds</h1>
-              <h4 class="quantity-h4">Bedrooms</h4>
-              <div class="bedrooms">
-                  <button *ngFor="let item of bedrooms" [ngClass]="{'change-btn-color':item.clicked}"
-                      (click)="bedroomsClick(item)" class="btn">{{item.name}}</button>
-              </div>
-              <h4 class="quantity-h4">Beds</h4>
-              <div class="beds">
-                  <button *ngFor="let item of beds" [ngClass]="{'change-btn-color':item.clicked}"
-                      (click)="bedsClick(item)" class="btn">{{item.name}}</button>
-              </div>
-              <h4 class="quantity-h4">Bathrooms</h4>
-              <div class="bathrooms">
-                  <button *ngFor="let item of bathrooms" [ngClass]="{'change-btn-color':item.clicked}"
-                      (click)="bathroomsClick(item)" class="btn">{{item.name}}</button>
-              </div>
-          </div>
-          <div class="property-type">
-              <h1 class=>Property type</h1>
-              <div class="property-btns">
-                  <button *ngFor="let item of propertyType" [ngClass]="{'property-selected': item.clicked}"
-                      (click)="propertyTypeClick(item)" class="property-button">
-                      <i [class]="item.icon"></i> {{item.name}}
-                  </button>
-              </div>
-          </div>
-          <div class="amenities">
-              <h1>Amenities</h1>
-              <div class="amenities-container">
-                  <div class="amenities-select">
-                      <div class="input-btn" *ngFor="let item of amenitiesForm">
-                          <input type="text" placeholder="Ex. Wifi" [(ngModel)]="item.name">
-                          <button (click)="addAmenitiesForm()">Add</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="host-language">
-              <h1>Host Language</h1>
-              <div class="sides">
-                  <div class="language-left">
-                      <div class="selected-left" *ngFor="let item of hostLanguage">
-                          <input type="checkbox" [(ngModel)]="item.clicked">
-                          <p>{{item.name}}</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </mat-dialog-content>
-  <mat-dialog-actions align="end">
-      <button mat-button mat-dialog-close>Cancel</button>
-      <button mat-button [mat-dialog-close]="true" (click)="saveFilterBtn()" cdkFocusInitial>Done</button>
-  </mat-dialog-actions>
+    <h2 mat-dialog-title>Filter hotels</h2>
+    <mat-dialog-content class="mat-typography">
+        <div class="main">
+            <div class="price-range">
+                <h1>Price range</h1>
+                <div class="inputs">
+                    <input type="number" placeholder="Price From" [(ngModel)]="priceRange['priceFrom']">
+                    <input type="number" placeholder="Price To" [(ngModel)]="priceRange['priceTo']">
+                </div>
+            </div>
+            <div class="type-of-place">
+                <h1>Type of place</h1>
+                <div class="place-select" *ngFor="let item of typeOfPlace">
+                    <input type="checkbox" [(ngModel)]="item.clicked">
+                    <div class="place-text">
+                        <label>{{item.name}}</label>
+                        <p>{{item.desc}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rooms-and-beds">
+                <h1>Rooms and Beds</h1>
+                <h4 class="quantity-h4">Bedrooms</h4>
+                <div class="bedrooms">
+                    <button *ngFor="let item of bedrooms" [ngClass]="{'change-btn-color':item.clicked}"
+                        (click)="bedroomsClick(item)" class="btn">{{item.name}}</button>
+                </div>
+                <h4 class="quantity-h4">Beds</h4>
+                <div class="beds">
+                    <button *ngFor="let item of beds" [ngClass]="{'change-btn-color':item.clicked}"
+                        (click)="bedsClick(item)" class="btn">{{item.name}}</button>
+                </div>
+                <h4 class="quantity-h4">Bathrooms</h4>
+                <div class="bathrooms">
+                    <button *ngFor="let item of bathrooms" [ngClass]="{'change-btn-color':item.clicked}"
+                        (click)="bathroomsClick(item)" class="btn">{{item.name}}</button>
+                </div>
+            </div>
+            <div class="property-type">
+                <h1 class=>Property type</h1>
+                <div class="property-btns">
+                    <button *ngFor="let item of propertyType" [ngClass]="{'property-selected': item.clicked}"
+                        (click)="propertyTypeClick(item)" class="property-button">
+                        <i [class]="item.icon"></i> {{item.name}}
+                    </button>
+                </div>
+            </div>
+            <div class="amenities">
+                <h1>Amenities</h1>
+                <div class="amenities-container">
+                    <div class="amenities-select">
+                        <div class="input-btn" *ngFor="let item of amenitiesForm;let i = index">
+                            <input type="text" placeholder="Ex. Wifi" [(ngModel)]="item.name">
+                            <button *ngIf="i == 0" (click)="addAmenitiesForm()">Add</button>
+                            <button *ngIf="i > 0" (click)="removeAmenitiesForm(i)">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="host-language">
+                <h1>Host Language</h1>
+                <div class="sides">
+                    <div class="language-left">
+                        <div class="selected-left" *ngFor="let item of hostLanguage">
+                            <input type="checkbox" [(ngModel)]="item.clicked">
+                            <p>{{item.name}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button [mat-dialog-close]="true" (click)="saveFilterBtn()" cdkFocusInitial>Done</button>
+    </mat-dialog-actions>
 </div>

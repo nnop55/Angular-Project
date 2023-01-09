@@ -85,6 +85,7 @@ const firebaseModules = [
     ProfileEditComponent,
     ProfileComponent,
     MastercardEditComponent,
+    ReserveHotelComponent,
     HotelMapComponent,
     ReserveHotelComponent,
     HotelMapComponent,
