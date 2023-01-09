@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { CheckbooleansService } from 'src/app/services/checkbooleans.service';
 import { HotelsHttpService } from 'src/app/services/hotels-http.service';
 import { FilterModalComponent } from '../../filter-modal/filter-modal.component';
 
@@ -14,7 +15,8 @@ export class FilterSliderComponent implements OnInit {
   @ViewChild('scrollArea', { static: true }) scrollArea!: ElementRef<HTMLElement>;
   btnDisable: boolean = false;
   btnDisable2: boolean = true;
-  constructor(private dialog: MatDialog, private categoryHttp: HotelsHttpService) { }
+  constructor(private dialog: MatDialog, private categoryHttp: HotelsHttpService
+    , private checkBooleans: CheckbooleansService) { }
 
   ngOnInit(): void {
     this.getSliderData();
@@ -77,6 +79,15 @@ export class FilterSliderComponent implements OnInit {
       }
     }, 10)
   }
+
+  getByCategoryData(id: string) {
+    this.categoryHttp.getFilteredHotels({ id: id }).subscribe((res: any) => {
+      this.categoryHttp.filteredHotelsArr = res;
+      this.checkBooleans.showHotelsBtn = true;
+      console.log(this.categoryHttp.filteredHotelsArr);
+    })
+  }
+
 
 
 }

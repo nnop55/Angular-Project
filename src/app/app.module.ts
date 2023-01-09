@@ -54,11 +54,8 @@ import { HotelMapComponent } from './components/hotel-cards/hotel-map/hotel-map.
     ProfileEditComponent,
     ProfileComponent,
     MastercardEditComponent,
-<<<<<<< HEAD
     ReserveHotelComponent,
-=======
-    HotelMapComponent,
->>>>>>> 17f11ae48f79a627b8bcd2a6f788c3b885aaa23d
+    HotelMapComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +73,7 @@ import { HotelMapComponent } from './components/hotel-cards/hotel-map/hotel-map.
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     AgmCoreModule.forRoot({
-      apiKey:'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw'
+      apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw'
     })
   ],
   providers: [],
