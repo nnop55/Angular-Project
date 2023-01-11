@@ -7,11 +7,21 @@
 }
 
 .card img {
-    width: 250px;
+    width: 290px;
+    height: 190px;
+    object-fit: cover;
 }
 
 .card {
-    width: 250px;
+    width: 290px;
+    height: max-content;
     display: flex;
     flex-direction: column;
+    margin: 10px 15px;
+    overflow: hidden;
+}
+.card_text{
+    font-size: 15px;
+    font-weight: 300;
+    padding: 15px;
 }

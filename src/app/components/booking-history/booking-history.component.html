@@ -1,9 +1,11 @@
 <div class="main">
     <div *ngFor="let item of bookedHotelsData" class="card">
         <img [src]="item.hotelImg" alt="">
-        Hotel: {{item.hotelName}}
-        From: {{item.startDate}}
-        To: {{item.endDate}}
-        Status: {{item.status}}
+   <div class="card_text">
+   <div> <b>Hotel:</b>  {{item.hotelName}}</div>
+   <div> <b>From:</b> {{item.startDate}}</div>
+    <div><b>To:</b> {{item.endDate}}</div>
+    <div><b>Status:</b> {{item.status}}</div>
+   </div>
     </div>
 </div>
