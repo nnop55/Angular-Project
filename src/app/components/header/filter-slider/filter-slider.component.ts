@@ -13,8 +13,10 @@ export class FilterSliderComponent implements OnInit {
   sliderData: any[] = [];
 
   @ViewChild('scrollArea', { static: true }) scrollArea!: ElementRef<HTMLElement>;
+
   btnDisable: boolean = false;
   btnDisable2: boolean = true;
+
   constructor(private dialog: MatDialog, private categoryHttp: HotelsHttpService
     , private checkBooleans: CheckbooleansService) { }
 
@@ -22,14 +24,14 @@ export class FilterSliderComponent implements OnInit {
     this.getSliderData();
   }
 
-  getSliderData() {
+  getSliderData() {                               //Movusminet kategoriebis informacias
     this.categoryHttp.getCategories().subscribe(res => {
       this.sliderData = res;
       console.log(this.sliderData)
     })
   }
 
-  openDialog() {
+  openDialog() {                                 //Filter dialogis gamodzaxeba
     const dialogRef = this.dialog.open(FilterModalComponent);
 
     dialogRef.afterClosed().subscribe(result => {
@@ -37,7 +39,7 @@ export class FilterSliderComponent implements OnInit {
     });
   }
 
-  onHorizontalScrollLeft() {
+  onHorizontalScrollLeft() {                     //Slaideri
     let element = this.scrollArea.nativeElement as HTMLElement;
     this.btnDisable = false;
     let inc = 25;
@@ -58,7 +60,7 @@ export class FilterSliderComponent implements OnInit {
     }, 10)
   }
 
-  onHorizontalScrollRight() {
+  onHorizontalScrollRight() {                     //Slaideri
     let element = this.scrollArea.nativeElement as HTMLElement;
     this.btnDisable2 = false;
 
@@ -80,7 +82,7 @@ export class FilterSliderComponent implements OnInit {
     }, 10)
   }
 
-  getByCategoryData(id: string) {
+  getByCategoryData(id: string) {                     //Filtracia kategoriis mixedvit
     this.categoryHttp.getFilteredHotels({ id: id }).subscribe((res: any) => {
       this.categoryHttp.filteredHotelsArr = res;
       this.checkBooleans.showHotelsBtn = true;

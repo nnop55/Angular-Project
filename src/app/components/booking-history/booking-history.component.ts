@@ -20,15 +20,15 @@ export class BookingHistoryComponent implements OnInit {
     this.checkUser();
   }
 
-  checkUser() {
+  checkUser() {                                       //Momxmareblis shemowmeba aris tu ara shemosuli
     this.user = localStorage.getItem('user');
     this.user = JSON.parse(this.user);
     if (this.user) {
-      //
+      this.checkHistory();
     }
   }
 
-  checkHistory() {
+  checkHistory() {                                        //Dajavshnili sastumroebis informaciis shenaxva masivshi
     this.firebase.getDataByDocumentName('book-history').valueChanges().pipe(
       map((items: any) =>
         items.filter((item: any) => item.user_id == this.user.uid))

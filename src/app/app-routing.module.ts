@@ -11,24 +11,25 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { MastercardEditComponent } from './components/mastercard-edit/mastercard-edit.component';
 import { ReserveHotelComponent } from './components/hotel-cards/reserve-hotel/reserve-hotel.component';
 import { BookingModalComponent } from './components/booking-modal/booking-modal.component';
+import { BookingHistoryComponent } from './components/booking-history/booking-history.component';
 
 const routes: Routes = [
   { path: "", component: HotelCardsComponent },
-  {path: "hotel-map", component: HotelMapComponent},
+  { path: "hotel-map", component: HotelMapComponent },
   {
     path: 'authorization', children: [
       { path: "login", component: LoginFormComponent },
       { path: "register", component: RegisterFormComponent },
-      {path: "forgot-password", component: ForgotPasswordComponent},
+      { path: "forgot-password", component: ForgotPasswordComponent },
     ]
   },
-  {path: 'profile', component:ProfileComponent},
-  {path: 'profile-edit', component: ProfileEditComponent},
-  {path: 'mastercard-edit', component: MastercardEditComponent},
-  {path: 'reserve-hotel', component: ReserveHotelComponent},
-  {path: 'reserve-hotel/:id', component: ReserveHotelComponent},
-  {path: 'booking-modal', component: BookingModalComponent},
-  { path: 'inner/:id', component: HotelInnerComponent }
+  { path: 'profile', component: ProfileComponent },
+  { path: 'profile-edit', component: ProfileEditComponent },
+  { path: 'mastercard-edit', component: MastercardEditComponent },
+  { path: 'reserve-hotel/:id', component: ReserveHotelComponent },
+  { path: 'booking-modal', component: BookingModalComponent },
+  { path: 'inner/:id', component: HotelInnerComponent },
+  { path: 'reserve-history', component: BookingHistoryComponent }
 ];
 
 

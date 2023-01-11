@@ -5,14 +5,15 @@
                 <h1>Edit your Profile</h1>
             </div>
             <div class="inputs">
-                <label >Enter Your Email</label>
+                <label>Enter Your Email</label>
                 <input required type="text" placeholder="Email" [(ngModel)]="email" name="email">
 
                 <label class="label">Enter Your UserName</label>
                 <input required type="text" placeholder="Username" [(ngModel)]="userName" name="userName">
 
                 <label class="label">Enter Your Phone Number</label>
-                <input required type="tel" placeholder="Phone Number" [(ngModel)]="phoneNumber" name="phoneNumber">
+                <input required maxlength="10" type="tel" placeholder="Phone Number" [(ngModel)]="phoneNumber"
+                    name="phoneNumber">
 
             </div>
             <div class="reg-btn">

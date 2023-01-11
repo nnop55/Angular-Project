@@ -1,1 +1,9 @@
-<p>booking-history works!</p>
+<div class="main">
+    <div *ngFor="let item of bookedHotelsData" class="card">
+        <img [src]="item.hotelImg" alt="">
+        Hotel: {{item.hotelName}}
+        From: {{item.startDate}}
+        To: {{item.endDate}}
+        Status: {{item.status}}
+    </div>
+</div>

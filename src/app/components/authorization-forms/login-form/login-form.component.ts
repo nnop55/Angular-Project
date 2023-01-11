@@ -24,18 +24,17 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onFormSubmit(form: NgForm) {
+  onFormSubmit(form: NgForm) {                                            //Accountze shesvla
     this.fireWorker.signIn(form.value.email, form.value.password).then(response => {
       response.subscribe((user: any) => { console.log(user) })
       this.checkUser.checkUserLoggedIn = true;
-
     })
     this.router.navigate(['/'])
   }
 
 
 
-  eyeIconToggle() {
+  eyeIconToggle() {                   //Parolis damalva an chveneba inputshi
     this.checkInpType = !this.checkInpType;
     if (this.checkInpType) {
       this.eyeIcon = 'ri-eye-off-fill';

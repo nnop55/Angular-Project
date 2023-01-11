@@ -12,46 +12,32 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 export class MastercardEditComponent implements OnInit {
 
   uid!: string;
-  userName!: string;
-  phoneNumber!: string;
-  email!: string;
-  cardNumber!:number;
-  cardCvv!:number;
+  cardNumber!: number;
+  cardCvv!: number;
   expirationDate!: string;
 
+  constructor(private router: Router,
+    private fireWorker: FirebaseWorkerService, private afs: AngularFirestore) { }
 
-
-  inpType: string = 'password';
-  user: User = new User();
-
-  constructor(private router:Router,
-     private fireWorker:FirebaseWorkerService, private afs:AngularFirestore) { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {                 //Useris baratis informaciis shenaxva cvladebshi
     this.fireWorker.user$.subscribe((user: any) => {
-      this.uid = user.id;
-      this.userName = user.userName;
-      this.phoneNumber = user.phoneNumber;
-      this.email = user.email;
+      this.uid = user.uid;
       this.cardNumber = user.cardNumber;
       this.cardCvv = user.cardCvv;
       this.expirationDate = user.expirationDate;
 
-      
+
       console.log(user);
     })
   }
 
-  onFormSubmit() {
+  onFormSubmit() {            //Baratis informaciis daediteba
     this.afs.collection('users').doc(this.uid).set({
-      'userName': this.userName,
-      'phoneNumber': this.phoneNumber,
-      'email': this.email,
       'cardNumber': this.cardNumber,
       'cardCvv': this.cardCvv,
       'expirationDate': this.expirationDate,
 
-      
+
     }, { merge: true })
       .then(() => {
         this.router.navigate(['/profile'])

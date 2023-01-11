@@ -37,15 +37,17 @@
                                     alt="">
                                 <button class="slider-right" (click)="nextImage(item)"> > </button>
                     </div>
-                    <h3><b>Price</b>   {{item.price | currency}}</h3>
+                    <h3><b>Price</b> {{item.price | currency}}</h3>
                     <p>Bathrooms : {{item.bathRoomsCount}}</p>
                     <p>Beds : {{item.bedsCount}}</p>
                     <p>Persons : {{item.personsCount}}</p>
                     <p>Child policy : {{item.childPolicy}}</p>
                 </div>
             </div>
-            <div>    
-                <a [routerLink]="['/reserve-hotel/', currentHotel.id]">Book</a>     
+            <div>
+                <button [routerLink]="['/reserve-hotel/', currentHotel?.id]" mat-raised-button>Book
+                    room</button>
             </div>
-
-
+        </div>
+    </div>
+</div>

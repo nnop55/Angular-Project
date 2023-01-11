@@ -13,8 +13,11 @@
             <button mat-stroked-button routerLink="/authorization/login" *ngIf="!checkUser.checkUserLoggedIn"
                 routerLinkActive="active">Log In</button>
             <button mat-stroked-button (click)="logOut()" *ngIf="checkUser.checkUserLoggedIn">Log Out</button>
+            <button mat-stroked-button routerLink="/reserve-history" routerLinkActive="active"
+                *ngIf="checkUser.checkUserLoggedIn">Reservation
+                history</button>
+            <button mat-stroked-button (click)="goToProfile()" *ngIf="checkUser.checkUserLoggedIn">Profile</button>
         </div>
-        <button mat-stroked-button (click)="goToProfile()" *ngIf="checkUser.checkUserLoggedIn">Profile</button>
     </div>
     <div class="filter-bar" *ngIf="checkUser.showHeader">
         <app-filter-slider></app-filter-slider>

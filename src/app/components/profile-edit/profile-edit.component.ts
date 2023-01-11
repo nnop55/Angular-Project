@@ -15,26 +15,17 @@ export class ProfileEditComponent implements OnInit {
   userName!: string;
   phoneNumber!: string;
   email!: string;
-  cardNumber!:number;
-  cardCvv!:number;
-  expirationDate!:string;
-
-  inpType: string = 'password';
-  user: User = new User();
 
 
-  constructor(private router:Router, private fireWorker:FirebaseWorkerService,
-    private afs:AngularFirestore) { }
+  constructor(private router: Router, private fireWorker: FirebaseWorkerService,
+    private afs: AngularFirestore) { }
 
   ngOnInit(): void {
     this.fireWorker.user$.subscribe((user: any) => {
-      this.uid = user.id;
+      this.uid = user.uid;
       this.userName = user.userName;
       this.phoneNumber = user.phoneNumber;
       this.email = user.email;
-      this.cardNumber = user.cardNumber;
-      this.cardCvv = user.cardCvv;
-      this.expirationDate = user.expirationDate;
       console.log(user);
     })
   }
@@ -44,9 +35,6 @@ export class ProfileEditComponent implements OnInit {
       'userName': this.userName,
       'phoneNumber': this.phoneNumber,
       'email': this.email,
-      'cardNumber': this.cardNumber,
-      'cardCvv': this.cardCvv,
-      'expirationDate': this.expirationDate
     }, { merge: true })
       .then(() => {
         this.router.navigate(['/profile'])

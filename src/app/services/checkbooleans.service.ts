@@ -7,7 +7,6 @@ export class CheckbooleansService {
 
   bookStatus: string = 'Active';
 
-
   showHotelsBtn: boolean = false;
 
   checkUserLoggedIn: boolean = false;

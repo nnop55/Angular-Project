@@ -11,12 +11,12 @@ import { FirebaseWorkerService } from 'src/app/services/firebase-worker.service'
 export class ProfileComponent implements OnInit {
   user: any;
 
-  constructor(private router:Router, 
-    private fireWorker:FirebaseWorkerService) { }
+  constructor(private router: Router,
+    private fireWorker: FirebaseWorkerService) { }
 
 
   ngOnInit(): void {
-    this.fireWorker.user$.subscribe((user:any) => {
+    this.fireWorker.user$.subscribe((user: any) => {    //Useris informaciis shenaxva cvladshi rom gamovitanot vizualze
       this.user = user;
       console.log(user);
     })

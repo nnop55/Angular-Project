@@ -28,6 +28,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 import { FilterModalComponent } from './components/filter-modal/filter-modal.component';
@@ -48,6 +49,7 @@ import { BookingModalComponent } from './components/booking-modal/booking-modal.
 
 import { ContinueBookingModalComponent } from './components/continue-booking-modal/continue-booking-modal.component';
 import { BookingHistoryComponent } from './components/booking-history/booking-history.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 
 const materialModules = [
@@ -57,7 +59,8 @@ const materialModules = [
   MatSnackBarModule,
   MatIconModule,
   MatNativeDateModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatProgressSpinnerModule
 ];
 
 const firebaseModules = [
@@ -92,6 +95,8 @@ const firebaseModules = [
     BookingModalComponent,
     ContinueBookingModalComponent,
     BookingHistoryComponent,
+    LoaderComponent,
+
   ],
   imports: [
     BrowserModule,

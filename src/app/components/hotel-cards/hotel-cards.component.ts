@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { HotelsHttpService } from './../../services/hotels-http.service';
 import { Component, OnInit } from '@angular/core';
+import { CheckbooleansService } from 'src/app/services/checkbooleans.service';
 
 
 @Component({
@@ -12,19 +13,25 @@ export class HotelCardsComponent implements OnInit {
 
   hotelObservable!: Observable<any>
 
-  constructor(public hotel: HotelsHttpService) { }
+  constructor(public hotel: HotelsHttpService, public check: CheckbooleansService) { }
 
   ngOnInit(): void {
-    this.getHotelInfo();
+    this.getHotelsInfo();
   }
-  getHotelInfo() {
+
+  getHotelsInfo() {                                //Yvela sastumros informacia
     this.hotel.getHotels().subscribe((res: any) => {
       this.hotel.filteredHotelsArr = res;
       console.log(this.hotel.filteredHotelsArr);
     })
   }
 
-  previousImage(item: any) {
+  showAllHotels() {         //Filtraciis shemdeg yvela sastumros naxva gilakze daklikebisas
+    this.getHotelsInfo();
+    this.check.showHotelsBtn = false;
+  }
+
+  previousImage(item: any) {                    //Suratis slideri
     item.imgIndex = item.imgIndex ? item.imgIndex : 0;
 
     if (item.imgIndex != 0) {
@@ -34,7 +41,7 @@ export class HotelCardsComponent implements OnInit {
     }
   }
 
-  nextImage(item: any) {
+  nextImage(item: any) {                    //Suratis slideri
     item.imgIndex = item.imgIndex ? item.imgIndex : 0;
     item.imgIndex++;
 
@@ -43,7 +50,7 @@ export class HotelCardsComponent implements OnInit {
     }
   }
 
-  updateUrl(event: Event) {
+  updateUrl(event: Event) {           //Tu romelime surati ar chaitvirteba mag shemtxvevashi gaeshveba es funkcia da image not found daewereba
     let ev = event.target as HTMLImageElement;
     ev.src = "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png";
   }

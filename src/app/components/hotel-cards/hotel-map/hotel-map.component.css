@@ -2,54 +2,66 @@
     width: 100%;
     margin: auto;
 }
-  a{
+
+a {
     text-decoration: none;
     color: black;
-  }
-agm-map{
+}
+
+agm-map {
     height: 600px;
-    }
- mat-card {
+
+}
+
+mat-card {
     width: 300px;
     height: 300px;
     padding: 0;
-    }
-    .example-card div{
-        padding: 0!important;
-    }
-    .gm-style-iw-d{
-        padding: 0;
-    }
+}
+
+.example-card div {
+    padding: 0 !important;
+}
+
+.gm-style-iw-d {
+    padding: 0;
+}
+
 mat-card img {
     max-width: 300px;
     max-height: 200px;
     border-radius: 10px;
-    }
+}
+
 mat-card-content {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-        
-    }
-.gm-ui-hover-effect{
+
+}
+
+.gm-ui-hover-effect {
     position: absolute;
 }
-.gm-style-iw-d{
-overflow: hidden;
+
+.gm-style-iw-d {
+    overflow: hidden;
 }
+
 .right {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    }
-      
+}
+
 .right i {
     margin-top: 7px;
     margin-right: 3px;
-    }
-    gm-style-iw-d{
-        padding: 10px;
-    }
+}
+
+gm-style-iw-d {
+    padding: 10px;
+}
 
 
 .slider {
@@ -59,21 +71,24 @@ overflow: hidden;
     position: relative;
 }
 
-.slider-left{
+.slider-left {
     position: absolute;
     left: 0;
     top: 0;
 }
-.slider-left:hover{
-    background: linear-gradient(90deg, rgba(69,69,69,0.5) 0%, rgba(255,255,255,0) 100%);
+
+.slider-left:hover {
+    background: linear-gradient(90deg, rgba(69, 69, 69, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
 }
-.slider-right{
+
+.slider-right {
     position: absolute;
     right: 0;
     top: 0;
 }
-.slider-right:hover{
-background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(69,69,69,0.5) 100%);
+
+.slider-right:hover {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(69, 69, 69, 0.5) 100%);
 }
 
 .slider button {
@@ -99,7 +114,7 @@ background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(69,69,69,0.5) 10
     flex-wrap: wrap;
     justify-content: start;
     align-items: baseline;
-    color:#18aaaa; 
+    color: #18aaaa;
     font-weight: 200;
-    
+
 }

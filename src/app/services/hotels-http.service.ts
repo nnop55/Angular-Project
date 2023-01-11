@@ -13,19 +13,19 @@ export class HotelsHttpService {
 
   constructor(private http: HttpClient) { }
 
-  getCategories(): Observable<any> {
+  getCategories(): Observable<any> {                     //Kategoriebis data
     return this.http.get(this.categoryApi)
   }
 
-  getHotels(): Observable<any> {
+  getHotels(): Observable<any> {                   //Sastumroebis data
     return this.http.get(this.hotelApi)
   }
 
-  getHotelById(hotelId: any): Observable<any> {
+  getHotelById(hotelId: any): Observable<any> {        //Erti sastumros data
     return this.http.get(`${this.hotelApi}/${hotelId}`);
   }
 
-  getFilteredHotels(params: any) {
+  getFilteredHotels(params: any) {       //Dafiltruli hotelebis shenaxva masivshi
     let reqUrl = this.hotelApi + "/filter-by-category?";
 
     let check = reqUrl.split("?");

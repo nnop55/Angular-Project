@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseWorkerService } from 'src/app/services/firebase-worker.service';
 
 @Component({
   selector: 'app-booking-modal',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingModalComponent implements OnInit {
 
-  constructor() { }
+  user: any;
+
+  constructor(private firebase: FirebaseWorkerService) { }
 
   ngOnInit(): void {
+    this.firebase.user$.subscribe((res: any) => {
+      this.user = res;
+      console.log(this.user)
+    })
   }
 
 }

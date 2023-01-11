@@ -1,16 +1,5 @@
-section {
-    max-width: 1120px;
-    padding: 0 40px;
-
-}
-
-.main {
-    width: 80%;
-    margin: 50px auto 0px;
-    background: #313131;
-    padding: 30px 106px;
-    border-radius: 5px;
-    padding-bottom: 100px;
+* {
+    color: #fff;
 }
 
 .name {
@@ -35,7 +24,6 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fff;
 }
 
 .top h2 {
@@ -46,7 +34,6 @@ section {
 .place {
     padding: 10px 0;
     border-bottom: 3px double #18aaaa;
-    color: #fff;
 }
 
 
@@ -71,7 +58,8 @@ section {
 
 .rooms {
     text-align: center;
-    color: #fff;
+    padding-bottom: 100px;
+
 }
 
 .card {
@@ -169,7 +157,6 @@ section {
     margin-top: 20px;
     border-radius: 10px;
     background-color: #313131;
-    color: white;
 }
 
 .mdy {

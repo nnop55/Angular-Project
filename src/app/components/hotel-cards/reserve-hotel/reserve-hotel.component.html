@@ -13,7 +13,6 @@
 </div>
 
 <div class="rooms">
-    <!-- <h2 class="heading">Rooms</h2> -->
     <div class="room-cards">
         <div *ngFor="let item of currentHotel?.rooms" class="card">
             <div class="slider">
@@ -28,7 +27,6 @@
             <p>Persons : {{item.personsCount}}</p>
             <p>Child policy : {{item.childPolicy}}</p>
             <button class="booking" mat-button (click)="openDialog(item)"> Booking </button>
-
         </div>
     </div>
 </div>

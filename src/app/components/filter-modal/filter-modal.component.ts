@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ICON_REGISTRY_PROVIDER } from '@angular/material/icon';
 import { filter, from } from 'rxjs';
+import { CheckbooleansService } from 'src/app/services/checkbooleans.service';
 import { HotelsHttpService } from 'src/app/services/hotels-http.service';
 
 @Component({
@@ -28,7 +29,7 @@ export class FilterModalComponent implements OnInit {
   ];
   checkBooleans: any;
 
-  constructor(private http: HotelsHttpService) { }
+  constructor(private http: HotelsHttpService, private check: CheckbooleansService) { }
 
   ngOnInit(): void {
     this.typeOfPlaceFunc();
@@ -39,7 +40,7 @@ export class FilterModalComponent implements OnInit {
     this.hostLanguageFunc();
   }
 
-  saveFilterBtn() {
+  saveFilterBtn() {                             //Sastumroebis filtracia masivshi
     if (parseInt(this.priceRange.price_from) > parseInt(this.priceRange.price_to)) {
       alert("Incorrect price range!")
     } else {
@@ -48,18 +49,19 @@ export class FilterModalComponent implements OnInit {
       this.http.filteredHotelsArr = [];
       this.http.getFilteredHotels(this.selectedFilter).subscribe(res => {
         this.http.filteredHotelsArr = res;
+        this.check.showHotelsBtn = true;
         console.log(this.http.filteredHotelsArr)
       })
       console.log(this.selectedFilter)
     }
   }
 
-  addAmenitiesForm() {
+  addAmenitiesForm() {                         //Amenities inputis damateba
     this.amenitiesForm.push({
       name: '',
     });
   }
-  removeAmenitiesForm(index: any) {
+  removeAmenitiesForm(index: any) {                         //Amenities inputis washla
     this.amenitiesForm.splice(index, 1)
   }
 
@@ -85,7 +87,7 @@ export class FilterModalComponent implements OnInit {
     ]
   }
 
-  bedroomsClick(item: any) {
+  bedroomsClick(item: any) {                    //Airchios mxolod erti parametri
     this.bedrooms.forEach(item2 => {
       item2.clicked = false;
     })
@@ -106,7 +108,7 @@ export class FilterModalComponent implements OnInit {
     ]
   }
 
-  bedsClick(item: any) {
+  bedsClick(item: any) {                    //Airchios mxolod erti parametri
     this.beds.forEach(item2 => {
       item2.clicked = false;
     })
@@ -127,7 +129,7 @@ export class FilterModalComponent implements OnInit {
     ]
   }
 
-  bathroomsClick(item: any) {
+  bathroomsClick(item: any) {                    //Airchios mxolod erti parametri
     this.bathrooms.forEach(item2 => {
       item2.clicked = false;
     })
@@ -141,7 +143,7 @@ export class FilterModalComponent implements OnInit {
     ]
   }
 
-  propertyTypeClick(item: any) {
+  propertyTypeClick(item: any) {                    //Airchios mxolod erti parametri
     this.propertyType.forEach(item2 => {
       item2.clicked = false;
     })
@@ -167,7 +169,7 @@ export class FilterModalComponent implements OnInit {
     ]
   }
 
-  filterHotels() {
+  filterHotels() {                                              //Shemowmeba filtraciistvis, romeli parametria archeuli da ramdeni
     //priceRAnge
     this.selectedFilter['priceFrom'] = this.priceRange['priceFrom'];
     this.selectedFilter['priceTo'] = this.priceRange['priceTo'];

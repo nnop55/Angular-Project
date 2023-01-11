@@ -22,15 +22,15 @@ export class RegisterFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onFormSubmit(form: NgForm) {
+  onFormSubmit(form: NgForm) {                              //Registracia
     var tmpUser = Object.assign(new User(), form.value);
     this.fireWorker.signUp(tmpUser, form.value.password).then((response: any) => {
-      this.router.navigate(['/authorization/login']);
+      this.router.navigate(['/']);
       console.log(response);
     })
   }
 
-  eyeIconToggle() {
+  eyeIconToggle() {                       //Parolis damalva an chveneba inputshi
     this.checkInpType = !this.checkInpType;
     if (this.checkInpType) {
       this.eyeIcon = 'ri-eye-off-fill';

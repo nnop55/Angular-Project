@@ -20,8 +20,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ReserveHotelComponent implements OnInit {
 
   currentHotel: any;
-  placeOffers: any;
-  HotelCategories: any;
   date: any = new Object();
   diffInMs: any;
   user: any;
@@ -37,24 +35,21 @@ export class ReserveHotelComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params: any) => {
+    this.activatedRoute.params.subscribe((params: any) => {   //Erti sastumros informacia ID-is mixedvit
       this.hotelId = params['id'];
-
-      console.log(this.hotelId);
-
       this.http.getHotelById(this.hotelId).subscribe(res => {
         this.currentHotel = res;
-        this.placeOffers = this.currentHotel?.placeOffers;
-        this.HotelCategories = this.currentHotel?.categories;
         console.log(this.currentHotel);
       })
     });
 
-    this.date.date_from = moment().format('YYYY-MM-DD');         //Date format with moment js
-    this.date.date_to = moment().add(1, 'days').format('YYYY-MM-DD');
+    this.checkUser();
+
+    this.date.date_from = moment().format("YYYY-MM-DD");         //Tarigis formati moment-js
+    this.date.date_to = moment().add(1, "days").format("YYYY-MM-DD");         //Tarigis formati moment-js
   }
 
-  checkUser() {
+  checkUser() {                                       //Momxmareblis shemowmeba aris tu ara shemosuli
     this.user = localStorage.getItem('user');
     this.user = JSON.parse(this.user);
     if (this.user) {
@@ -62,13 +57,16 @@ export class ReserveHotelComponent implements OnInit {
     }
   }
 
-  getDifferenceInDays() {
+  getDifferenceInDays() {               //Archeuli tarigs shoris dgeebis datvla
     const postData = {
       start_date: moment(this.date.date_from).format("YYYY-MM-DD"),
       end_date: moment(this.date.date_to).format("YYYY-MM-DD")
     }
 
-    this.firebase.setDataByDocumentName('book-history', this.uid).update(postData);
+    console.log(this.uid);
+
+    this.firebase.setDataByDocumentName("book-history", this.uid).update(postData);
+
 
     let to: any = new Date(this.date.date_to);
     let from: any = new Date(this.date.date_from);
@@ -76,21 +74,23 @@ export class ReserveHotelComponent implements OnInit {
     const diffInMs = Math.abs(to - from);
     this.diffInMs = diffInMs / (1000 * 60 * 60 * 24);
     this.calculatePrice();
-    return this.diffInMs;
+    console.log(this.diffInMs)
+    return this.diffInMs
   }
 
-  calculatePrice() {
+  calculatePrice() {                  //Datvlili dgeebis raodenoba gamrvaldeba yvela otaxis pasze
     this.currentHotel['rooms'].forEach((e: any) => {
       e['oldPriceTmp'] = e.oldPriceTmp == undefined ? e.price : e.oldPriceTmp;
       e.price = this.diffInMs * e.oldPriceTmp;
     })
   }
 
-  checkBookHistory() {
+  checkBookHistory() { //Vamowmebt shemosul momxmarebels tu konda akamde raime sastumros dajavshna dawkebuli romelic ar daumtavrebia,
+    // tu konda shevtavazebt gagrdzelebas tu ar konda sheikmneba axali istoria konkretul momxmarebelze
     let date = moment().format('YYYY-MM-DD HH:mm');
     let index = 0;
 
-    this.firebase.getDataByDocumentName('book-history').valueChanges().pipe(
+    this.firebase.getDataByDocumentName("book-history").valueChanges().pipe(
       map((items: any) =>
         items.filter((item: any) =>
           item.datetime <= date && moment(item.datetime).add(1, 'days').format('YYYY-MM-DD HH:mm') >=
@@ -115,7 +115,7 @@ export class ReserveHotelComponent implements OnInit {
           })
   }
 
-  continueBookingModal(data: any) {
+  continueBookingModal(data: any) { //Dajavshnis gagrdzelebis dialogi
     const dialogRef = this.dialog.open(ContinueBookingModalComponent);
 
     dialogRef.afterClosed().subscribe(result => {
@@ -137,7 +137,7 @@ export class ReserveHotelComponent implements OnInit {
     })
   }
 
-  createBookHistory() {
+  createBookHistory() {                  //Ikmneba axali istoria im konkretul momxmarebelze romelsac akamde arasdros daujavshnia
     const postData: HotelBook = {
       uid: '',
       datetime: moment().format('YYYY-MM-DD HH:mm'),
@@ -148,10 +148,10 @@ export class ReserveHotelComponent implements OnInit {
       user_id: this.user.uid
     }
 
-    this.firebase.createBookHistory(postData)
+    this.uid = this.firebase.createBookHistory(postData)
   }
 
-  openDialog(item: any) {
+  openDialog(item: any) {   //Dialogi dadasturebistvis namdvilat surs tu ara am otaxis dajavshna     
     const dialogRef = this.dialog.open(BookingModalComponent);
 
     if (this.uid == '') {
@@ -161,6 +161,7 @@ export class ReserveHotelComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.check.bookStatus = 'Done';
+        this.router.navigate(['/'])
         this.openSnackBar(`${item.price} dollars were deducted from your card`, 'OK')
       } else {
         this.check.bookStatus = 'Cancelled'
@@ -170,7 +171,7 @@ export class ReserveHotelComponent implements OnInit {
         status: this.check.bookStatus
       }
 
-      this.firebase.setDataByDocumentName('book-history', this.uid).update(postData);
+      this.firebase.setDataByDocumentName("book-history", this.uid).update(postData);
     });
   }
 
@@ -178,7 +179,7 @@ export class ReserveHotelComponent implements OnInit {
     this._snackBar.open(message, action);
   }
 
-  previousImage(item: any) {
+  previousImage(item: any) {      //Suratis slider
     item.imgIndex = item.imgIndex ? item.imgIndex : 0;
 
     if (item.imgIndex != 0) {
@@ -188,7 +189,7 @@ export class ReserveHotelComponent implements OnInit {
     }
   }
 
-  nextImage(item: any) {
+  nextImage(item: any) {      //Suratis slider
     item.imgIndex = item.imgIndex ? item.imgIndex : 0;
     item.imgIndex++;
 
@@ -197,7 +198,7 @@ export class ReserveHotelComponent implements OnInit {
     }
   }
 
-  updateUrl(event: Event) {
+  updateUrl(event: Event) {  //Tu romelime surati ar chaitvirteba mag shemtxvevashi gaeshveba es funkcia da image not found daewereba
     let ev = event.target as HTMLImageElement;
     ev.src = "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png";
   }

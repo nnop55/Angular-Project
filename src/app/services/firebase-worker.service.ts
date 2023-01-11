@@ -11,12 +11,13 @@ import { HotelBook } from '../models/hotel-book.model';
 })
 export class FirebaseWorkerService {
 
+
   user$!: Observable<User | null | undefined>;
 
   constructor(private firestore: AngularFirestore, public auth: AngularFireAuth,
     private router: Router) {
     this.user$ = this.auth.authState
-      .pipe(
+      .pipe(                                     //Useris informaciaze wvdoma
         switchMap((user: any) => {
           if (user) {
             return this.firestore.doc<User>(`users/${user.uid}`).valueChanges();
@@ -27,24 +28,32 @@ export class FirebaseWorkerService {
       )
   }
 
-  getDataByDocumentName(document: string): any {
+  getDataByDocumentName(document: string): any {         //Informacia dokumentis saxelis mixedvit
     return this.firestore.collection<any>(document);
   }
 
-  setDataByDocumentName(document: string, uid: string): any {
+  setDataByDocumentName(document: string, uid: string): any {       //Informaciis daediteba dokumentis saxelis da uid-is mixedvit
     return this.firestore.doc<any>(`${document}/${uid}`)
   }
 
-  createBookHistory(item: HotelBook) {
+  createBookHistory(item: HotelBook) {                     //Dajavshnis istoriis shekmna
     let uid = this.firestore.createId();
 
     const bookRef: AngularFirestoreDocument<any> = this.firestore.doc(
       `book-history/${uid}`
     )
+
+    item.uid = uid;
+
+    bookRef.set(item, {
+      merge: true,
+    });
+
+    return uid;
   }
 
 
-  signIn(email: string, password: string) {
+  signIn(email: string, password: string) {             //Momxmareblis acc-ze shesvla
     return this.auth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
@@ -61,12 +70,11 @@ export class FirebaseWorkerService {
   }
 
 
-  signUp(user: User, password: string): any {
+  signUp(user: User, password: string): any {        //Registracia
     return this.auth
       .createUserWithEmailAndPassword(user.email, password)
       .then((result) => {
 
-        this.sendVerificationMail();
         this.setUserDataForSignUp(result.user, user);
       })
       .catch((error) => {
@@ -74,16 +82,15 @@ export class FirebaseWorkerService {
       });
   }
 
-  signOut() {
+  signOut() {                                //Gamosvla acc-dan
     return this.auth.signOut().then(() => {
       window.alert('Logged out!');
     });
   }
 
-  sendVerificationMail() {
-  }
 
-  getUserDoc(id: string): any {
+
+  getUserDoc(id: string): any { //Useris dokumenti
     return this.firestore
       .collection('users')
       .doc(id)
@@ -92,7 +99,7 @@ export class FirebaseWorkerService {
 
 
 
-  setUserDataForSignUp(fireUser: any, user: User) {
+  setUserDataForSignUp(fireUser: any, user: User) {// Useris datis dasetva
     console.log(user);
 
     const userRef: AngularFirestoreDocument<any> = this.firestore.doc(
@@ -115,7 +122,7 @@ export class FirebaseWorkerService {
     });
   }
 
-  forgotPassword(passwordReset: string) {
+  forgotPassword(passwordReset: string) {  //Parolis agdgena
     return this.auth.sendPasswordResetEmail(passwordReset)
       .then(() => {
         window.alert("Password Reset Email Send, Check Your Inbox")

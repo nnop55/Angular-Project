@@ -7,28 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hotel-map.component.css']
 })
 export class HotelMapComponent implements OnInit {
-  
-  
 
-  constructor(private hotel:HotelsHttpService) { }
+
+  currentLatLng: any[] = [];
+
   lat = 41.7151;
   long = 40.8271;
   zoom = 4;
 
-  
-currentLatLng:any [] = []
-currentHotelCard:any
-id:any
+  constructor(private hotel: HotelsHttpService) { }
+
+
 
   ngOnInit(): void {
-    this.hotel.getHotels().subscribe(res =>{
+    this.hotel.getHotels().subscribe(res => {   //Yvela sastumros informacias vinaxavt masivshi
       this.currentLatLng = res;
       console.log(this.currentLatLng);
-      this.id = res.id      
     })
-    
+
   }
-  previousImage(item: any) {
+  previousImage(item: any) {       //Suratis slider
     item.imgIndex = item.imgIndex ? item.imgIndex : 0;
 
     if (item.imgIndex != 0) {
@@ -38,7 +36,7 @@ id:any
     }
   }
 
-  nextImage(item: any) {
+  nextImage(item: any) {       //Suratis slider
     item.imgIndex = item.imgIndex ? item.imgIndex : 0;
     item.imgIndex++;
 
@@ -47,7 +45,7 @@ id:any
     }
   }
 
-  updateUrl(event: Event) {
+  updateUrl(event: Event) { //Tu romelime surati ar chaitvirteba mag shemtxvevashi gaeshveba es funkcia da image not found daewereba
     let ev = event.target as HTMLImageElement;
     ev.src = "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled-1150x647.png";
   }
