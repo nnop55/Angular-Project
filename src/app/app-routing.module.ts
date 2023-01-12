@@ -24,13 +24,13 @@ const routes: Routes = [
       { path: "forgot-password", component: ForgotPasswordComponent },
     ]
   },
-  { path: 'profile', component: ProfileComponent, canActivate:[AuthGuard] },
-  { path: 'profile-edit', component: ProfileEditComponent, canActivate:[AuthGuard] },
-  { path: 'mastercard-edit', component: MastercardEditComponent },
-  { path: 'reserve-hotel/:id', component: ReserveHotelComponent, canActivate:[AuthGuard] },
-  { path: 'booking-modal', component: BookingModalComponent, canActivate:[AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'profile-edit', component: ProfileEditComponent, canActivate: [AuthGuard] },
+  { path: 'mastercard-edit', component: MastercardEditComponent, canActivate: [AuthGuard] },
+  { path: 'reserve-hotel/:id', component: ReserveHotelComponent, canActivate: [AuthGuard] },
+  { path: 'booking-modal', component: BookingModalComponent, canActivate: [AuthGuard] },
   { path: 'inner/:id', component: HotelInnerComponent },
-  { path: 'reserve-history', component: BookingHistoryComponent, canActivate:[AuthGuard] }
+  { path: 'reserve-history', component: BookingHistoryComponent, canActivate: [AuthGuard] }
 ];
 
 

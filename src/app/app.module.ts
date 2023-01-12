@@ -51,7 +51,7 @@ import { ContinueBookingModalComponent } from './components/continue-booking-mod
 import { BookingHistoryComponent } from './components/booking-history/booking-history.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { AuthGuard } from './router-guards/auth.guard';
-import { AuthService } from './services/auth.service';
+import { CheckbooleansService } from './services/checkbooleans.service';
 
 
 const materialModules = [
@@ -112,7 +112,7 @@ const firebaseModules = [
       apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw'
     })
   ],
-  providers: [AuthGuard, AuthService],
+  providers: [AuthGuard, CheckbooleansService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
