@@ -5,6 +5,7 @@ import { User } from 'src/app/models/user.model';
 import { FirebaseWorkerService } from 'src/app/services/firebase-worker.service';
 import { NgForm } from '@angular/forms';
 import { CheckbooleansService } from '../../../services/checkbooleans.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login-form',
@@ -18,7 +19,7 @@ export class LoginFormComponent implements OnInit {
   inpType: string = 'password';
 
   constructor(public checkUser: CheckbooleansService, private router: Router,
-    private fireWorker: FirebaseWorkerService,
+    private fireWorker: FirebaseWorkerService, private auth:AuthService
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +31,7 @@ export class LoginFormComponent implements OnInit {
       this.checkUser.checkUserLoggedIn = true;
     })
     this.router.navigate(['/'])
+    this.auth.userLogIn(form.value)
   }
 
 

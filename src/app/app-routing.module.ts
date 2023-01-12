@@ -1,3 +1,4 @@
+import { AuthGuard } from './router-guards/auth.guard';
 import { HotelMapComponent } from './components/hotel-cards/hotel-map/hotel-map.component';
 import { HotelInnerComponent } from './components/hotel-cards/hotel-inner/hotel-inner/hotel-inner.component';
 import { NgModule, Component } from '@angular/core';
@@ -23,13 +24,13 @@ const routes: Routes = [
       { path: "forgot-password", component: ForgotPasswordComponent },
     ]
   },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'profile-edit', component: ProfileEditComponent },
+  { path: 'profile', component: ProfileComponent, canActivate:[AuthGuard] },
+  { path: 'profile-edit', component: ProfileEditComponent, canActivate:[AuthGuard] },
   { path: 'mastercard-edit', component: MastercardEditComponent },
-  { path: 'reserve-hotel/:id', component: ReserveHotelComponent },
-  { path: 'booking-modal', component: BookingModalComponent },
+  { path: 'reserve-hotel/:id', component: ReserveHotelComponent, canActivate:[AuthGuard] },
+  { path: 'booking-modal', component: BookingModalComponent, canActivate:[AuthGuard] },
   { path: 'inner/:id', component: HotelInnerComponent },
-  { path: 'reserve-history', component: BookingHistoryComponent }
+  { path: 'reserve-history', component: BookingHistoryComponent, canActivate:[AuthGuard] }
 ];
 
 
