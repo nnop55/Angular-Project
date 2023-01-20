@@ -14,7 +14,7 @@
 .top img {
     width: 940px;
     height: 500px;
-    /* object-fit: cover; */
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -49,6 +49,7 @@
     width: 400px;
     height: 400px;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .rooms h2 {

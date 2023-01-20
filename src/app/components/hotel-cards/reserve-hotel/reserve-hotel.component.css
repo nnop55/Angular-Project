@@ -36,7 +36,9 @@
     border-bottom: 3px double #18aaaa;
 }
 
-
+h3 b {
+    color: black;
+}
 
 .rooms div img {
     width: 300px;
